@@ -4,7 +4,14 @@
 /public/hot
 /public/storage
 /storage/*.key
+/user-interface/assets/images
+/user-interface/assets/bg-video-2.mp4
 /vendor
+.mp4
+.mp3
+.jpg
+.jpeg
+.png
 .env
 .env.backup
 .env.production
