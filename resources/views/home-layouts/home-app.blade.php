@@ -20,7 +20,9 @@
 
 <body class="theme-1">
     
-    <x-header></x-header>
+    <x-header-desktop-home></x-header-desktop-home>
+
+    <x-header-mobile-home></x-header-mobile-home>
 
     @yield('content')
 
