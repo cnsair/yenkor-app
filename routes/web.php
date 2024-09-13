@@ -36,6 +36,10 @@ Route::middleware('guest')->group(function () {
         return view('home.contact-us');
     })->name('contact');
 
+    Route::get('/book-ride', function () {
+        return view('home.book-ride');
+    })->name('book-ride');
+
 });
 
 

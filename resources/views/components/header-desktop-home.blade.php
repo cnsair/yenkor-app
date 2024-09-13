@@ -32,16 +32,16 @@
                 </div>
                 <div class="d-none d-lg-block col-lg-6">
                     <div class="header__upper--right">
-                        <nav class="navigation">
+                        <!-- <nav class="navigation">
                             <ul>
                                 <li>
                                     <a href="my-driver-dashboard.html">Driver Dashboard</a>
                                 </li>
                             </ul>
-                        </nav>
-                        <a href="sign-up.html" class="button p-0"><i class="far fa-user-astronaut"></i> Drive with
+                        </nav> -->
+                        <a href="{{ route('register') }}" class="button p-0"><i class="far fa-user-astronaut"></i> Drive with
                             us</a>
-                        <a href="ride-with-carrgo.html" class="button p-0"><i class="far fa-taxi"></i> Book a
+                        <a href="{{ route('book-ride') }}" class="button p-0"><i class="far fa-taxi"></i> Book a
                             Ride</a>
                     </div>
                 </div>
@@ -60,12 +60,9 @@
                             <span class="navbar-toggler-icon"></span>
                         </button> 
 
-                        @php
-                            //dd(route('about') );
-                        @endphp
-
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto">
+                                <!-- ->has('home') -->
                                 <li class="nav-item {{ route('home') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('home') }}">
                                         <i class="fas fa-home"></i>Home
@@ -99,7 +96,7 @@
                                 </li>
                             </ul>
                             <div class="my-2 my-lg-0 d-inline-flex">
-                                <a href="sign-in.html" class="button button-light big">Get Started</a>
+                                <a href="{{ route('login') }}" class="button button-light big">Sign In</a>
                             </div>
                         </div>
                     </nav>
