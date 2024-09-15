@@ -57,7 +57,6 @@ Route::middleware('guest')->group(function () {
 
 Route::group(['middleware' => 'auth'], function() {
 
-
     //Main Redirect Controller
     Route::get('redirects', [
         RedirectController::class, 'index'
