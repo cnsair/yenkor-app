@@ -14,22 +14,22 @@ class LoginResponse implements LoginResponseContract
      */
     public function toResponse($request)
     {
-        $role = \Illuminate\Support\Facades\Auth::user()->role;
+        // $role = \Illuminate\Support\Facades\Auth::user()->role;
 
-        if ($request->wantsJson()) {
-            return response()->json(['two_factor' => false]);
-        }
+        // if ($request->wantsJson()) {
+        //     return response()->json(['two_factor' => false]);
+        // }
 
-        switch ($role) {
+        // switch ($role) {
 
-            case 0:
-                return redirect()->route('rider.rider');
-            case 1:
-                return redirect()->route('driver.driver');
-            case 2:
-                return redirect()->route('admin.admin');
-            default:
-                return redirect('home');
+        //     case 0:
+        //         return redirect()->route('rider.rider');
+        //     case 1:
+        //         return redirect()->route('driver.driver');
+        //     case 2:
+        //         return redirect()->route('admin.admin');
+        //     default:
+        //         return redirect('home');
 
             // case 'admin':
             //     return redirect()->intended(config('fortify.home'));
@@ -41,6 +41,6 @@ class LoginResponse implements LoginResponseContract
             //         auth()->user()->is_admin ? route('admin.dashboard') : route('dashboard')
             //     );
 
-        }
+        //}
     }
 }
