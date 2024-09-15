@@ -63,34 +63,35 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto">
                                 <!-- ->has('home') -->
-                                <li class="nav-item {{ route('home') ? 'active' : '' }}">
+                                <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('home') }}">
                                         <i class="fas fa-home"></i>Home
                                     </a>
                                 </li>
-                                <li class="nav-item {{ route('about') ? 'active' : '' }}">
+                                <li class="nav-item {{ request()->routeIs('about') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('about') }}">
                                         <i class="fas fa-exclamation-circle"></i>About
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" {{ request()->routeIs('service') ? 'active' : '' }}>
                                     <a class="nav-link" href="{{ route('service') }}">
                                         <i class="fas fa-cog"></i>Our Services</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" {{ request()->routeIs('vehicle') ? 'active' : '' }}>
                                     <a class="nav-link" href="{{ route('vehicle') }}">
-                                        <i class="fas fa-taxi"></i>Our
-                                        Vehicles</a>
+                                        <i class="fas fa-taxi"></i>Our Vehicles
+                                    </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('package') }}"><i class="fas fa-cube"></i>Packages</a>
+                                <li class="nav-item" {{ request()->routeIs('package') ? 'active' : '' }}>
+                                    <a class="nav-link" href="{{ route('package') }}">
+                                        <i class="fas fa-cube"></i>Packages</a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" {{ request()->routeIs('blog') ? 'active' : '' }}>
                                     <a class="nav-link" href="{{ route('blog') }}">
                                         <i class="fas fa-home"></i>Blog
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item" {{ request()->routeIs('contact') ? 'active' : '' }}>
                                     <a class="nav-link" href="{{ route('contact') }}">
                                         <i class="fas fa-map-marker-alt"></i>Contact Us</a>
                                 </li>

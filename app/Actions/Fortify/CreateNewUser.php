@@ -32,6 +32,10 @@ class CreateNewUser implements CreatesNewUsers
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
+        // $user = $request->input('user'); // $request->input() returns a string.
+        // if ($user->is('admin')) {
+        //     // Error: $user is a string, not an object.
+        // }
         //if($input->terms == 'accepted') {
 
             return User::create([
