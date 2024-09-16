@@ -28,6 +28,7 @@ class RedirectController extends Controller
                 return redirect()->route('admin.admin');
             default:
                 return redirect( abort(403) );
+                
         }
     }
 
