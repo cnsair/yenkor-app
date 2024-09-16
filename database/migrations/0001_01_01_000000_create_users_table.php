@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+
+            // 0 = rider; 1 = driver; 2 = admin; 3 = super-admin;
+            $table->enum('role',[0,1,2,3])->default(0);
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('phone')->unique();
             $table->string('email')->unique();
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_driver')->default(false);
+            $table->boolean('is_rider')->default(false);
+            
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

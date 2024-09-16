@@ -20,16 +20,30 @@ class CreateNewUser implements CreatesNewUsers
     public function create(array $input): User
     {
         Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'role' => ['required', 'integer'],
+            'firstname' => ['required', 'string', 'max:20'],
+            'lastname' => ['required', 'string', 'max:20'],
+            'phone' => ['string', 'max:20'],
+            'email' => ['required', 'string', 'email', 'max:40', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        return User::create([
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
-        ]);
+        // $user = $request->input('user'); // $request->input() returns a string.
+        // if ($user->is('admin')) {
+        //     // Error: $user is a string, not an object.
+        // }
+        //if($input->terms == 'accepted') {
+
+            return User::create([
+                'role' => $input['role'],
+                'firstname' => $input['firstname'],
+                'lastname' => $input['lastname'],
+                'phone' => $input['phone'],
+                'email' => $input['email'],
+                'password' => Hash::make($input['password']),
+                //'terms' => $input['terms'],
+            ]);
+        //}
     }
 }
