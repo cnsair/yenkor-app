@@ -21,13 +21,13 @@ class RedirectController extends Controller
         switch ($role) {
 
             case 0:
-                return redirect()->route('rider.rider');
+                return redirect()->route('rider.dashboard');
             case 1:
-                return redirect()->route('driver.driver');
+                return redirect()->route('driver.dashboard');
             case 2 || 3:
-                return redirect()->route('admin.admin');
+                return redirect()->route('admin.dashboard');
             default:
-                return redirect( abort(403) );
+                return redirect()->route('login');
                 
         }
     }

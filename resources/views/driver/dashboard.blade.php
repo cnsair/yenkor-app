@@ -9,7 +9,7 @@
     <title>Driver - {{ Auth()->user()->firstname }}</title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.webp">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/yenkor-favicon.ico">
 
     <x-css-links></x-css-links>
 </head>
@@ -18,112 +18,11 @@
     
 <x-dashboard-header></x-dashboard-header>
 
-    <section class="responsive-menu">
-        <div class="rep-header">
-            <div class="logo">
-                <a href="index.html"><img src="assets/images/logo-main.webp" alt="Site Logo"></a>
-            </div>
-            <a href="#" title class="close-menu"><i class="lni lni-close"></i></a>
-        </div>
-        <div class="navbar-collapse" id="navbarSupportedContent">
-            <ul class="mobile-menu navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <div class="media">
-                            <img height="30" width="30" class="me-3" src="assets/images/partner-img.webp" alt>
-                            <div class="media-body">
-                                <h6 class="m-0">John Doe <i class="fas fa-angle-down"></i></h6>
-                                <p class="m-0">India</p>
-                            </div>
-                        </div>
-                        <span class="sr-only">(current)</span>
-                    </a>
-                    <ul>
-                        <li><a class="dropdown-item" href="partner-profile.html">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="media">
-                            <div class="media-body">
-                                <h3 class="m-0">Passenger</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <ul>
-                        <li>
-                            <a class="dropdown-item" href="on-ride.html">On Ride</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="passenger-profile.html">Passenger</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="ride-with-Yenkor.html">Ride with Cargo</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="ride-with-Yenkor-booked.html">Ride with Cargo Booked</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="media">
-                            <div class="media-body">
-                                <h3 class="m-0">Driver</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <ul>
-                        <li>
-                            <a class="dropdown-item" href="partner-profile.html">Partner Profile</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <div class="media">
-                            <div class="media-body">
-                                <h3 class="m-0">Login</h3>
-                            </div>
-                        </div>
-                    </a>
-                    <ul>
-                        <li>
-                            <a class="dropdown-item" href="sign-in.html">Sign In</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="sign-up.html">Sign up</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="m-0"><a href="contact-us.html">Help</a></li>
-                <li class="m-0"><a href="contact-us.html"><i class="far fa-envelope"></i></a></li>
-            </ul>
-            <div class="header__upper--right flex-column">
-                <nav class="navigation p-3">
-                    <ul>
-
-                        <li><a href="my-driver-dashboard.html">Driver Dashboard</a></li>
-
-                    </ul>
-                </nav>
-                <a href="sign-up.html" class="button p-3"><i class="far fa-user-astronaut"></i> Drive with
-                    us</a>
-                <a href="ride-with-Yenkor.html" class="button p-3" my-2><i class="far fa-taxi"></i> Book a
-                    Ride</a>
-                <div class="p-3 my-lg-0 d-inline-flex">
-                    <a href="sign-in.html" class="button button-light big">Get Started</a>
-                </div>
-            </div>
-        </div>
-    </section>
     <div class="breadcrumb-div">
         <div class="container">
             <h1 class="page-title mb-0">Dashboard</h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{ route('driver.dashboard') }}">Home</a></li>
                 <li>My Dashboard</li>
             </ol>
         </div>
@@ -134,7 +33,7 @@
                 <div class="col-sm-6">
                     <div class="passanger-name">
                         <div class="media">
-                            <img class="me-3" src="assets/images/partner-img.webp" alt="partner-img">
+                            <img class="me-3" src="{{ asset('assets/assets/images/partner-img.webp') }}" alt="partner-img">
                             <div class="media-body">
                                 <h2 class="mt-0">Johnson Smith</h2>
                                 <p>ID 1234567890</p>

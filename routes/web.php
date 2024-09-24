@@ -62,29 +62,64 @@ Route::group(['middleware' => 'auth'], function() {
         RedirectController::class, 'index'
     ]);
 
+   
+    Route::group(['middleware' => 'rider'], function() {
+        Route::prefix('rider')->group(function () {
+            Route::name('rider.')->group(function () {
 
-    //Rider method calls
-    Route::get('/rider/rider-dashboard', [
-        RiderController::class, 'index'
-    ])->name('rider.rider');
+                //view analytics page
+                Route::get('/dashboard', function () {
+                    return view('rider.dashboard'); })
+                    ->name('dashboard');
 
+                //Rider method calls
+                // Route::get('/dashboard', [
+                //     RiderController::class, 'index'
+                // ])->name('rider');
 
-    //Driver method calls
-    Route::prefix('driver')->group(function () {
-        Route::name('driver.')->group(function () {
-
-            Route::get('/driver-dashboard', [
-                DriverController::class, 'index'
-            ])->name('driver');
-
+            });
         });
     });
 
 
-    //Admin method calls
-    Route::get('/admin/admin-dashboard', [
-        AdminController::class, 'index'
-    ])->name('admin.admin');
+    Route::group(['middleware' => 'driver'], function() {
+      
+        Route::prefix('driver')->group(function () {
+            Route::name('driver.')->group(function () {
+
+                //view analytics page
+                Route::get('/dashboard', function () {
+                    return view('driver.dashboard'); })
+                    ->name('dashboard');
+
+                // Route::get('/dashboard', [
+                //     DriverController::class, 'index'
+                // ])->name('driver');
+
+            });
+        });
+    });
+
+
+
+    Route::group(['middleware' => 'admin'], function() {
+        Route::prefix('admin')->group(function () {
+            Route::name('admin.')->group(function () {
+
+                //view analytics page
+                Route::get('/dashboard', function () {
+                    return view('admin.dashboard'); })
+                    ->name('dashboard');
+
+                //Admin method calls
+                // Route::get('/admin/dashboard', [
+                //     AdminController::class, 'index'
+                // ])->name('admin.admin');
+
+            });
+        });
+    });
+
 
 });
 

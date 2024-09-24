@@ -14,11 +14,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        
-        $middleware->web(append: [
-            
-            // 'role' => \App\Http\Middleware\CheckRole::class,
 
+        $middleware->alias([
+            'rider' => \App\Http\Middleware\RiderMiddleware::class,
+            'driver' => \App\Http\Middleware\DriverMiddleware::class,
+            'admin' => \App\Http\Middleware\AdminMiddleware::class,
         ]);
         
     })

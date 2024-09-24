@@ -9,7 +9,7 @@
     <title>Yenkor - Lets go</title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/assets/images/favicon-16x16.webp') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/assets/images/yenkor-favicon.ico') }}">
     
     <x-css-links></x-css-links>
 </head>
@@ -20,7 +20,9 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="logo">
-                        <a href="{{ route('home') }}"><img src="{{ asset('assets/assets/images/logo-main.webp') }}" alt></a>
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset('assets/assets/images/logo-main.webp') }}" alt>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -50,13 +52,7 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="rider">
 
-                                <x-validation-errors class="mb-4" />
-
-                                @session('status')
-                                    <div class="mb-4 font-medium text-sm text-green-600">
-                                        {{ $value }}
-                                    </div>
-                                @endsession
+                                <x-validation-errors class="mb-4 text-red-400" />
 
                                 <form class="mb-4" method="POST" action="{{ route('login') }}">
                                     @csrf

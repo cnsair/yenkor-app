@@ -36,6 +36,37 @@ class User extends Authenticatable
         //'terms',
     ];
 
+
+    public function isRider()
+    {
+        if( $this->role == 0 && $this->is_rider == 1 ) { 
+            return true; 
+        } 
+        else { 
+            return false; 
+        }
+    }
+
+    public function isDriver()
+    {
+        if( $this->role == 1 && $this->is_driver == 1 ) { 
+            return true; 
+        } 
+        else { 
+            return false; 
+        }
+    }
+
+    public function isAdmin()
+    {
+        if( ( $this->role == 2 || $this->role == 3 ) && $this->is_admin == 1 ) { 
+            return true; 
+        } 
+        else { 
+            return false; 
+        }
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
