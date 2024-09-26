@@ -35,7 +35,7 @@
                                         <input type="email" name="email" class="form-control" id="floatingInput"
                                             placeholder="name@yenkor.com" :value="old('email')" required 
                                             autofocus autocomplete="username">
-                                        <label for="floatingInput">Email address</label>
+                                        <label for="floatingInput">Email address Enter</label>
                                     </div>
 
                                     <div class="form-floating">
