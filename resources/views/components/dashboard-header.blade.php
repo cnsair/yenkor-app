@@ -98,7 +98,7 @@
                                     <img height="30" width="30" 
                                         class="me-3" src="{{ asset('assets/assets/images/partner-img.webp') }}" alt>
                                     <div class="media-body">
-                                        <h6 class="m-0"> {{ Auth()->user()->firstname." ".Auth()->user()->lastname }}
+                                        <h6 class="m-0">{{ Auth()->user()->firstname." ".Auth()->user()->lastname }}
                                             <i class="fas fa-angle-down"></i>
                                         </h6>
                                         <p class="m-0">Ghana</p>
@@ -108,13 +108,11 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="#">Profile</a>
 
-                                <a class="dropdown-item" href="#">
-                                    <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">
-                                        @csrf
+                                <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">
+                                    @csrf
 
-                                        <button>Logout Now</button>
-                                    </form>
-                                </a>
+                                    <button class="dropdown-item">Logout Now</button>
+                                </form>
 
                                 <a class="dropdown-item" href="#">Something else here</a>
                             </div>

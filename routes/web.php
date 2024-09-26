@@ -58,9 +58,8 @@ Route::middleware('guest')->group(function () {
 Route::group(['middleware' => 'auth'], function() {
 
     //Main Redirect Controller
-    Route::get('redirects', [
-        RedirectController::class, 'index'
-    ]);
+    Route::resource('redirects', RedirectController::class, 
+    ['only' => 'index']);
 
    
     Route::group(['middleware' => 'rider'], function() {
@@ -131,10 +130,8 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
-        return view('dashboard');
-        
-        // return redirect()->route('redirects');
-    // return redirect()->back()->with('success','done');
+        // return view('dashboard');
+        abort(403, 'Unauthorised action!');
     })->name('dashboard');
 
 });

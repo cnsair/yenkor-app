@@ -9,7 +9,7 @@
     <title>Driver - {{ Auth()->user()->firstname }}</title>
     <meta name="description" content>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/yenkor-favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/assets/images/yenkor-favicon.ico') }}">
 
     <x-css-links></x-css-links>
 </head>
@@ -35,7 +35,7 @@
                         <div class="media">
                             <img class="me-3" src="{{ asset('assets/assets/images/partner-img.webp') }}" alt="partner-img">
                             <div class="media-body">
-                                <h2 class="mt-0">Johnson Smith</h2>
+                                <h2 class="mt-0">{{ Auth()->user()->firstname .' '.Auth()->user()->lastname }}</h2>
                                 <p>ID 1234567890</p>
                                 <a href="#">Edit Profile</a>
                             </div>

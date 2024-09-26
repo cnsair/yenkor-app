@@ -5,10 +5,10 @@
                 <div class="col-12 col-lg-6">
                     <div class="header__upper--left">
                         <div class="d-none d-lg-block logo">
-                            <a href="{{ route('home') }}"><img src="assets/assets/images/logo-main.webp" alt="Site Logo"></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/assets/images/logo-main.webp') }}" alt="Site Logo"></a>
                         </div>
                         <div class="d-block d-lg-none logo w-49px">
-                            <a href="{{ route('home') }}"><img src="assets/assets/images/logo-icon.webp" alt="Site Logo"></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/assets/images/logo-icon.webp') }}" alt="Site Logo"></a>
                         </div>
                         <div class="search-bar">
                             <form class="form">
@@ -32,17 +32,12 @@
                 </div>
                 <div class="d-none d-lg-block col-lg-6">
                     <div class="header__upper--right">
-                        <!-- <nav class="navigation">
-                            <ul>
-                                <li>
-                                    <a href="my-driver-dashboard.html">Driver Dashboard</a>
-                                </li>
-                            </ul>
-                        </nav> -->
-                        <a href="{{ route('register') }}" class="button p-0"><i class="far fa-user-astronaut"></i> Drive with
-                            us</a>
-                        <a href="{{ route('book-ride') }}" class="button p-0"><i class="far fa-taxi"></i> Book a
-                            Ride</a>
+                        <a href="{{ route('register') }}" class="button p-0">
+                            <i class="far fa-user-astronaut"></i> Drive with us
+                        </a>
+                        <a href="{{ route('book-ride') }}" class="button p-0">
+                            <i class="far fa-taxi"></i> Book a Ride
+                        </a>
                     </div>
                 </div>
             </div>
@@ -62,7 +57,6 @@
 
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto">
-                                <!-- ->has('home') -->
                                 <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('home') }}">
                                         <i class="fas fa-home"></i>Home
@@ -73,25 +67,25 @@
                                         <i class="fas fa-exclamation-circle"></i>About
                                     </a>
                                 </li>
-                                <li class="nav-item" {{ request()->routeIs('service') ? 'active' : '' }}>
+                                <li class="nav-item {{ request()->routeIs('service') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('service') }}">
                                         <i class="fas fa-cog"></i>Our Services</a>
                                 </li>
-                                <li class="nav-item" {{ request()->routeIs('vehicle') ? 'active' : '' }}>
+                                <li class="nav-item {{ request()->routeIs('vehicle') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('vehicle') }}">
                                         <i class="fas fa-taxi"></i>Our Vehicles
                                     </a>
                                 </li>
-                                <li class="nav-item" {{ request()->routeIs('package') ? 'active' : '' }}>
+                                <li class="nav-item {{ request()->routeIs('package') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('package') }}">
                                         <i class="fas fa-cube"></i>Packages</a>
                                 </li>
-                                <li class="nav-item" {{ request()->routeIs('blog') ? 'active' : '' }}>
+                                <li class="nav-item {{ request()->routeIs('blog') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('blog') }}">
                                         <i class="fas fa-home"></i>Blog
                                     </a>
                                 </li>
-                                <li class="nav-item" {{ request()->routeIs('contact') ? 'active' : '' }}>
+                                <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('contact') }}">
                                         <i class="fas fa-map-marker-alt"></i>Contact Us</a>
                                 </li>
