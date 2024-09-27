@@ -1,392 +1,786 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
+    <!-- Mirrored from carrgohtml.tortoizthemes.com/ride-with-carrgo by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2024 19:21:56 GMT -->
+    <!-- Added by HTTrack --><meta
+        http-equiv="content-type"
+        content="text/html;charset=utf-8"
+    /><!-- /Added by HTTrack -->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>CarrGo - Ridesharing Taxi HTML Template</title>
+        <meta name="description" content />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="assets/images/favicon-16x16.webp"
+        />
+        <link
+            rel="stylesheet"
+            href="assets/plugins/bootstrap/css/bootstrap.min.css"
+        />
+        <link rel="stylesheet" href="assets/plugins/shortcode/shortcode.css" />
+        <link rel="stylesheet" href="assets/plugins/animate/animate.css" />
+        <link
+            rel="stylesheet"
+            href="assets/plugins/OwlCarousel/owl.carousel.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="assets/plugins/metismenu/css/metismenu.html"
+        />
+        <link rel="stylesheet" href="main/css/style.css" />
+    </head>
+    <body class="theme-2">
+        <header class="theme-2">
+            <div class="header__upper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="header__upper--left">
+                                <div class="d-none d-lg-block logo">
+                                    <a href="index.html"
+                                        ><img
+                                            src="assets/images/logo-main.webp"
+                                            alt="Site Logo"
+                                    /></a>
+                                </div>
+                                <div class="d-block d-lg-none logo w-49px">
+                                    <a href="index.html"
+                                        ><img
+                                            src="assets/images/logo-icon.webp"
+                                            alt="Site Logo"
+                                    /></a>
+                                </div>
+                                <button
+                                    type="button"
+                                    class="nav-toggle-btn a-nav-toggle ms-auto d-block d-lg-none"
+                                >
+                                    <span class="nav-toggle nav-toggle-sm">
+                                        <span class="stick stick-1"></span>
+                                        <span class="stick stick-2"></span>
+                                        <span class="stick stick-3"></span>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="d-none d-lg-block col-lg-6">
+                            <div class="header__upper--right">
+                                <nav class="navigation">
+                                    <ul>
+                                        <li class="m-0">
+                                            <div class="dropdown">
+                                                <a
+                                                    href="#"
+                                                    class="dropdown-toggle"
+                                                    id="dropdownMenuButton"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                >
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="m-0">
+                                                                Passenger
+                                                                <i
+                                                                    class="fas fa-angle-down"
+                                                                ></i>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div
+                                                    class="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby="dropdownMenuButton"
+                                                >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="on-ride.html"
+                                                        >On Ride</a
+                                                    >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="passenger-profile.html"
+                                                        >Passenger</a
+                                                    >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="ride-with-carrgo.html"
+                                                        >Ride with Cargo</a
+                                                    >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="ride-with-carrgo-booked.html"
+                                                        >Ride with Cargo
+                                                        Booked</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-0">
+                                            <div class="dropdown">
+                                                <a
+                                                    href="#"
+                                                    class="dropdown-toggle"
+                                                    id="dropdownMenuButton"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                >
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="m-0">
+                                                                Driver
+                                                                <i
+                                                                    class="fas fa-angle-down"
+                                                                ></i>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div
+                                                    class="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby="dropdownMenuButton"
+                                                >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="partner-profile.html"
+                                                        >Partner Profile</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-0">
+                                            <div class="dropdown">
+                                                <a
+                                                    href="#"
+                                                    class="dropdown-toggle"
+                                                    id="dropdownMenuButton"
+                                                    data-toggle="dropdown"
+                                                    aria-haspopup="true"
+                                                    aria-expanded="false"
+                                                >
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h6 class="m-0">
+                                                                Login
+                                                                <i
+                                                                    class="fas fa-angle-down"
+                                                                ></i>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <div
+                                                    class="dropdown-menu dropdown-menu-right"
+                                                    aria-labelledby="dropdownMenuButton"
+                                                >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="sign-in.html"
+                                                        >Sign In</a
+                                                    >
+                                                    <a
+                                                        class="dropdown-item"
+                                                        href="sign-up.html"
+                                                        >Sign up</a
+                                                    >
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="m-0">
+                                            <a href="contact-us.html">Help</a>
+                                        </li>
+                                        <li class="m-0">
+                                            <a href="contact-us.html"
+                                                ><i class="far fa-envelope"></i
+                                            ></a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <div class="dropdown">
+                                    <a
+                                        href="#"
+                                        class="dropdown-toggle"
+                                        id="dropdownMenuButton"
+                                        data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                    >
+                                        <div class="media">
+                                            <img
+                                                height="30"
+                                                width="30"
+                                                class="me-3"
+                                                src="assets/images/partner-img.webp"
+                                                alt
+                                            />
+                                            <div class="media-body">
+                                                <h6 class="m-0">
+                                                    John Doe
+                                                    <i
+                                                        class="fas fa-angle-down"
+                                                    ></i>
+                                                </h6>
+                                                <p class="m-0">India</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div
+                                        class="dropdown-menu dropdown-menu-right"
+                                        aria-labelledby="dropdownMenuButton"
+                                    >
+                                        <a
+                                            class="dropdown-item"
+                                            href="partner-profile.html"
+                                            >Profile</a
+                                        >
+                                        <a class="dropdown-item" href="#"
+                                            >Sign out</a
+                                        >
+                                        <a class="dropdown-item" href="#"
+                                            >Something else here</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="responsive-menu">
+            <div class="rep-header">
+                <div class="logo">
+                    <a href="index.html"
+                        ><img
+                            src="assets/images/logo-main.webp"
+                            alt="Site Logo"
+                    /></a>
+                </div>
+                <a href="#" title class="close-menu"
+                    ><i class="lni lni-close"></i
+                ></a>
+            </div>
+            <div class="navbar-collapse" id="navbarSupportedContent">
+                <ul class="mobile-menu navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <div class="media">
+                                <img
+                                    height="30"
+                                    width="30"
+                                    class="me-3"
+                                    src="assets/images/partner-img.webp"
+                                    alt
+                                />
+                                <div class="media-body">
+                                    <h6 class="m-0">
+                                        John Doe
+                                        <i class="fas fa-angle-down"></i>
+                                    </h6>
+                                    <p class="m-0">India</p>
+                                </div>
+                            </div>
+                            <span class="sr-only">(current)</span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="partner-profile.html"
+                                    >Profile</a
+                                >
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Sign out</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"
+                                    >Something else here</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="m-0">Passenger</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="dropdown-item" href="on-ride.html"
+                                    >On Ride</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="passenger-profile.html"
+                                    >Passenger</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="ride-with-carrgo.html"
+                                    >Ride with Cargo</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="ride-with-carrgo-booked.html"
+                                    >Ride with Cargo Booked</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="m-0">Driver</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <ul>
+                            <li>
+                                <a
+                                    class="dropdown-item"
+                                    href="partner-profile.html"
+                                    >Partner Profile</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h3 class="m-0">Login</h3>
+                                </div>
+                            </div>
+                        </a>
+                        <ul>
+                            <li>
+                                <a class="dropdown-item" href="sign-in.html"
+                                    >Sign In</a
+                                >
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="sign-up.html"
+                                    >Sign up</a
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="m-0"><a href="contact-us.html">Help</a></li>
+                    <li class="m-0">
+                        <a href="contact-us.html"
+                            ><i class="far fa-envelope"></i
+                        ></a>
+                    </li>
+                </ul>
+                <div class="header__upper--right flex-column">
+                    <nav class="navigation p-3">
+                        <ul>
+                            <li>
+                                <a href="my-driver-dashboard.html"
+                                    >Driver Dashboard</a
+                                >
+                            </li>
+                        </ul>
+                    </nav>
+                    <a href="sign-up.html" class="button p-3"
+                        ><i class="far fa-user-astronaut"></i> Drive with us</a
+                    >
+                    <a href="ride-with-carrgo.html" class="button p-3" my-2
+                        ><i class="far fa-taxi"></i> Book a Ride</a
+                    >
+                    <div class="p-3 my-lg-0 d-inline-flex">
+                        <a href="sign-in.html" class="button button-light big"
+                            >Get Started</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="breadcrumb-div">
+            <div class="container">
+                <h1 class="page-title mb-0">Let's Ride</h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a></li>
+                    <li>Ride with Carrgo</li>
+                </ol>
+            </div>
+        </div>
+        <div class="div-padding our-vehicles-div">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="booking-form">
+                            <form action="#">
+                                <div class="from-group destination">
+                                    <label for="inputFrom">From</label>
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <input
+                                        type="text"
+                                        name="frominputDestination"
+                                        placeholder="Select Pickup"
+                                        id="inputFrom"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="from-group destination">
+                                    <label for="inputDestination"
+                                        >Where to?</label
+                                    >
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <input
+                                        type="text"
+                                        name="desctination"
+                                        placeholder="Select Destination"
+                                        id="inputDestination"
+                                        class="form-control"
+                                    />
+                                </div>
+                                <div class="payment-options-wrapper">
+                                    <h2>Payment Method</h2>
+                                    <div class="from-group payment-options">
+                                        <div
+                                            class="form-check form-check-inline"
+                                        >
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="payment-opts"
+                                                id="cash-pay"
+                                                value="option1"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="cash-pay"
+                                                >Cash</label
+                                            >
+                                        </div>
+                                        <div
+                                            class="form-check form-check-inline"
+                                        >
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="payment-opts"
+                                                id="banking-pay"
+                                                value="option2"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="banking-pay"
+                                                >Net Banking</label
+                                            >
+                                        </div>
+                                        <div
+                                            class="form-check form-check-inline"
+                                        >
+                                            <input
+                                                class="form-check-input"
+                                                type="radio"
+                                                name="payment-opts"
+                                                id="card-pay"
+                                                value="option3"
+                                            />
+                                            <label
+                                                class="form-check-label"
+                                                for="card-pay"
+                                                >Debit Card</label
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="select-car-wrapper">
+                                    <h2>Selected Car</h2>
+                                    <div class="selected-car">
+                                        <div class="from-group car-options">
+                                            <div
+                                                class="form-check form-check-inline"
+                                            >
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="car-opts"
+                                                    id="scooter"
+                                                    value="option1"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="scooter"
+                                                >
+                                                    <img
+                                                        src="assets/images/dashboard/car-1.webp"
+                                                        alt="car"
+                                                    />
+                                                </label>
+                                                <div class="car-details">
+                                                    <h4>1x</h4>
+                                                    <p>Scooter</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="form-check form-check-inline"
+                                            >
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="car-opts"
+                                                    id="alto"
+                                                    value="option2"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="alto"
+                                                >
+                                                    <img
+                                                        src="assets/images/dashboard/car-2.webp"
+                                                        alt="Car"
+                                                    />
+                                                </label>
+                                                <div class="car-details">
+                                                    <h4>2x</h4>
+                                                    <p>Alto</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="form-check form-check-inline"
+                                            >
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="car-opts"
+                                                    id="swift"
+                                                    value="option3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="swift"
+                                                >
+                                                    <img
+                                                        src="assets/images/dashboard/car-3.webp"
+                                                        alt="Car"
+                                                    />
+                                                </label>
+                                                <div class="car-details">
+                                                    <h4>3x</h4>
+                                                    <p>Swift dzire</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="form-check form-check-inline"
+                                            >
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="car-opts"
+                                                    id="luxury"
+                                                    value="option3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="luxury"
+                                                >
+                                                    <img
+                                                        src="assets/images/dashboard/car-4.webp"
+                                                        alt="Car"
+                                                    />
+                                                </label>
+                                                <div class="car-details">
+                                                    <h4>4x</h4>
+                                                    <p>Luxury</p>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="form-check form-check-inline"
+                                            >
+                                                <input
+                                                    class="form-check-input"
+                                                    type="radio"
+                                                    name="car-opts"
+                                                    id="tourist"
+                                                    value="option3"
+                                                />
+                                                <label
+                                                    class="form-check-label"
+                                                    for="tourist"
+                                                >
+                                                    <img
+                                                        src="assets/images/dashboard/car-5.webp"
+                                                        alt="Car"
+                                                    />
+                                                </label>
+                                                <div class="car-details">
+                                                    <h4>5x</h4>
+                                                    <p>Tourist</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button
+                                    type="submit"
+                                    class="button button-dark"
+                                >
+                                    Book Now
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="ride-map-area">
+                            <div class="mapouter">
+                                <div class="gmap_canvas">
+                                    <iframe
+                                        id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+                                        frameborder="0"
+                                        scrolling="no"
+                                        marginheight="0"
+                                        marginwidth="0"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="theme-2">
+            <div class="footer-nav-div div-padding theme-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="footer-brand">
+                                <a href="index.html"
+                                    ><img
+                                        src="assets/images/logo.webp"
+                                        alt="logo"
+                                /></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="social-nav">
+                                <li>
+                                    <a href="#" class="facebook"
+                                        ><i class="fab fa-facebook-f"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="twitter"
+                                        ><i class="fab fa-twitter"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="instagram"
+                                        ><i class="fab fa-instagram"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="google-p"
+                                        ><i class="fab fa-google-plus-g"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="linkedin"
+                                        ><i class="fab fa-linkedin-in"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a href="#" class="pinterest"
+                                        ><i class="fab fa-pinterest-p"></i
+                                    ></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="app-download-box">
+                                <a href="#"
+                                    ><img
+                                        src="assets/images/icon/google-play.webp"
+                                        alt="Google play"
+                                /></a>
+                                <a href="#"
+                                    ><img
+                                        src="assets/images/icon/apple-store.webp"
+                                        alt="Apple store"
+                                /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-div theme-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>
+                                &copy; Copyright 2022 by Tortoiz. All Right
+                                Reserved.
+                            </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <ul class="social-nav">
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Terms</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
 
-<!-- Mirrored from carrgohtml.tortoizthemes.com/ride-with-carrgo by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2024 19:21:56 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
-<head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>CarrGo - Ridesharing Taxi HTML Template</title>
-<meta name="description" content>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.webp">
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/plugins/shortcode/shortcode.css">
-<link rel="stylesheet" href="assets/plugins/animate/animate.css">
-<link rel="stylesheet" href="assets/plugins/OwlCarousel/owl.carousel.min.css">
-<link rel="stylesheet" href="assets/plugins/metismenu/css/metismenu.html">
-<link rel="stylesheet" href="main/css/style.css">
-</head>
-<body class="theme-2">
-<header class="theme-2">
-<div class="header__upper">
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<div class="header__upper--left">
-<div class="d-none d-lg-block logo">
-<a href="index.html"><img src="assets/images/logo-main.webp" alt="Site Logo"></a>
-</div>
-<div class="d-block d-lg-none logo w-49px">
-<a href="index.html"><img src="assets/images/logo-icon.webp" alt="Site Logo"></a>
-</div>
-<button type="button" class="nav-toggle-btn a-nav-toggle ms-auto d-block d-lg-none">
-<span class="nav-toggle nav-toggle-sm">
-<span class="stick stick-1"></span>
-<span class="stick stick-2"></span>
-<span class="stick stick-3"></span>
-</span>
-</button>
-</div>
-</div>
-<div class="d-none d-lg-block col-lg-6">
-<div class="header__upper--right">
-<nav class="navigation">
-<ul>
-<li class="m-0">
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<div class="media">
-<div class="media-body">
-<h6 class="m-0">Passenger <i class="fas fa-angle-down"></i></h6>
-</div>
-</div>
-</a>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-<a class="dropdown-item" href="on-ride.html">On Ride</a>
-<a class="dropdown-item" href="passenger-profile.html">Passenger</a>
-<a class="dropdown-item" href="ride-with-carrgo.html">Ride with Cargo</a>
-<a class="dropdown-item" href="ride-with-carrgo-booked.html">Ride with Cargo Booked</a>
-</div>
-</div>
-</li>
-<li class="m-0">
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<div class="media">
-<div class="media-body">
-<h6 class="m-0">Driver <i class="fas fa-angle-down"></i></h6>
-</div>
-</div>
-</a>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-<a class="dropdown-item" href="partner-profile.html">Partner Profile</a>
-</div>
-</div>
-</li>
-<li class="m-0">
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<div class="media">
-<div class="media-body">
-<h6 class="m-0">Login <i class="fas fa-angle-down"></i></h6>
+        <script
+            src="assets/plugins/common/common.min.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="assets/plugins/bootstrap/js/bootstrap.min.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="assets/plugins/OwlCarousel/owl.carousel.min.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="assets/plugins/counterup/waypoints.min.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="assets/plugins/counterup/jquery.counterup.min.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="assets/plugins/gmap3/gmap3.min.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
 
-</div>
-</div>
-</a>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-<a class="dropdown-item" href="sign-in.html">Sign In</a>
-<a class="dropdown-item" href="sign-up.html">Sign up</a>
-</div>
-</div>
-</li>
-<li class="m-0"><a href="contact-us.html">Help</a></li>
-<li class="m-0"><a href="contact-us.html"><i class="far fa-envelope"></i></a></li>
-</ul>
-</nav>
-<div class="dropdown">
-<a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<div class="media">
-<img height="30" width="30" class="me-3" src="assets/images/partner-img.webp" alt>
-<div class="media-body">
-<h6 class="m-0">John Doe <i class="fas fa-angle-down"></i></h6>
-<p class="m-0">India</p>
-</div>
-</div>
-</a>
-<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-<a class="dropdown-item" href="partner-profile.html">Profile</a>
-<a class="dropdown-item" href="#">Sign out</a>
-<a class="dropdown-item" href="#">Something else here</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</header>
-<section class="responsive-menu">
-<div class="rep-header">
-<div class="logo">
-<a href="index.html"><img src="assets/images/logo-main.webp" alt="Site Logo"></a>
-</div>
-<a href="#" title class="close-menu"><i class="lni lni-close"></i></a>
-</div>
-<div class="navbar-collapse" id="navbarSupportedContent">
-<ul class="mobile-menu navbar-nav me-auto">
-<li class="nav-item">
-<a class="nav-link" href="index.html">
-<div class="media">
-<img height="30" width="30" class="me-3" src="assets/images/partner-img.webp" alt>
-<div class="media-body">
-<h6 class="m-0">John Doe <i class="fas fa-angle-down"></i></h6>
-<p class="m-0">India</p>
-</div>
-</div>
-<span class="sr-only">(current)</span>
-</a>
-<ul>
-<li><a class="dropdown-item" href="partner-profile.html">Profile</a></li>
-<li><a class="dropdown-item" href="#">Sign out</a></li>
-<li><a class="dropdown-item" href="#">Something else here</a></li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">
-<div class="media">
-<div class="media-body">
-<h3 class="m-0">Passenger</h3>
-</div>
-</div>
-</a>
-<ul>
-<li>
-<a class="dropdown-item" href="on-ride.html">On Ride</a>
-</li>
-<li>
-<a class="dropdown-item" href="passenger-profile.html">Passenger</a>
-</li>
-<li>
-<a class="dropdown-item" href="ride-with-carrgo.html">Ride with Cargo</a>
-</li>
-<li>
-<a class="dropdown-item" href="ride-with-carrgo-booked.html">Ride with Cargo Booked</a>
-</li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">
-<div class="media">
-<div class="media-body">
-<h3 class="m-0">Driver</h3>
-</div>
-</div>
-</a>
-<ul>
-<li>
-<a class="dropdown-item" href="partner-profile.html">Partner Profile</a>
-</li>
-</ul>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">
-<div class="media">
-<div class="media-body">
-<h3 class="m-0">Login</h3>
-</div>
-</div>
-</a>
-<ul>
-<li>
-<a class="dropdown-item" href="sign-in.html">Sign In</a>
-</li>
-<li>
-<a class="dropdown-item" href="sign-up.html">Sign up</a>
-</li>
-</ul>
-</li>
-<li class="m-0"><a href="contact-us.html">Help</a></li>
-<li class="m-0"><a href="contact-us.html"><i class="far fa-envelope"></i></a></li>
-</ul>
-<div class="header__upper--right flex-column">
-<nav class="navigation p-3">
-<ul>
+        <script
+            src="main/js/scripts.js"
+            type="cd5eb3b614fbf93d17de6d20-text/javascript"
+        ></script>
+        <script
+            src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+            data-cf-settings="cd5eb3b614fbf93d17de6d20-|49"
+            defer
+        ></script>
+    </body>
 
-<li><a href="my-driver-dashboard.html">Driver Dashboard</a></li>
-
-</ul>
-</nav>
-<a href="sign-up.html" class="button p-3"><i class="far fa-user-astronaut"></i> Drive with
-us</a>
-<a href="ride-with-carrgo.html" class="button p-3" my-2><i class="far fa-taxi"></i> Book a
-Ride</a>
-<div class="p-3 my-lg-0 d-inline-flex">
-<a href="sign-in.html" class="button button-light big">Get Started</a>
-</div>
-</div>
-</div>
-</section>
-<div class="breadcrumb-div">
-<div class="container">
-<h1 class="page-title mb-0">Let's Ride</h1>
-<ol class="breadcrumb">
-<li><a href="index.html">Home</a></li>
-<li>Ride with Carrgo</li>
-</ol>
-</div>
-</div>
-<div class="div-padding our-vehicles-div">
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<div class="booking-form">
-<form action="#">
-<div class="from-group destination">
-<label for="inputFrom">From</label>
-<i class="fas fa-map-marker-alt"></i>
-<input type="text" name="frominputDestination" placeholder="Select Pickup" id="inputFrom" class="form-control">
-</div>
-<div class="from-group destination">
-<label for="inputDestination">Where to?</label>
-<i class="fas fa-map-marker-alt"></i>
-<input type="text" name="desctination" placeholder="Select Destination" id="inputDestination" class="form-control">
-</div>
-<div class="payment-options-wrapper">
-<h2>Payment Method</h2>
-<div class="from-group payment-options">
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="payment-opts" id="cash-pay" value="option1">
-<label class="form-check-label" for="cash-pay">Cash</label>
-</div>
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="payment-opts" id="banking-pay" value="option2">
-<label class="form-check-label" for="banking-pay">Net Banking</label>
-</div>
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="payment-opts" id="card-pay" value="option3">
-<label class="form-check-label" for="card-pay">Debit Card</label>
-</div>
-</div>
-</div>
-<div class="select-car-wrapper">
-<h2>Selected Car</h2>
-<div class="selected-car">
-<div class="from-group car-options">
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="car-opts" id="scooter" value="option1">
-<label class="form-check-label" for="scooter">
-<img src="assets/images/dashboard/car-1.webp" alt="car">
-</label>
-<div class="car-details">
-<h4>1x</h4>
-<p>Scooter</p>
-</div>
-</div>
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="car-opts" id="alto" value="option2">
-<label class="form-check-label" for="alto">
-<img src="assets/images/dashboard/car-2.webp" alt="Car">
-</label>
-<div class="car-details">
-<h4>2x</h4>
-<p>Alto</p>
-</div>
-</div>
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="car-opts" id="swift" value="option3">
-<label class="form-check-label" for="swift">
-<img src="assets/images/dashboard/car-3.webp" alt="Car">
-</label>
-<div class="car-details">
-<h4>3x</h4>
-<p>Swift dzire</p>
-</div>
-</div>
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="car-opts" id="luxury" value="option3">
-<label class="form-check-label" for="luxury">
-<img src="assets/images/dashboard/car-4.webp" alt="Car">
-</label>
-<div class="car-details">
-<h4>4x</h4>
-<p>Luxury</p>
-</div>
-</div>
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="car-opts" id="tourist" value="option3">
-<label class="form-check-label" for="tourist">
-<img src="assets/images/dashboard/car-5.webp" alt="Car">
-</label>
-<div class="car-details">
-<h4>5x</h4>
-<p>Tourist</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<button type="submit" class="button button-dark">Book Now</button>
-</form>
-</div>
-</div>
-<div class="col-lg-6">
-<div class="ride-map-area">
-<div class="mapouter">
-<div class="gmap_canvas">
-<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<footer class="theme-2">
-<div class="footer-nav-div div-padding theme-2">
-<div class="container">
-<div class="row">
-<div class="col-lg-3">
-<div class="footer-brand">
-<a href="index.html"><img src="assets/images/logo.webp" alt="logo"></a>
-</div>
-</div>
-<div class="col-lg-6">
-<ul class="social-nav">
-<li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
-<li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
-<li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
-<li><a href="#" class="google-p"><i class="fab fa-google-plus-g"></i></a></li>
-<li><a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
-<li><a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a></li>
-</ul>
-</div>
-<div class="col-lg-3">
-<div class="app-download-box">
-<a href="#"><img src="assets/images/icon/google-play.webp" alt="Google play"></a>
-<a href="#"><img src="assets/images/icon/apple-store.webp" alt="Apple store"></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="copyright-div theme-2">
-<div class="container">
-<div class="row">
-<div class="col-lg-6">
-<p>&copy; Copyright 2022 by Tortoiz. All Right Reserved.</p>
-</div>
-<div class="col-lg-6">
-<ul class="social-nav">
-<li><a href="#">Privacy</a></li>
-<li><a href="#">Terms</a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</footer>
-
-<script src="assets/plugins/common/common.min.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="assets/plugins/OwlCarousel/owl.carousel.min.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="assets/plugins/counterup/waypoints.min.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="assets/plugins/counterup/jquery.counterup.min.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&amp;sensor=true" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="assets/plugins/gmap3/gmap3.min.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-
-<script src="main/js/scripts.js" type="cd5eb3b614fbf93d17de6d20-text/javascript"></script>
-<script src="cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="cd5eb3b614fbf93d17de6d20-|49" defer></script></body>
-
-<!-- Mirrored from carrgohtml.tortoizthemes.com/ride-with-carrgo by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2024 19:22:00 GMT -->
+    <!-- Mirrored from carrgohtml.tortoizthemes.com/ride-with-carrgo by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Aug 2024 19:22:00 GMT -->
 </html>
