@@ -1,60 +1,161 @@
-<x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
+@extends('layouts.app-auth')
 
-        <x-validation-errors class="mb-4" />
+@section('content')
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
-
-            <div>
-                <x-label for="name" value="{{ __('Name') }}" />
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+    <div class="div-padding p-t-0 signup-div user-access-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 text-center">
+                    <h1 class="h3 mb-3 fw-normal">Please Register</h1>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="account-access sign-up">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#rider" class="active" aria-controls="rider" role="tab" data-toggle="tab">
+                                    Take to Ride
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#driver" aria-controls="driver" role="tab" data-toggle="tab">
+                                    Apply to Drive
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="rider">
 
-            <div class="mt-4">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            </div>
+                                <x-validation-errors class="mb-4" />
 
-            <div class="mt-4">
-                <x-label for="password" value="{{ __('Password') }}" />
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
-            </div>
+                                <form method="POST" action="{{ route('register') }}" class="user-access-form"
+                                    onsubmit="return registerF(this);">
+                                    @csrf
 
-            <div class="mt-4">
-                <x-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
-            </div>
+                                    <div class="row">
+                                        <input type="number" class="form-control" name="role" 
+                                            id="role" hidden value="0" required>
 
-            @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                <div class="mt-4">
-                    <x-label for="terms">
-                        <div class="flex items-center">
-                            <x-checkbox name="terms" id="terms" required />
+                                        <div class="col-lg-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" name="firstname"
+                                                    id="firstName" placeholder="First Name" :value="old('firstname')" required autofocus autocomplete="name">
+                                                <label for="firstName">First Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" name="lastname"
+                                                        id="lastName" placeholder="Last Name" :value="old('lastname')" required autocomplete="name">
+                                                <label for="lastName">Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" name="phone" id="phone"
+                                            placeholder="Phone Number (Optional)" :value="old('phone')">
+                                        <label for="phone">Phone Number</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" name="email" id="email"
+                                            placeholder="Email Address" :value="old('email')" required autocomplete="email">
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="password"
+                                            id="password" placeholder="Password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="password.confirmation"
+                                            id="passwordConfirm" placeholder="Confirm Password">
+                                        <label for="passwordConfirm">Password</label>
+                                    </div>
+                                    <!-- <div class="form-floating">
+                                        <input type="checkbox" id="agree" name="terms">
+                                        <label for="agree">I agree to the
+                                            <a href="#">Terms and Conditions</a> and
+                                            <a href="#">Privacy Policy</a>
+                                        </label>
+                                    </div> -->
+                                    <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
+                                </form>
+                                <p class="acclink">Already have an account?
+                                    <a href="{{ route('login') }}">Sign in
+                                        <i class="icofont">double_right</i>
+                                    </a>
+                                </p>
+                            </div>
 
-                            <div class="ms-2">
-                                {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Terms of Service').'</a>',
-                                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">'.__('Privacy Policy').'</a>',
-                                ]) !!}
+                            <div role="tabpanel" class="tab-pane" id="driver">
+
+                                <x-validation-errors class="mb-4" />
+
+                                <form method="POST" action="{{ route('register') }}" class="user-access-form"
+                                    onsubmit="return registerF(this);">
+                                    @csrf
+
+                                    <div class="row">
+                                        <input type="number" class="form-control" name="role"
+                                            id="role" hidden value="1" required>
+
+                                        <div class="col-lg-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" name="firstname"
+                                                    id="firstName2" placeholder="First Name" :value="old('firstname')" required autofocus autocomplete="name">
+                                                <label for="firstName2">First Name</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" name="lastname"
+                                                    id="lastName2" placeholder="Last Name" :value="old('lastname')" required autocomplete="name">
+                                                <label for="lastName2">Last Name</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" name="phone" id="number2"
+                                            placeholder="Phone Number" required :value="old('phone')">
+                                        <label for="number2">Phone Number</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" name="email" id="email2"
+                                            placeholder="Email Address" :value="old('email')" required autocomplete="email">
+                                        <label for="email2">Email</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="password"
+                                            id="password2" placeholder="Password" required>
+                                        <label for="password2">Password</label>
+                                    </div>
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="password.confirmation"
+                                            id="passwordConfirm2" placeholder="Confirm Password" required>
+                                        <label for="passwordConfirm2">Confirm Password</label>
+                                    </div>
+                                    <!-- <div class="form-floating">
+                                        <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
+                                        <label for="agree">I agree to the
+                                            <a href="#">Terms and Conditions</a> and
+                                            <a href="#">Privacy Policy</a>
+                                        </label>
+                                    </div> -->
+                                    <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
+                                </form>
+
+                                <p class="acclink">Already have an account?
+                                    <a href="{{ route('login') }}">Sign in
+                                        <i class="icofont">double_right</i>
+                                    </a>
+                                </p>
                             </div>
                         </div>
-                    </x-label>
+                    </div>
                 </div>
-            @endif
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ms-4">
-                    {{ __('Register') }}
-                </x-button>
             </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout>
+        </div>
+    </div>
+    
+@endsection

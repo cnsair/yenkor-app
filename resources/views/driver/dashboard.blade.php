@@ -36,7 +36,8 @@
                             <img class="me-3" src="{{ asset('assets/assets/images/partner-img.webp') }}" alt="partner-img">
                             <div class="media-body">
                                 <h2 class="mt-0">{{ Auth()->user()->firstname .' '.Auth()->user()->lastname }}</h2>
-                                <p>ID 1234567890</p>
+                                <p>{{ 'ID: ' . random_int(1000000, 9999999) }}</p>
+                                <p>{{ 'ID: ' . time() }}</p>
                                 <a href="#">Edit Profile</a>
                             </div>
                         </div>

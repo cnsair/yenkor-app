@@ -25,17 +25,35 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'role',
+        'yenkor_id',
         'firstname',
         'lastname',
         'phone',
         'email',
         'password',
-        'is_admin',
         'is_driver',
         'is_rider',
-        //'terms',
+        'status',
+        'vehicle',
+        'gender',
+        'biography',
+        'd_o_b',
     ];
 
+    public function rider()
+    {
+        return $this->hasMany(Rider::class);
+    }
+
+    public function driver()
+    {
+        return $this->hasMany(Driver::class);
+    }
+
+    public function admin()
+    {
+        return $this->hasMany(Admin::class);
+    }
 
     public function isRider()
     {

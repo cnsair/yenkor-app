@@ -14,3 +14,23 @@
 <script src="{{ asset('assets/main/js/scripts.js') }} " type="3f92a221a179e90f658fbd8c-text/javascript"></script>
 <script src="{{ asset('assets/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js') }}"
         data-cf-settings="3f92a221a179e90f658fbd8c-|49" defer></script>
+        
+<script>
+
+    //FORMS
+    // Disable buttons when clicked
+    //SignIn
+    function signInF(form) {
+        form.signIn.disabled = true;
+        form.signIn.value = "Signing in...";
+        return true;
+    }
+
+    //Register
+    function registerF(form) {
+        form.register.disabled = true;
+        form.register.value = "Please wait...";
+        return true;
+    }
+
+</script>

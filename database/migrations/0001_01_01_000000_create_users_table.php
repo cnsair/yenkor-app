@@ -16,6 +16,7 @@ return new class extends Migration
 
             // 0 = rider; 1 = driver; 2 = admin; 3 = super-admin;
             $table->enum('role',[0,1,2,3])->default(0);
+            $table->integer('yenkor_id')->unique();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('phone')->unique();
@@ -23,6 +24,12 @@ return new class extends Migration
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_driver')->default(false);
             $table->boolean('is_rider')->default(false);
+            // 1 = banned; 2 = suspended; 3 = inactive; 4 = active;
+            $table->enum('status',[1,2,3,4])->default(3);
+            $table->string('vehicle')->nullable();
+            $table->string('gender')->nullable();
+            $table->string('biography')->nullable();
+            $table->string('d_o_b')->nullable();
             
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

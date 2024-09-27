@@ -11,6 +11,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="hero-area-wrap">
+
                         <div class="hero-area-left">
                             <h1 class="hero-title-v-2">
                                 <span class="hero-title-bg">
@@ -21,12 +22,15 @@
                                 Partner with us as a rider for ease and comfort, or as a driver to drive your own livelihood and more.
                             </p>
                             <div class="download-buttons">
-                                <a href="#" aria-label="download-apple-btn"><img src="assets/assets/images/download-1.webp"
-                                        alt></a>
-                                <a href="#" aria-label="download-android-btn"><img src="assets/assets/images/download-2.webp"
-                                        alt></a>
+                                <a href="#" aria-label="download-apple-btn">
+                                    <img src="{{ asset('assets/assets/images/download-1.webp') }}"alt>
+                                </a>
+                                <a href="#" aria-label="download-android-btn">
+                                    <img src="{{ asset('assets/assets/images/download-2.webp') }}" alt>
+                                </a>
                             </div>
                         </div>
+
                         <div class="hero-area-right">
                             <div class="combine-form">
                                 <nav class="navigation">
@@ -49,7 +53,8 @@
 
                                         <x-validation-errors class="mb-4" />
 
-                                        <form method="POST" action="{{ route('register') }}" class="form1">
+                                        <form method="POST" action="{{ route('register') }}" class="form1"
+                                            onsubmit="return registerF(this);">
                                             @csrf
 
                                             <h2 class="form-title">Get member exclusive rewards</h2>
@@ -84,13 +89,13 @@
                                                         id="password" placeholder="Confirm Password">
                                                 </div>
                                                 <div class="col-12 form-group mt-3">
-                                                    <input type="checkbox" id="agree" name="terms-and-privacy">
+                                                    <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
                                                     <label for="agree">I agree to the
                                                         <a href="#">Terms and Conditions</a> and
                                                         <a href="#">Privacy Policy</a></label>
                                                 </div>
                                                 <div class="form-btn col-12">
-                                                    <button class="form-button button button-dark big">
+                                                    <button name="register" class="form-button button button-dark big">
                                                         Sign up to Ride
                                                     </button>
                                                 </div>
@@ -104,7 +109,8 @@
 
                                         <x-validation-errors class="mb-4" />
 
-                                        <form method="POST" action="{{ route('register') }}" class="form1">
+                                        <form method="POST" action="{{ route('register') }}" class="form1"
+                                            onsubmit="return registerF(this);">
                                             @csrf
                                             
                                             <h2 class="form-title">
@@ -148,7 +154,7 @@
                                                         <a href="#">Privacy Policy</a></label>
                                                 </div>
                                                 <div class="form-btn col-12">
-                                                    <button type="submit" class="form-button button button-dark big">
+                                                    <button name="register" class="form-button button button-dark big">
                                                         Become a Driver
                                                     </button>
                                                 </div>

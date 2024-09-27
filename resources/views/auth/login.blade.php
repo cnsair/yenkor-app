@@ -26,9 +26,10 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="rider">
 
-                                <x-validation-errors class="mb-4 text-red-400" />
+                                <x-validation-errors class="mb-4" />
 
-                                <form class="mb-4" method="POST" action="{{ route('login') }}">
+                                <form class="mb-4" method="POST" action="{{ route('login') }}"
+                                    onsubmit="return signInF(this);">
                                     @csrf
 
                                     <div class="form-floating mb-4">
@@ -44,14 +45,22 @@
                                         <label for="floatingPassword">Password</label>
                                     </div>
 
-                                    <div class="checkbox mb-3">
+                                    <div class="checkbox mb-3 mt-3">
                                         <label for="remember">
                                             <input type="checkbox" value="remember-me" id="remember_me" name="remember"> 
                                             Remember me
                                         </label>
                                     </div>
-                                    <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
 
+                                    <button class="w-100 btn btn-lg btn-dark" name="signIn">
+                                        Sign in
+                                    </button>
+
+
+                                    <!-- <div class="form-floating mb-3 mt-3">
+                                        <input class="w-100 h-50 btn btn-xs btn-dark" type="submit" data-submit="...Signing in" 
+                                            name="signIn" value="SIGN-IN">
+                                    </div> -->
                                 </form>
 
                                 <p class="acclink">Don't have an account?

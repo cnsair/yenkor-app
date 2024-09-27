@@ -21,29 +21,37 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'role' => ['required', 'integer'],
-            'firstname' => ['required', 'string', 'max:20'],
-            'lastname' => ['required', 'string', 'max:20'],
-            'phone' => ['string', 'max:20'],
+            'firstname' => ['required', 'string', 'max:25'],
+            'lastname' => ['required', 'string', 'max:25'],
+            'phone' => ['string', 'max:20', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:40', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        // $user = $request->input('user'); // $request->input() returns a string.
-        // if ($user->is('admin')) {
-        //     // Error: $user is a string, not an object.
-        // }
-        //if($input->terms == 'accepted') {
+        // $yenkor_id = hexdec(uniqid());
+        $yenkor_id = time() . random_int(1000, 9999);
+        $yenkor_id = mt_rand(1000000, 9999999);
 
-            return User::create([
-                'role' => $input['role'],
-                'firstname' => $input['firstname'],
-                'lastname' => $input['lastname'],
-                'phone' => $input['phone'],
-                'email' => $input['email'],
-                'password' => Hash::make($input['password']),
-                //'terms' => $input['terms'],
-            ]);
-        //}
+        if ( $input['role'] == 0 ) {
+            $is_rider = 1; 
+            $status = 4; 
+        }else{
+            $is_rider = 0; 
+            $status = 3;
+        }
+
+        return User::create([
+            'role' => $input['role'],
+            'yenkor_id' => $yenkor_id,
+            'status' => $status,
+            'firstname' => $input['firstname'],
+            'lastname' => $input['lastname'],
+            'phone' => $input['phone'],
+            'email' => $input['email'],
+            'is_rider' => $is_rider,
+            'password' => Hash::make($input['password']),
+        ]);
+       
     }
 }

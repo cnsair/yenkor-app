@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Rider;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Rider;
 use Illuminate\Http\Request;
 
 class RiderController extends Controller
@@ -12,7 +12,7 @@ class RiderController extends Controller
      */
     public function index()
     {
-        return view('rider.rider-dashboard');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class RiderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Rider $rider)
     {
         //
     }
@@ -42,7 +42,7 @@ class RiderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Rider $rider)
     {
         //
     }
@@ -50,7 +50,7 @@ class RiderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Rider $rider)
     {
         //
     }
@@ -58,7 +58,7 @@ class RiderController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Rider $rider)
     {
         //
     }
