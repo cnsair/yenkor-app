@@ -17,7 +17,7 @@
         
 <script>
 
-    //FORMS
+    //For FORMS
     // Disable buttons when clicked
     //SignIn
     function signInF(form) {

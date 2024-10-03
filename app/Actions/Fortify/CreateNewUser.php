@@ -30,8 +30,8 @@ class CreateNewUser implements CreatesNewUsers
         ])->validate();
 
         // $yenkor_id = hexdec(uniqid());
-        $yenkor_id = time() . random_int(1000, 9999);
-        $yenkor_id = mt_rand(1000000, 9999999);
+        $yenkor_id = random_int(10, 99) . time();
+        //$yenkor_id = mt_rand(1000000, 9999999);
 
         if ( $input['role'] == 0 ) {
             $is_rider = 1; 
@@ -39,6 +39,12 @@ class CreateNewUser implements CreatesNewUsers
         }else{
             $is_rider = 0; 
             $status = 3;
+        }
+
+        if ( $input['role'] == 1 ) {
+            $is_driver = 1; 
+        }else{
+            $is_driver = 0; 
         }
 
         return User::create([
@@ -50,6 +56,7 @@ class CreateNewUser implements CreatesNewUsers
             'phone' => $input['phone'],
             'email' => $input['email'],
             'is_rider' => $is_rider,
+            'is_driver' => $is_driver,
             'password' => Hash::make($input['password']),
         ]);
        
