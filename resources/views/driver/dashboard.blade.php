@@ -57,14 +57,14 @@
                                     data-toggle="tab">Dashboard</a>
                             </li>
                             <li role="presentation" class="active">
-                                <a href="#info" aria-controls="info" role="tab" data-toggle="tab">Personal
+                                <a href="#info" aria-controls="info" role="tab" data-toggle="tab">Profile
                                     Information</a>
                             </li>
                             <li role="presentation">
-                                <a href="#vehicles" aria-controls="vehicles" role="tab" data-toggle="tab">Vehicles</a>
+                                <a href="#vehicles" aria-controls="vehicles" role="tab" data-toggle="tab">My Vehicles</a>
                             </li>
                             <li role="presentation">
-                                <a href="#rides" aria-controls="rides" role="tab" data-toggle="tab">Rides</a>
+                                <a href="#rides" aria-controls="rides" role="tab" data-toggle="tab">My Rides</a>
                             </li>
                             <li role="presentation">
                                 <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
@@ -73,43 +73,44 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="dashboard">
                                 <div class="dashboard-info">
-                                    <div class="ride-chart small-div">
-                                        <h4>Ride From the day</h4>
+                                    <!-- <div class="ride-chart small-div">
+                                        <h4>Ride Chart</h4>
                                         <div class="small-div-item">
                                             <div id="ride-chart"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="overview-counter small-div">
                                         <h4>Overview</h4>
                                         <div class="counter-wrapper bg-gray small-div-item">
                                             <div class="single-counter-box">
-                                                <h2 class="counter-number">18445</h2>
+                                                <h2 class="counter-number">18</h2>
+                                                <p class="counter-text">Today Rides</p>
+                                            </div>
+                                            <div class="single-counter-box">
+                                                <h2 class="counter-number">75445</h2>
                                                 <p class="counter-text">Total Rides</p>
                                             </div>
                                             <div class="single-counter-box">
+                                                <h2 class="counter-number inline">150</h2>
+                                                <p class="counter-text">Position</p>
+                                            </div>
+                                            <div class="single-counter-box">
                                                 <h2 class="counter-number">21785</h2>
-                                                <p class="counter-text">Total Passengers</p>
-                                            </div>
-                                            <div class="single-counter-box">
-                                                <h2 class="counter-number">150</h2>
-                                                <p class="counter-text">Drivers</p>
-                                            </div>
-                                            <div class="single-counter-box">
-                                                <h2 class="counter-number">75</h2>
-                                                <p class="counter-text">Today Rides</p>
+                                                <p class="counter-text">Total Earnings</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="earning-details small-div">
-                                        <h4>Total earnings of last month</h4>
+                                        <h4>Total earnings today</h4>
                                         <div class="total-earning-table table-responsive small-div-item">
                                             <table class="table">
                                                 <thead>
                                                     <tr>
-                                                        <th scope="col">Name of Cabs</th>
+                                                        <th scope="col">Vehicle</th>
                                                         <th scope="col">Earnigns</th>
                                                         <th scope="col">Date</th>
-                                                        <th scope="col">Drivers</th>
+                                                        <th scope="col">From</th>
+                                                        <th scope="col">To</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -117,13 +118,15 @@
                                                         <th scope="row">BMW 5 <small>“4976ART RU”</small></th>
                                                         <td>$337.29</td>
                                                         <td>May 11, 2018</td>
-                                                        <td>Johnson Smith</td>
+                                                        <td>Lashibi</td>
+                                                        <td>Cirle</td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">Audi <small>“4876ORT AU”</small></th>
                                                         <td>$856.56</td>
                                                         <td>May 11, 2018</td>
-                                                        <td>John Doe</td>
+                                                        <td>Sakumono Estate</td>
+                                                        <td>Accra Market</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -137,7 +140,7 @@
                             <div role="tabpanel" class="tab-pane" id="info">
                                 <div class="personal-info small-div">
                                     <div class="div-heading">
-                                        <h4 class="heading-item heading-item-1">Personal Information</h4>
+                                        <h4 class="heading-item heading-item-1">Profile Information</h4>
                                         <p class="heading-item heading-item-2 right">
                                             <a href="#" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
                                         </p>
@@ -222,45 +225,23 @@
                                             <a href="#" class="button button-dark">Register New Vehicle</a>
                                         </div>
                                     </div>
+
                                     <div class="row">
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/dashboard/vehicle-1.webp" alt="Vehicle">
+                                        <div class="col-lg-6">
+                                            <h4>BMW 5 <small>"4976ART RU"</small></h4>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="single-vehicle-container">
+                                                    <img src="{{ asset('assets/assets/images/home/1.webp') }}" alt="Vehicle">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/21_our_vehicles.webp" alt="Vehicle">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/22_our_vehicles.webp" alt="Vehicle">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/23_our_vehicles.webp" alt="Vehicle">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/dashboard/vehicle-1.webp" alt="Vehicle">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/21_our_vehicles.webp" alt="Vehicle">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/22_our_vehicles.webp" alt="Vehicle">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <div class="single-vehicle-container">
-                                                <img src="assets/images/23_our_vehicles.webp" alt="Vehicle">
+
+                                        <div class="col-lg-6">
+                                            <h4>Audi <small>"4876ORT AU"</small></h4>
+                                            <div class="col-lg-3 col-sm-6">
+                                                <div class="single-vehicle-container">
+                                                    <img src="{{ asset('assets/assets/images/dashboard/vehicle-1.webp') }}" alt="Vehicle">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -302,10 +283,11 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
-                                                            <th scope="col">Name of Cabs</th>
+                                                            <th scope="col">Vehicle</th>
                                                             <th scope="col">Earnigns</th>
                                                             <th scope="col">Date</th>
-                                                            <th scope="col">Passengers</th>
+                                                            <th scope="col">From</th>
+                                                            <th scope="col">To</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -313,13 +295,15 @@
                                                             <th scope="row">BMW 5 <small>“4976ART RU”</small></th>
                                                             <td>$337.29</td>
                                                             <td>May 11, 2018</td>
-                                                            <td>Johnson Smith</td>
+                                                            <td>Lashibi</td>
+                                                            <td>Circle</td>
                                                         </tr>
                                                         <tr>
                                                             <th scope="row">Audi <small>“4876ORT AU”</small></th>
                                                             <td>$856.56</td>
                                                             <td>May 11, 2018</td>
-                                                            <td>John Doe</td>
+                                                            <td>Sakumono Estate</td>
+                                                            <td>Accra Market</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -331,12 +315,12 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div role="tabpanel" class="tab-pane" id="settings">
                                 <div class="personal-info">
                                     <div class="row">
                                         <div class="col-lg-6">
-                                            <h4>Personal Information</h4>
+                                            <h4>Profile Information</h4>
                                         </div>
                                         <div class="col-lg-6 text-end">
                                             <a href="#"><i class="fas fa-edit"></i> Edit</a>
