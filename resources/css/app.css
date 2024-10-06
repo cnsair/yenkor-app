@@ -5,3 +5,39 @@
 [x-cloak] {
     display: none;
 }
+/*
+.settings-info {
+    padding: 30px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.settings-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.settings-section form {
+    max-width: 100%;
+}
+
+.settings-section .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.settings-section .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+}
+
+.settings-section .button {
+    margin-top: 1rem;
+}
+
+
+Gerard did this, css comment for titi. Gerard added this
+*/
