@@ -16,7 +16,8 @@
                             <h1 class="hero-title-v-2">
                                 <span class="hero-title-bg">
                                     Ride Safety. <span class="hero-title-accent-v-2">Drive and Earn.</span>
-                                    <span>All Contributes to Society.</span></span>
+                                    <span>Contribute to the Society.</span>
+                                </span>
                             </h1>
                             <p class="hero-text">
                                 Partner with us as a rider for ease and comfort, or as a driver to drive your own livelihood and more.
@@ -171,7 +172,7 @@
         </div>
     </section>
    
-    @include('home.howitworks')
+    @include('home.how-it-works')
 
     @include('home.trusted')
 

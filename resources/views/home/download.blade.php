@@ -2,8 +2,8 @@
         <div class="container">
             <div class="download-content-wrapper">
                 <div class="download-left-content">
-                    <h2 class="div-title">Download CarrGo</h2>
-                    <h3>Download the CarrGo mobile application</h3>
+                    <h2 class="div-title">Download Yenkor</h2>
+                    <h3>Download the Yenkor mobile application</h3>
                     <p>
                         Nunc volutpat tincidunt est a scelerisque. Aliquam erat volutpat.
                         Donec varius ex in justo pharetra, nec mollis erat porta. Donec
