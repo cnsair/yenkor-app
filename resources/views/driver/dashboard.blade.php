@@ -1,23 +1,7 @@
-<!doctype html>
+@extends('layouts.app-driver')
 
-<html class="no-js" lang="en">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Driver - {{ Auth()->user()->firstname }}</title>
-    <meta name="description" content>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/assets/images/yenkor-favicon.ico') }}">
-
-    <x-css-links/>
-</head>
-
-<body class="theme-2">
+@section('content')
     
-    <x-dashboard-header/>
-
     <div class="breadcrumb-div">
         <div class="container">
             <h1 class="page-title mb-0">Dashboard</h1>
@@ -27,8 +11,10 @@
             </ol>
         </div>
     </div>
+
     <div class="div-padding driver-dashboard-div">
         <div class="container">
+            
             <div class="row">
                 <div class="col-sm-6">
                     <div class="passanger-name">
@@ -39,7 +25,7 @@
                                 <p>{{ 'ID: ' . Auth()->user()->yenkor_id }}</p>
                                 <p>{{ 'Email: ' . Auth()->user()->email }}</p>
                                 
-                                <a href="{{ route('profile.show') }}">Edit Profile</a>
+                                <a class="btn btn-secondary" style="color: #fffddd" href="{{ route('driver.edit-profile.edit') }}">Edit Profile</a>
                             </div>
                         </div>
                     </div>
@@ -48,6 +34,7 @@
                     <h2>Driver</h2>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="tab-dashboard">
@@ -65,9 +52,6 @@
                             </li>
                             <li role="presentation">
                                 <a href="#rides" aria-controls="rides" role="tab" data-toggle="tab">My Rides</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -214,7 +198,7 @@
                                     </div>
                                 </div>
                             </div>
-                     
+                        
                             <div role="tabpanel" class="tab-pane" id="vehicles">
                                 <div class="vahicles-container">
                                     <div class="row">
@@ -315,98 +299,14 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div role="tabpanel" class="tab-pane" id="settings">
-                                <div class="personal-info">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <h4>Profile Information</h4>
-                                        </div>
-                                        <div class="col-lg-6 text-end">
-                                            <a href="#"><i class="fas fa-edit"></i> Edit</a>
-                                        </div>
-                                    </div>
-                                    <div class="personal-details">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="firstName">First Name</label>
-                                                    <input type="text" class="form-control text-muted" id="firstName"
-                                                        value="John">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="lastName">Last Name</label>
-                                                    <input type="text" class="form-control text-muted" id="lastName"
-                                                        value="Doe">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="yourEmail">Your Email</label>
-                                                    <input type="text" class="form-control text-muted" id="yourEmail"
-                                                        value="johndoe@gmail.com">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="yourWebsite">Your Website</label>
-                                                    <input type="text" class="form-control text-muted" id="yourWebsite"
-                                                        value="www.johndoe.com">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="yourBirthday">Your Birthday</label>
-                                                    <input type="text" class="form-control text-muted" id="yourBirthday"
-                                                        value="01 June 1984">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="phoneNumber">Your Phone Number</label>
-                                                    <input type="text" class="form-control text-muted" id="phoneNumber"
-                                                        value="+91 - 123 456 7890">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="yourGender">Your Gender</label>
-                                                    <input type="text" class="form-control text-muted" id="yourGender"
-                                                        value="Male">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="yourStatus">Status</label>
-                                                    <input type="text" class="form-control text-muted" id="yourStatus"
-                                                        value="Married">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <div class="form-group">
-                                                    <label for="aboutDesc">Write a little description about you</label>
-                                                    <textarea class="form-control text-muted"
-                                                        id="aboutDesc">Vestibulum suscipit faucibus dolor, vitae mollis justo consequat vel. Vestibulum in nisi ut neque tristique accumsan vel eu eros. Quisque pellentesque urna et hendrerit lacinia. Mauris vitae tellus neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in placerat tortor, sit amet dictum sem. Donec et orci condimentum eros pulvinar maximus. Suspendisse accumsan imperdiet mauris vitae tincidunt. Donec imperdiet purus eget diam tristique vestibulum. Vestibulum posuere placerat lacus commodo sollicitudin. Nullam eget justo fermentum, rhoncus leo eget, viverra augue. Fusce odio odio, egestas id turpis at, faucibus consectetur nulla. Sed vel volutpat ligula, quis vulputate odio. Sed condimentum, neque nec aliquam sodales, dolor erat euismod erat, porta venenatis odio leo non dolor. Donec ut lacus non quam convallis sodales.</textarea>
-                                                </div>
-                                                <a href="#" class="button button-dark">Save</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
             </div>
+
+        <!-- Ends here -->   
         </div>
     </div>
-    
-    <x-dashboard-footer/>
 
-    <x-dashboard-js-script/>
-
-</body>
-
-</html>
+@endsection

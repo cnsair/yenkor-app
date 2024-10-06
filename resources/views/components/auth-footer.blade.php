@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <p>&copy; Copyright <script>document.write(new Date().getFullYear());</script> Yenkor App. All Right Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear());</script> Yenkor App. All Right Reserved.</p>
                 </div>
                 <div class="col-lg-6">
                     <ul class="social-nav">

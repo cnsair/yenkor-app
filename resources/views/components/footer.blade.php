@@ -1,6 +1,6 @@
 <footer class="footer-div theme-1">
     <div class="footer-shape">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+        <svg data-name="Layer 1" xmlns="#" viewBox="0 0 1200 120"
             preserveAspectRatio="none">
             <path
                 d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
@@ -12,7 +12,9 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="footer-brand">
-                        <a href="index.html"><img src="assets/assets/images/logo.webp" alt="Logo"></a>
+                        <a href="{{ route('home') }}">
+                            <img src="{{ asset('assets/assets/images/logo-main.webp') }}" alt="Site Logo">
+                        </a>
                     </div>
                     <div class="footer-text pe-lg-3">
                         <p class="mb-4">
@@ -30,21 +32,19 @@
                     <h4>Useful links</h4>
                     <nav class="footer-navigation">
                         <ul>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="our-vehicles.html">Our vehicles</a></li>
-                            <li><a href="our-services.html">Services</a></li>
-                            <li><a href="packages.html">Packages</a></li>
-                            <li><a href="sign-in.html">Login</a></li>
-                            <li><a href="sign-up.html">Register</a></li>
-                            <li><a href="index.html">Latest News</a></li>
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            <li><a href="{{ route('vehicle') }}">Our vehicles</a></li>
+                            <li><a href="{{ route('service') }}">Services</a></li>
+                            <li><a href="{{ route('package') }}">Packages</a></li>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('blog') }}">Latest News</a></li>
                         </ul>
                         <ul>
-                            <li><a href="ride-with-carrgo.html">Ride</a></li>
-                            <li><a href="my-driver-dashboard.html">Drive</a></li>
-                            <li><a href="sign-up.html">Become a Driver</a></li>
+                            <li><a href="{{ route('book-ride') }}">Book a Ride</a></li>
+                            <li><a href="{{ route('register') }}">Become a Driver</a></li>
+                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="contact-us.html">Help</a></li>
                             <li><a href="#">Privacy policy</a></li>
                         </ul>
                     </nav>
@@ -53,15 +53,13 @@
                     <h4>Head Office</h4>
                     <address class="company-address">
                         <p class="m-b-20">
-                            15 Street No, Ox Building,
+                            GT223454 Accra, Ghana
                             <span class="d-block">Near Station, 1356.</span>
                         </p>
                         <p class="m-b-8">Phone number: (+1) 123 4567 890</p>
-                        <p class="m-b-8">Email Address: <a href="cdn-cgi/l/email-protection.html"
-                                class="__cf_email__"
-                                data-cfemail="86c5e7f4f4e1e9c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</a></p>
-                        <p class="m-b-8">Fax : <a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
-                                data-cfemail="2a794f585c43494f6a494b58584d4504494547">[email&#160;protected]</a></p>
+                        <p class="m-b-8">Email Address: <a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
+                            data-cfemail="">info@yenkor.com</a>
+                        </p>
                     </address>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -71,8 +69,8 @@
                         <a href="#"><img src="assets/assets/images/icon/apple-store.webp" alt="Apple store"></a>
                     </div>
                     <div class="cta-button">
-                        <a href="my-driver-dashboard.html" class="button button-light big">Become a Driver</a>
-                        <a href="ride-with-carrgo.html" class="button button-black big">Ride with CarrGo</a>
+                        <a href="{{ route('register') }}" class="button button-light big">Become a Driver</a>
+                        <a href="{{ route('book-ride') }}" class="button button-black big">Ride with CarrGo</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +80,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <p>&copy; Copyright 2023 by Tortoiz Themes. All Right Reserved.</p>
+                    <p>
+                        &copy; <script>document.write(new Date().getFullYear());</script> 
+                        Yenkor App. All Right Reserved.
+                    </p>
                 </div>
                 <div class="col-lg-6">
                     <ul class="social-nav">

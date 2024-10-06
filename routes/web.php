@@ -1,5 +1,6 @@
 <?php
 
+use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
 
-    Route::get('/', function () {
+    Route::get('/home', function () {
         return view('home.home');
     })->name('home');
 
@@ -86,10 +87,19 @@ Route::group(['middleware' => 'auth'], function() {
         Route::prefix('driver')->group(function () {
             Route::name('driver.')->group(function () {
 
-                //view analytics page
+                //dashboard:view
                 Route::get('/dashboard', function () {
                     return view('driver.dashboard'); })
                     ->name('dashboard');
+
+                //dashboard:view
+                Route::get('/edit-profile', function () {
+                    return view('driver.edit-profile'); })
+                    ->name('edit-profile.edit');
+
+                //view upload page
+                Route::patch('/edit-profile',  [UpdateUserProfileInformation::class, 'update'])
+                    ->name('edit-profile.update');
 
                 // Route::get('/dashboard', [
                 //     DriverController::class, 'index'
