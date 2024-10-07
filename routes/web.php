@@ -5,6 +5,7 @@ use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\RedirectController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 
@@ -98,7 +99,7 @@ Route::group(['middleware' => 'auth'], function() {
                     ->name('edit-profile.edit');
 
                 //view upload page
-                Route::patch('/edit-profile',  [UpdateUserProfileInformation::class, 'update'])
+                Route::patch('/edit-profile', [UpdateUserProfileInformation::class, 'update'])
                     ->name('edit-profile.update');
 
                 // Route::get('/dashboard', [

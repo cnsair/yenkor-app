@@ -21,8 +21,8 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'role' => ['required', 'integer'],
-            'firstname' => ['required', 'string', 'max:25'],
-            'lastname' => ['required', 'string', 'max:25'],
+            'firstname' => ['required', 'string', 'regex:/^\S*$/u', 'max:25'],
+            'lastname' => ['required', 'string', 'regex:/^\S*$/u', 'max:25'],
             'phone' => ['string', 'max:20', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:40', 'unique:users'],
             'password' => $this->passwordRules(),

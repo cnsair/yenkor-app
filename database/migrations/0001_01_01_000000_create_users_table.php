@@ -28,7 +28,7 @@ return new class extends Migration
             $table->enum('status',[1,2,3,4])->default(3);
             $table->string('vehicle')->nullable();
             $table->string('gender')->nullable();
-            $table->string('biography')->nullable();
+            $table->longText('biography')->nullable();
             $table->string('d_o_b')->nullable();
             
             $table->timestamp('email_verified_at')->nullable();

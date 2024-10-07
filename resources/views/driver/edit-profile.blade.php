@@ -1,7 +1,27 @@
 @extends('layouts.app-driver')
 
 @section('content')
-    
+    <style>
+        input[type="radio"] {
+            appearance: radio !important; /* Ensures default radio button styling is used */
+            visibility: visible !important;
+            display: inline-block !important;
+            width: auto !important;
+            height: auto !important;
+            opacity: 1 !important;
+            /* vertical-align: middle !important; */
+        }
+
+        .in-line{
+            display: inline-block;
+        }
+
+        .align{
+            align-items: center !important;
+            align-content: center !important;
+        }
+    </style>
+
     <div class="breadcrumb-div">
         <div class="container">
             <h1 class="page-title mb-0">Edit Profile</h1>
@@ -20,12 +40,14 @@
                     <div class="passanger-name">
                         <div class="media">
                             
-                            @if (Auth()->user()->profile_photo_path)
-                                @php
-                                    $file = Auth()->user()->profile_photo_path;
-                                    $photo_path  = asset('storage/' . $file);
-                                @endphp
+                            @php
+                                $user_id = Auth::user()->id;
                                 
+                                $file = Auth()->user()->profile_photo_path;
+                                $photo_path  = asset('storage/' . $file);
+                            @endphp
+
+                            @if ($file)
                                 <img class="me-3" src="{{ asset($photo_path) }}" alt="partner-img">
                             @else
                                 <img class="me-3" width="110px" src="{{ asset('assets/assets/images/avatar.png') }}" alt="partner-img">
@@ -48,129 +70,89 @@
                 <div class="col-lg-12">
                     
                     <div class="personal-info">
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-lg-6">
-                                <h4>Profile Information</h4>
+                                <h4>Edit Profile</h4>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="personal-details">
 
                             <x-validation-errors class="mb-4" />
 
-                            <form method="POST" action="{{ route('driver.edit-profile.update') }}" enctype="multipart/form-data" class="mt-6 space-y-6" onsubmit="return uploadF(this);">
-                            @csrf
+                            <form method="POST" action="{{ route('driver.edit-profile.update', ['update' => $user_id]) }}" enctype="multipart/form-data" class="mt-6 space-y-6" onsubmit="return editF(this);">
+                                @csrf
+                                @method('patch')
 
-                            <!-- Profile Photo -->
-                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
-                                    <!-- Profile Photo File Input -->
-                                    <input type="file" id="photo" class="hidden"
-                                                wire:model.live="photo"
-                                                x-ref="photo"
-                                                x-on:change="
-                                                        photoName = $refs.photo.files[0].name;
-                                                        const reader = new FileReader();
-                                                        reader.onload = (e) => {
-                                                            photoPreview = e.target.result;
-                                                        };
-                                                        reader.readAsDataURL($refs.photo.files[0]);
-                                                " />
+                                <div class="row">
 
-                                    <x-label for="photo" value="{{ __('Photo') }}" />
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="firstName">First Name</label>
+                                            <input type="text" class="form-control text-muted" id="firstName" name="firstname" value="{{ old('firstname',Auth()->user()->firstname) }}" required autofocus autocomplete="firstname">
+                                            <x-input-error for="firstname" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="lastName">Last Name</label>
+                                            <input type="text" class="form-control text-muted" id="lastName" name="lastname" value="{{ old('firstname', Auth()->user()->lastname) }}" required>
+                                            <x-input-error for="lastname" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="yourEmail">Your Email</label>
+                                            <input type="text" class="form-control text-muted" id="yourEmail" name="email" value="{{ old('firstname', Auth()->user()->email) }}" required>
+                                            <x-input-error for="email" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="phoneNumber">Phone Number</label>
+                                            <input type="number" class="form-control text-muted" id="phoneNumber" name="phone" value="{{ old('firstname', Auth()->user()->phone) }}" required>
+                                            <x-input-error for="phone" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Your Gender</label>
 
-                                    <!-- Current Profile Photo -->
-                                    <div class="mt-2" x-show="! photoPreview">
-                                        <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-full h-20 w-20 object-cover">
-                                    </div>
+                                            <div class="in-line">
+                                                <label for="male">Male</label>
+                                                <input id="male" type="radio" name="gender" value="Male" {{ old('gender', Auth()->user()->gender) == 'Male' ? 'checked' : '' }}>
+                                            </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                    <!-- New Profile Photo Preview -->
-                                    <div class="mt-2" x-show="photoPreview" style="display: none;">
-                                        <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
-                                            x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
-                                        </span>
+                                            <div class="in-line">
+                                                <label for="female">Female</label>
+                                                <input id="female" type="radio" name="gender" value="Female" {{ old('gender', Auth()->user()->gender) == 'Female' ? 'checked' : '' }}>
+                                                <x-input-error for="gender" class="mt-2" />
+                                            </div>
+                                            
+                                        </div>
                                     </div>
-
-                                    <x-secondary-button class="mt-2 me-2" type="button" x-on:click.prevent="$refs.photo.click()">
-                                        {{ __('Select A New Photo') }}
-                                    </x-secondary-button>
-
-                                    @if ($this->user->profile_photo_path)
-                                        <x-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
-                                            {{ __('Remove Photo') }}
-                                        </x-secondary-button>
-                                    @endif
-
-                                    <x-input-error for="photo" class="mt-2" />
-                                </div>
-                            @endif
-
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="firstName">First Name</label>
-                                        <input type="text" class="form-control text-muted" id="firstName"
-                                            value="John">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label for="yourBirthday">Your Birthday</label>
+                                            <input type="date" class="form-control text-muted" id="yourBirthday" name="d_o_b" value="{{ old('d_o_b', Auth()->user()->d_o_b) }}"
+                                            <x-input-error for="d_o_b" class="mt-2" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="lastName">Last Name</label>
-                                        <input type="text" class="form-control text-muted" id="lastName"
-                                            value="Doe">
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="aboutDesc">Write a little description about you</label>
+                                            <textarea class="form-control text-muted" id="aboutDesc" name="biography">{{ !empty(Auth()->user()->biography) ? old('biography', Auth()->user()->biography) : 'Please write something like: I am a driver for safety from Kumasi, married with 3 children...' }}</textarea>
+                                            <x-input-error for="biography" class="mt-2" />
+                                        </div>
+                                        <!-- <a href="#" class="button button-dark">Save</a> -->
+                                      <div class="align">
+                                        <button class="button button-dark" name="Edit">
+                                            {{ __('Update') }}
+                                        </button>
+                                        </div>
                                     </div>
+                            
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="yourEmail">Your Email</label>
-                                        <input type="text" class="form-control text-muted" id="yourEmail"
-                                            value="johndoe@gmail.com">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="yourWebsite">Your Website</label>
-                                        <input type="text" class="form-control text-muted" id="yourWebsite"
-                                            value="www.johndoe.com">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="yourBirthday">Your Birthday</label>
-                                        <input type="text" class="form-control text-muted" id="yourBirthday"
-                                            value="01 June 1984">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="phoneNumber">Your Phone Number</label>
-                                        <input type="text" class="form-control text-muted" id="phoneNumber"
-                                            value="+91 - 123 456 7890">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="yourGender">Your Gender</label>
-                                        <input type="text" class="form-control text-muted" id="yourGender"
-                                            value="Male">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label for="yourStatus">Status</label>
-                                        <input type="text" class="form-control text-muted" id="yourStatus"
-                                            value="Married">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="aboutDesc">Write a little description about you</label>
-                                        <textarea class="form-control text-muted"
-                                            id="aboutDesc">Vestibulum suscipit faucibus dolor, vitae mollis justo consequat vel. Vestibulum in nisi ut neque tristique accumsan vel eu eros. Quisque pellentesque urna et hendrerit lacinia. Mauris vitae tellus neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in placerat tortor, sit amet dictum sem. Donec et orci condimentum eros pulvinar maximus. Suspendisse accumsan imperdiet mauris vitae tincidunt. Donec imperdiet purus eget diam tristique vestibulum. Vestibulum posuere placerat lacus commodo sollicitudin. Nullam eget justo fermentum, rhoncus leo eget, viverra augue. Fusce odio odio, egestas id turpis at, faucibus consectetur nulla. Sed vel volutpat ligula, quis vulputate odio. Sed condimentum, neque nec aliquam sodales, dolor erat euismod erat, porta venenatis odio leo non dolor. Donec ut lacus non quam convallis sodales.</textarea>
-                                    </div>
-                                    <a href="#" class="button button-dark">Save</a>
-                                </div>
-                            </div>
 
                             </form>
 

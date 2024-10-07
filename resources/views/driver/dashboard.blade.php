@@ -19,7 +19,18 @@
                 <div class="col-sm-6">
                     <div class="passanger-name">
                         <div class="media">
-                            <img class="me-3" src="{{ asset('assets/assets/images/partner-img.webp') }}" alt="partner-img">
+                            
+                            @if (Auth()->user()->profile_photo_path)
+                                @php
+                                    $file = Auth()->user()->profile_photo_path;
+                                    $photo_path  = asset('storage/' . $file);
+                                @endphp
+                                
+                                <img class="me-3" src="{{ asset($photo_path) }}" alt="partner-img">
+                            @else
+                                <img class="me-3" width="110px" src="{{ asset('assets/assets/images/avatar.png') }}" alt="partner-img">
+                            @endif
+
                             <div class="media-body">
                                 <h2 class="mt-0">{{ Auth()->user()->firstname .' '.Auth()->user()->lastname }}</h2>
                                 <p>{{ 'ID: ' . Auth()->user()->yenkor_id }}</p>
