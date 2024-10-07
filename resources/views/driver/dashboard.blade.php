@@ -184,7 +184,7 @@
                                                 <div class="form-group">
                                                     <label for="inputBirthday">Your Birthday</label>
                                                     <input type="text" class="form-control text-muted"
-                                                        id="inputBirthday" readonly value="{{ old('d_o_b', Auth()->user()->d_o_b) }}">
+                                                        id="inputBirthday" readonly value="{{ date("M d, Y", strtotime( old('d_o_b', Auth()->user()->d_o_b) )) }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
