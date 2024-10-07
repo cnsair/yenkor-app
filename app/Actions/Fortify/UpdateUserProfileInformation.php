@@ -28,10 +28,10 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'firstname' => ['required', 'string', 'regex:/^\S*$/u', 'max:255'],
             'lastname' => ['required', 'string', 'regex:/^\S*$/u', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'phone' => ['string', 'max:20', 'unique:users'],
+            'phone' => ['string', 'max:20', Rule::unique('users')->ignore($user->id)],
             'gender' => ['string', 'max:20'],
-            'biography' => ['string', 'max:50'],
-            'd_o_b' => ['string', 'max:20', 'unique:users'],
+            'biography' => ['string', 'max:500'],
+            'd_o_b' => ['string', 'max:20'],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:5120'],
         ])->validateWithBag('updateProfileInformation');
 
@@ -44,8 +44,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $this->updateVerifiedUser($user, $input);
         } else {
             $user->forceFill([
-                'firstname' => $input['name'],
-                'lastname' => $input['name'],
+                'firstname' => $input['firstname'],
+                'lastname' => $input['lastname'],
                 'email' => $input['email'],
                 'phone' => $input['phone'],
                 'gender' => $input['gender'],

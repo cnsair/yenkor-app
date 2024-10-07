@@ -4,7 +4,9 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer-brand">
-                        <a href="#"><img src="{{ asset('assets/assets/images/logo.webp') }}" alt="logo"></a>
+                        <a href="#">
+                            <img src="{{ asset('assets/assets/images/logo-main.webp') }}" alt="Site Logo">
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -26,7 +28,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <p>&copy; Copyright 2022 by Tortoiz. All Right Reserved.</p>
+                    <p>&copy; <script>document.write(new Date().getFullYear());</script> Yenkor App. All Right Reserved.</p>
                 </div>
                 <div class="col-lg-6">
                     <ul class="social-nav">

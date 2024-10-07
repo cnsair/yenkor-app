@@ -20,15 +20,17 @@
                     <div class="passanger-name">
                         <div class="media">
                             
-                            @if (Auth()->user()->profile_photo_path)
-                                @php
-                                    $file = Auth()->user()->profile_photo_path;
-                                    $photo_path  = asset('storage/' . $file);
-                                @endphp
+                            @php
+                                $user_id = Auth::user()->id;
                                 
-                                <img class="me-3" src="{{ asset($photo_path) }}" alt="partner-img">
+                                $file = Auth()->user()->profile_photo_path;
+                                $photo_path  = asset('storage/' . $file);
+                            @endphp
+
+                            @if ($file)
+                                <img class="me-3 profile-picture" src="{{ asset($photo_path) }}" alt="partner-img" alt="ProfilePicture">
                             @else
-                                <img class="me-3" width="110px" src="{{ asset('assets/assets/images/avatar.png') }}" alt="partner-img">
+                                <img class="me-3 profile-picture" src="{{ asset('assets/assets/images/avatar.png') }}" alt="ProfilePicture">
                             @endif
 
                             <div class="media-body">
@@ -132,13 +134,14 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div role="tabpanel" class="tab-pane" id="info">
                                 <div class="personal-info small-div">
                                     <div class="div-heading">
                                         <h4 class="heading-item heading-item-1">Profile Information</h4>
-                                        <p class="heading-item heading-item-2 right">
+                                        <!-- <p class="heading-item heading-item-2 right">
                                             <a href="#" class="edit-btn"><i class="fas fa-edit"></i> Edit</a>
-                                        </p>
+                                        </p> -->
                                     </div>
                                     <div class="personal-details small-div-item">
                                         <div class="row">
@@ -146,63 +149,49 @@
                                                 <div class="form-group">
                                                     <label for="inputFirstName">First Name</label>
                                                     <input type="text" class="form-control text-muted"
-                                                        id="inputFirstName" readonly value="John">
+                                                        id="inputFirstName" readonly value="{{ old('firstname',Auth()->user()->firstname) }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="inputLastName">Last Name</label>
                                                     <input type="text" class="form-control text-muted"
-                                                        id="inputLastName" readonly value="Doe">
+                                                        id="inputLastName" readonly value="{{ old('lastname',Auth()->user()->lastname) }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="inputEmail">Your Email</label>
                                                     <input type="text" class="form-control text-muted" id="inputEmail"
-                                                        readonly value="johndoe@gmail.com">
+                                                        readonly value="{{ old('email', Auth()->user()->email) }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
-                                                    <label for="inputWebsite">Your Website</label>
-                                                    <input type="text" class="form-control text-muted" id="inputWebsite"
-                                                        readonly value="www.johndoe.com">
+                                                    <label for="inputPhoneNumber">Phone Number</label>
+                                                    <input type="text" class="form-control text-muted"
+                                                        id="inputPhoneNumber" readonly value="{{ old('phone', Auth()->user()->phone) }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label for="inputGender">Gender</label>
+                                                    <input type="text" class="form-control text-muted" id="inputGender"
+                                                        readonly value="{{ old('gender', Auth()->user()->gender) }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-group">
                                                     <label for="inputBirthday">Your Birthday</label>
                                                     <input type="text" class="form-control text-muted"
-                                                        id="inputBirthday" readonly value="01 June 1984">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="inputPhoneNumber">Your Phone Number</label>
-                                                    <input type="text" class="form-control text-muted"
-                                                        id="inputPhoneNumber" readonly value="+91 - 123 456 7890">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="inputGender">Your Gender</label>
-                                                    <input type="text" class="form-control text-muted" id="inputGender"
-                                                        readonly value="Male">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="form-group">
-                                                    <label for="inputStatus">Status</label>
-                                                    <input type="text" class="form-control text-muted" id="inputStatus"
-                                                        readonly value="Married">
+                                                        id="inputBirthday" readonly value="{{ old('d_o_b', Auth()->user()->d_o_b) }}">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="inputDesc">Write a little description about you</label>
+                                                    <label for="inputDesc">Something about you</label>
                                                     <textarea class="form-control text-muted" id="inputDesc"
-                                                        readonly>Vestibulum suscipit faucibus dolor, vitae mollis justo consequat vel. Vestibulum in nisi ut neque tristique accumsan vel eu eros. Quisque pellentesque urna et hendrerit lacinia. Mauris vitae tellus neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec in placerat tortor, sit amet dictum sem. Donec et orci condimentum eros pulvinar maximus. Suspendisse accumsan imperdiet mauris vitae tincidunt. Donec imperdiet purus eget diam tristique vestibulum. Vestibulum posuere placerat lacus commodo sollicitudin. Nullam eget justo fermentum, rhoncus leo eget, viverra augue. Fusce odio odio, egestas id turpis at, faucibus consectetur nulla. Sed vel volutpat ligula, quis vulputate odio. Sed condimentum, neque nec aliquam sodales, dolor erat euismod erat, porta venenatis odio leo non dolor. Donec ut lacus non quam convallis sodales.</textarea>
+                                                        readonly>{{ old('biography', Auth()->user()->biography) }}.</textarea>
                                                 </div>
                                             </div>
                                         </div>

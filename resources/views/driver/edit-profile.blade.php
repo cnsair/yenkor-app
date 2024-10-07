@@ -1,26 +1,6 @@
 @extends('layouts.app-driver')
 
 @section('content')
-    <style>
-        input[type="radio"] {
-            appearance: radio !important; /* Ensures default radio button styling is used */
-            visibility: visible !important;
-            display: inline-block !important;
-            width: auto !important;
-            height: auto !important;
-            opacity: 1 !important;
-            /* vertical-align: middle !important; */
-        }
-
-        .in-line{
-            display: inline-block;
-        }
-
-        .align{
-            align-items: center !important;
-            align-content: center !important;
-        }
-    </style>
 
     <div class="breadcrumb-div">
         <div class="container">
@@ -48,9 +28,9 @@
                             @endphp
 
                             @if ($file)
-                                <img class="me-3" src="{{ asset($photo_path) }}" alt="partner-img">
+                                <img class="me-3 profile-picture" src="{{ asset($photo_path) }}" alt="partner-img" alt="ProfilePicture" onclick="document.getElementById('profile-photo').click();">
                             @else
-                                <img class="me-3" width="110px" src="{{ asset('assets/assets/images/avatar.png') }}" alt="partner-img">
+                                <img class="me-3 profile-picture" src="{{ asset('assets/assets/images/avatar.png') }}" alt="ProfilePicture" onclick="document.getElementById('profile-photo').click();">
                             @endif
 
                             <div class="media-body">
@@ -80,11 +60,29 @@
 
                             <x-validation-errors class="mb-4" />
 
+                            @if (session('status') === 'success')
+                                <x-success-msg>
+                                    {{ __('Profile updated successfully.') }}
+                                </x-success-msg>
+                            @elseif (session('status') === 'failed')
+                                <x-failed-msg>
+                                    {{ __('Please try again.') }}
+                                </x-failed-msg>
+                            @endif
+
                             <form method="POST" action="{{ route('driver.edit-profile.update', ['update' => $user_id]) }}" enctype="multipart/form-data" class="mt-6 space-y-6" onsubmit="return editF(this);">
                                 @csrf
                                 @method('patch')
 
                                 <div class="row">
+
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label for="firstName">Profile Picture</label>
+                                            <input type="file" name="photo" id="profile-photo" class="form-control text-muted" value="{{ old('photo',Auth()->user()->photo) }}">
+                                            <x-input-error for="photo" class="mt-2" />
+                                        </div>
+                                    </div>
 
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -96,21 +94,21 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="lastName">Last Name</label>
-                                            <input type="text" class="form-control text-muted" id="lastName" name="lastname" value="{{ old('firstname', Auth()->user()->lastname) }}" required>
+                                            <input type="text" class="form-control text-muted" id="lastName" name="lastname" value="{{ old('lastname', Auth()->user()->lastname) }}" required>
                                             <x-input-error for="lastname" class="mt-2" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="yourEmail">Your Email</label>
-                                            <input type="text" class="form-control text-muted" id="yourEmail" name="email" value="{{ old('firstname', Auth()->user()->email) }}" required>
+                                            <input type="text" class="form-control text-muted" id="yourEmail" name="email" value="{{ old('email', Auth()->user()->email) }}" required>
                                             <x-input-error for="email" class="mt-2" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label for="phoneNumber">Phone Number</label>
-                                            <input type="number" class="form-control text-muted" id="phoneNumber" name="phone" value="{{ old('firstname', Auth()->user()->phone) }}" required>
+                                            <input type="number" class="form-control text-muted" id="phoneNumber" name="phone" value="{{ old('phone', Auth()->user()->phone) }}" required>
                                             <x-input-error for="phone" class="mt-2" />
                                         </div>
                                     </div>
@@ -140,7 +138,7 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="aboutDesc">Write a little description about you</label>
+                                            <label for="aboutDesc">Write a little about you (500 characters max)</label>
                                             <textarea class="form-control text-muted" id="aboutDesc" name="biography">{{ !empty(Auth()->user()->biography) ? old('biography', Auth()->user()->biography) : 'Please write something like: I am a driver for safety from Kumasi, married with 3 children...' }}</textarea>
                                             <x-input-error for="biography" class="mt-2" />
                                         </div>
