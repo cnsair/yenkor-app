@@ -124,6 +124,8 @@
                                 </form>
 
                                 <a class="dropdown-item" href="#">Earnings</a>
+
+                                <a class="dropdown-item" href="#">Register Vihicle</a>
                             </div>
                         </div>
                     </div>
