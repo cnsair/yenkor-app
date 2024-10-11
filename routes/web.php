@@ -103,6 +103,10 @@ Route::group(['middleware' => 'auth'], function() {
                 Route::patch('/edit-profile', [ProfileController::class, 'update'])
                     ->name('edit-profile.update');
 
+                //view upload page
+                Route::delete('/edit-profile', [ProfileController::class, 'destroy'])
+                    ->name('edit-profile.destroy');
+
                 // Route::get('/dashboard', [
                 //     DriverController::class, 'index'
                 // ])->name('driver');
