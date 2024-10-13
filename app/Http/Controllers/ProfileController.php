@@ -24,17 +24,17 @@ class ProfileController extends Controller
         ]);
 
         // Update the user's profile using Jetstream's UpdateUserProfileInformation class
-        (new UpdateUserProfileInformation)->update(Auth::user(), $request->all());
+        $update = ((new UpdateUserProfileInformation)->update(Auth::user(), $request->all()));
 
-        // if ($update){
-        //     // Redirect back with success message
-        //     return back()->with('status', 'success');
-        // }else{
-        //     // Redirect back with success message
-        //     return back()->with('status', 'failed');
-        // }
+        if ($update){
+            // Redirect back with success message
+            return back()->with('status', 'success');
+        }else{
+            // Redirect back with success message
+            return back()->with('status', 'failed');
+        }
 
         // Redirect back with success message
-        return back()->with('status', 'success');
+        // return back()->with('status', 'success');
     }
 }
