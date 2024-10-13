@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
 
-    Route::get('/home', function () {
+    Route::get('/', function () {
         return view('home.home');
     })->name('home');
 
