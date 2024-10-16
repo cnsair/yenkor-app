@@ -116,6 +116,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('driver.edit-profile.edit') }}">Profile</a>
+                                <a class="dropdown-item" href="#">Change Password</a>
 
                                 <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">
                                     @csrf
@@ -125,7 +126,7 @@
 
                                 <a class="dropdown-item" href="#">Earnings</a>
 
-                                <a class="dropdown-item" href="#">Register Vihicle</a>
+                                <a class="dropdown-item" href="#">Register Vehicle</a>
                             </div>
                         </div>
                     </div>

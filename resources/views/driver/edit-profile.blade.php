@@ -66,7 +66,7 @@
                                 </x-success-msg>
                             @elseif (session('status') === 'failed')
                                 <x-failed-msg>
-                                    {{ __('Please try again.') }}
+                                    {{ __('Something went wrong! Please try again.') }}
                                 </x-failed-msg>
                             @endif
 
