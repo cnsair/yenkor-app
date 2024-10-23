@@ -1,6 +1,6 @@
 
-Sign up form 
-                                 " HTML CODE "
+
+                                 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +34,7 @@ Sign up form
 </body>
 </html>
 
-                                                   " CSS CODE"
+                                                
 
 body {
     font-family: Arial, sans-serif;
@@ -103,8 +103,8 @@ a:hover {
     text-decoration: underline;
 }
 
- Login form 
-                  HTML CODE:
+ 
+                  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -132,7 +132,7 @@ a:hover {
 </body>
 </html>
 
-                            " CSS CODE "
+                            
 
 body {
     font-family: Arial, sans-serif;
