@@ -59,18 +59,12 @@
                     <div class="header__upper--right">
                         <nav class="navigation">
                             <ul>
-                                <!-- <li class="m-0">
-                                    <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-                                            <div class="media">
-                                                <div class="media-body">
-                                                    <h6 class="m-0">Menu</h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                <li class="m-0 active">
+                                    <a href="{{ route('driver.dashboard') }}" aria-expanded="false" active>
+                                        Dashboard       
+                                    </a>
                                 </li>
-                                <li class="m-0">
+                                <!-- <li class="m-0">
                                     <div class="dropdown">
                                         <a href="#" class="dropdown-toggle" id="dropdownMenuButton"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -116,17 +110,15 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('driver.edit-profile.edit') }}">Profile</a>
-                                <a class="dropdown-item" href="#">Change Password</a>
+                                <a class="dropdown-item" href="{{ route('driver.change-password.edit') }}">Change Password</a>
+                                <a class="dropdown-item" href="#">Register Vehicle</a>
+                                <a class="dropdown-item" href="#">Earnings</a>
 
                                 <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">
                                     @csrf
 
                                     <button class="dropdown-item">Logout Now</button>
                                 </form>
-
-                                <a class="dropdown-item" href="#">Earnings</a>
-
-                                <a class="dropdown-item" href="#">Register Vehicle</a>
                             </div>
                         </div>
                     </div>

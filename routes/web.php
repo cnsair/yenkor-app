@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
@@ -103,9 +104,14 @@ Route::group(['middleware' => 'auth'], function() {
                 Route::patch('/edit-profile', [ProfileController::class, 'update'])
                     ->name('edit-profile.update');
 
+                //dashboard:view
+                Route::get('/change-password', function () {
+                    return view('driver.change-password'); })
+                    ->name('change-password.edit');
+
                 //view upload page
-                Route::delete('/edit-profile', [ProfileController::class, 'destroy'])
-                    ->name('edit-profile.destroy');
+                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                    ->name('change-password.update');
 
                 // Route::get('/dashboard', [
                 //     DriverController::class, 'index'

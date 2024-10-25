@@ -28,9 +28,9 @@
                             @endphp
 
                             @if ($file)
-                                <img class="me-3 profile-picture" src="{{ asset($photo_path) }}" alt="partner-img" alt="ProfilePicture" onclick="document.getElementById('profile-photo').click();">
+                                <a href="#"><img class="me-3 profile-picture" src="{{ asset($photo_path) }}" alt="partner-img" alt="ProfilePicture" onclick="document.getElementById('profile-photo').click();"></a>
                             @else
-                                <img class="me-3 profile-picture" src="{{ asset('assets/assets/images/avatar.png') }}" alt="ProfilePicture" onclick="document.getElementById('profile-photo').click();">
+                                <a href="#"><img class="me-3 profile-picture" src="{{ asset('assets/assets/images/avatar.png') }}" alt="ProfilePicture" onclick="document.getElementById('profile-photo').click();"></a>
                             @endif
 
                             <div class="media-body">
@@ -48,14 +48,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    
                     <div class="personal-info">
-                        <!-- <div class="row">
-                            <div class="col-lg-6">
-                                <h4>Edit Profile</h4>
-                            </div>
-                        </div> -->
-
                         <div class="personal-details">
 
                             <x-validation-errors class="mb-4" />
@@ -78,8 +71,8 @@
 
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <label for="firstName">Profile Picture</label>
-                                            <input type="file" name="photo" id="profile-photo" class="form-control text-muted" value="{{ old('photo',Auth()->user()->photo) }}">
+                                            <!-- <label for="firstName">Profile Picture</label> -->
+                                            <input hidden type="file" name="photo" id="profile-photo" class="form-control text-muted" value="{{ old('photo',Auth()->user()->photo) }}">
                                             <x-input-error for="photo" class="mt-2" />
                                         </div>
                                     </div>
@@ -149,9 +142,7 @@
                                         </button>
                                         </div>
                                     </div>
-                            
                                 </div>
-
                             </form>
 
                         </div>

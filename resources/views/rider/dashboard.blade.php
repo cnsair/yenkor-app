@@ -23,7 +23,7 @@
             <h1 class="page-title mb-0">Let's Ride</h1>
             <ol class="breadcrumb">
                 <li><a href="{{ route('rider.dashboard') }}">Home</a></li>
-                <li>Ride with Carrgo</li>
+                <li>Ride with Yenkor</li>
             </ol>
         </div>
     </div>
