@@ -55,6 +55,11 @@ class User extends Authenticatable
         return $this->hasMany(Admin::class);
     }
 
+    // public function vehicle()
+    // {
+    //     return $this->hasMany(Vehicle::class);
+    // }
+
     public function isRider()
     {
         if( $this->role == 0 && $this->is_rider == 1 ) { 

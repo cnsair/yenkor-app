@@ -59,8 +59,8 @@
                     <div class="header__upper--right">
                         <nav class="navigation">
                             <ul>
-                                <li class="m-0 active">
-                                    <a href="{{ route('driver.dashboard') }}" aria-expanded="false" active>
+                                <li class="m-0">
+                                    <a href="{{ route('driver.dashboard') }}" aria-expanded="false">
                                         Dashboard       
                                     </a>
                                 </li>
@@ -111,7 +111,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('driver.edit-profile.edit') }}">Profile</a>
                                 <a class="dropdown-item" href="{{ route('driver.change-password.edit') }}">Change Password</a>
-                                <a class="dropdown-item" href="#">Register Vehicle</a>
+                                <a class="dropdown-item" href="{{ route('driver.register-vehicle.index') }}">Register Vehicle</a>
                                 <a class="dropdown-item" href="#">Earnings</a>
 
                                 <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">

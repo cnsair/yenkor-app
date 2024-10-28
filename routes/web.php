@@ -7,6 +7,7 @@ use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RedirectController;
+use App\Http\Controllers\VehicleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -110,12 +111,13 @@ Route::group(['middleware' => 'auth'], function() {
                     ->name('change-password.edit');
 
                 //view upload page
-                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                Route::patch('/change-password', [
+                    ChangePasswordController::class, 'updatePassword'])
                     ->name('change-password.update');
 
-                // Route::get('/dashboard', [
-                //     DriverController::class, 'index'
-                // ])->name('driver');
+                Route::get('/register-vehicle', [
+                    VehicleController::class, 'index'])
+                    ->name('register-vehicle.index');
 
             });
         });
