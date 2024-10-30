@@ -206,7 +206,7 @@
                                             <h4>My vehicles</h4>
                                         </div>
                                         <div class="col-lg-6 text-end">
-                                            <a href="#" class="button button-dark">Register New Vehicle</a>
+                                            <a href="{{ route('driver.register-vehicle.create') }}" class="button button-dark">Register New Vehicle</a>
                                         </div>
                                     </div>
 

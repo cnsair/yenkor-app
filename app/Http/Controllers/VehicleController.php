@@ -12,7 +12,7 @@ class VehicleController extends Controller
      */
     public function index()
     {
-        return view('driver.register-vehicle');
+        // return view('driver.register-vehicle');
     }
 
     /**
@@ -20,7 +20,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        //
+        return view('driver.register-vehicle');
     }
 
     /**

@@ -92,7 +92,7 @@ class RegisterVehicleForm extends Component
         
         session()->flash('message', 'Vehicle registered successfully!');
         return Redirect()->back()->with('status', 'success');
-     
+
     }
 
     public function render()

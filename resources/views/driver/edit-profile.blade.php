@@ -136,10 +136,10 @@
                                             <x-input-error for="biography" class="mt-2" />
                                         </div>
                                         <!-- <a href="#" class="button button-dark">Save</a> -->
-                                      <div class="align">
-                                        <button class="button button-dark" name="Edit">
-                                            {{ __('Update') }}
-                                        </button>
+                                        <div class="align">
+                                            <button class="button button-dark" name="Edit">
+                                                {{ __('Update') }}
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

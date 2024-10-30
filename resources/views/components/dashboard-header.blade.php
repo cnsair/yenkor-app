@@ -111,7 +111,7 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('driver.edit-profile.edit') }}">Profile</a>
                                 <a class="dropdown-item" href="{{ route('driver.change-password.edit') }}">Change Password</a>
-                                <a class="dropdown-item" href="{{ route('driver.register-vehicle.index') }}">Register Vehicle</a>
+                                <a class="dropdown-item" href="{{ route('driver.register-vehicle.create') }}">Register Vehicle</a>
                                 <a class="dropdown-item" href="#">Earnings</a>
 
                                 <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">

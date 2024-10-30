@@ -105,24 +105,24 @@ Route::group(['middleware' => 'auth'], function() {
                 Route::patch('/edit-profile', [ProfileController::class, 'update'])
                     ->name('edit-profile.update');
 
-                //dashboard:view
+                //change password:view
                 Route::get('/change-password', function () {
                     return view('driver.change-password'); })
                     ->name('change-password.edit');
 
-                //view upload page
+                //update password page
                 Route::patch('/change-password', [
                     ChangePasswordController::class, 'updatePassword'])
                     ->name('change-password.update');
-
+                
+                //Register vehicle
                 Route::get('/register-vehicle', [
-                    VehicleController::class, 'index'])
-                    ->name('register-vehicle.index');
+                    VehicleController::class, 'create'])
+                    ->name('register-vehicle.create');
 
             });
         });
     });
-
 
 
     Route::group(['middleware' => 'admin'], function() {
