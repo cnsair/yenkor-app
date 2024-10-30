@@ -201,33 +201,85 @@
                         
                             <div role="tabpanel" class="tab-pane" id="vehicles">
                                 <div class="vahicles-container">
+
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <!-- <div class="col-lg-6">
                                             <h4>My vehicles</h4>
-                                        </div>
-                                        <div class="col-lg-6 text-end">
+                                        </div> -->
+                                        <div class="col-lg-12 text-end">
                                             <a href="{{ route('driver.register-vehicle.create') }}" class="button button-dark">Register New Vehicle</a>
                                         </div>
-                                    </div>
 
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <h4>BMW 5 <small>"4976ART RU"</small></h4>
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="single-vehicle-container">
-                                                    <img src="{{ asset('assets/assets/images/home/1.webp') }}" alt="Vehicle">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @forelse ( $vehicle_data as $vehicle )
+                                            
+                                            @php
+                                                $vehicle_photo = $vehicle->vehicle_photo;
+                                                $insurance_document = $vehicle->insurance_document;
+                                                $registration_document = $vehicle->registration_document;
 
-                                        <div class="col-lg-6">
-                                            <h4>Audi <small>"4876ORT AU"</small></h4>
-                                            <div class="col-lg-3 col-sm-6">
-                                                <div class="single-vehicle-container">
-                                                    <img src="{{ asset('assets/assets/images/dashboard/vehicle-1.webp') }}" alt="Vehicle">
+                                                $photo = asset('storage/' . $vehicle_photo);
+                                                $insurance_doc = asset('storage/' . $insurance_document);
+                                                $registration_doc = asset('storage/' . $registration_document);
+                                                //$file_ext = pathinfo($vid, PATHINFO_EXTENSION);
+
+                                                $make = $vehicle->make;
+                                                $model = $vehicle->model;
+                                                $year_of_manufacture = $vehicle->year_of_manufacture;
+                                                $license_plate = $vehicle->license_plate;
+                                                $vin = $vehicle->vin;
+                                                $color = $vehicle->color;
+                                                $vehicle_type = $vehicle->vehicle_type;
+                                                $insurance_provider = $vehicle->insurance_provider;
+                                                $insurance_policy_number = $vehicle->insurance_policy_number;
+                                                $insurance_expiration = $vehicle->insurance_expiration;
+                                                $driver_license_number = $vehicle->driver_license_number;
+                                                $license_expiration = $vehicle->license_expiration;
+                                                $seating_capacity = $vehicle->seating_capacity;
+                                                $mileage = $vehicle->mileage;
+                                            @endphp
+
+                                            <div class="col-lg-6">
+                                                <h2>{{ $make }} <small>"{{ $model }}"</small></h2>
+                                                <div class="col-lg-3 col-sm-6">
+                                                    <div class="single-vehicle-container">
+                                                        <img src="{{ $photo }}" alt="Vehicle">
+                                                    </div>
                                                 </div>
+
+                                                <form action="{{ route('driver.vehicle.destroy', ['vehicle' => $vehicle->id]) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+
+                                                    <x-danger-button type="submit" onclick="return confirm('Are you sure you want to permanently delete this vehicle record?');" class="button button-dark">
+                                                        {{ __('Delete') }}
+                                                    </x-danger-button>
+                                                </form>
+
+                                                <p>Year of Manufacture: <small><b>{{ $year_of_manufacture }}</b></small></p>
+                                                <p>License Plate: <small><b>{{ $license_plate }}</b></small></p>
+                                                <p>VIN: <small><b>{{ $vin }}</b></small></p>
+                                                <p>Color: <small><b>{{ $color }}</b></small></p>
+                                                <p>Vehicle Type: <small><b>{{ $vehicle_type }}</b></small></p>
+                                                <p>Insurance Provider: <small><b>{{ $insurance_provider }}</b></small></p>
+                                                <p>Insurance Policy Number: <small><b>{{ $insurance_policy_number }}</b></small></p>
+                                                <p>Insurance Expiration: <small><b>{{ $insurance_expiration }}</b></small></p>
+                                                <p>Driver License Number: <small><b>{{ $driver_license_number }}</b></small></p>
+                                                <p>License Expiration: <small><b>{{ $license_expiration }}</b></small></p>
+                                                <p>Seating Capacity: <small><b>{{ $seating_capacity }}</b></small></p>
+                                                <p>Mileage: <small><b>{{ $mileage }}</b></small></p>
+                                                <p>Insurance Document: 
+                                                    <small><b><a download href="{{ $insurance_doc }}">Download</a> to preview</b></small>
+                                                </p>
+                                                <p>Registration Document: 
+                                                    <small><b><a download href="{{ $registration_doc }}">Download</a> to preview</b></small>
+                                                </p>
                                             </div>
-                                        </div>
+                                        @empty
+                                            <div class="container">
+                                                You've not registered any car yet. Click <a href="{{ route('driver.register-vehicle.create') }}" class="button button-dark">here</a> to register one.
+                                            </div>
+                                        @endforelse
+
                                     </div>
                                 </div>
                             </div>

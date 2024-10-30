@@ -28,8 +28,8 @@ class RegisterVehicleForm extends Component
     }
 
     protected $rules = [
-        'make' => 'required|string|max:255',
-        'model' => 'required|string|max:255',
+        'make' => 'required|string|max:50',
+        'model' => 'required|string|max:50',
         'year_of_manufacture' => 'required|integer|between:1900,', // we'll append currentYear later
         'license_plate' => 'required|string|max:20|unique:vehicles,license_plate',
         'vin' => 'required|string|max:20|unique:vehicles,vin',

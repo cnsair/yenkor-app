@@ -2,6 +2,7 @@
 
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\DashboardRendererController;
 use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
@@ -92,8 +93,10 @@ Route::group(['middleware' => 'auth'], function() {
             Route::name('driver.')->group(function () {
 
                 //dashboard:view
-                Route::get('/dashboard', function () {
-                    return view('driver.dashboard'); })
+                // Route::get('/dashboard', function () {
+                //     return view('driver.dashboard'); })
+                //     ->name('dashboard');
+                Route::get('/dashboard', [DashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
                 //dashboard:view
@@ -111,14 +114,16 @@ Route::group(['middleware' => 'auth'], function() {
                     ->name('change-password.edit');
 
                 //update password page
-                Route::patch('/change-password', [
-                    ChangePasswordController::class, 'updatePassword'])
+                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
                     ->name('change-password.update');
                 
                 //Register vehicle
-                Route::get('/register-vehicle', [
-                    VehicleController::class, 'create'])
+                Route::get('/register-vehicle', [VehicleController::class, 'create'])
                     ->name('register-vehicle.create');
+                
+                //Delete vehicle record
+                Route::delete('/dashboard/{vehicle}', [VehicleController::class, 'destroy'])
+                    ->name('vehicle.destroy');
 
             });
         });

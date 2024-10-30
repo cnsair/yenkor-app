@@ -4,17 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class VehicleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        // return view('driver.register-vehicle');
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -27,14 +20,6 @@ class VehicleController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Vehicle $vehicle)
     {
         //
     }
@@ -58,8 +43,24 @@ class VehicleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Vehicle $vehicle)
+    public function destroy( $vehicle )
     {
-        //
+        $vehicle = Vehicle::find($vehicle);
+        $vehicle->delete();
+
+        // Delete associated uploaded files from storage
+        if ($vehicle->vehicle_photo && Storage::disk('public')->exists($vehicle->vehicle_photo)) {
+            Storage::disk('public')->delete($vehicle->vehicle_photo);
+        }
+    
+        if ($vehicle->insurance_document && Storage::disk('public')->exists($vehicle->insurance_document)) {
+            Storage::disk('public')->delete($vehicle->insurance_document);
+        }
+    
+        if ($vehicle->registration_document && Storage::disk('public')->exists($vehicle->registration_document)) {
+            Storage::disk('public')->delete($vehicle->registration_document);
+        }
+
+        return Redirect()->back()->with('status', 'success');
     }
 }
