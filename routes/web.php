@@ -77,10 +77,23 @@ Route::group(['middleware' => 'auth'], function() {
                     return view('rider.dashboard'); })
                     ->name('dashboard');
 
-                //Rider method calls
-                // Route::get('/dashboard', [
-                //     RiderController::class, 'index'
-                // ])->name('rider');
+                //dashboard:view
+                Route::get('/edit-profile', function () {
+                    return view('rider.edit-profile'); })
+                    ->name('edit-profile.edit');
+
+                //view upload page
+                Route::patch('/edit-profile', [ProfileController::class, 'update'])
+                    ->name('edit-profile.update');
+
+                //change password:view
+                Route::get('/change-password', function () {
+                    return view('rider.change-password'); })
+                    ->name('change-password.edit');
+
+                //update password page
+                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                    ->name('change-password.update');
 
             });
         });

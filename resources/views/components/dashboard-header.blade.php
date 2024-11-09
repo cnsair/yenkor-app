@@ -59,27 +59,25 @@
                     <div class="header__upper--right">
                         <nav class="navigation">
                             <ul>
-                                <li class="m-0">
-                                    <a href="{{ route('driver.dashboard') }}" aria-expanded="false">
-                                        Dashboard       
-                                    </a>
-                                </li>
-                                <!-- <li class="m-0">
-                                    <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle" id="dropdownMenuButton"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <div class="media">
-                                                <div class="media-body">
-                                                    <h6 class="m-0">Analytics <i class="fas fa-angle-down"></i></h6>
-                                                </div>
-                                            </div>
+                                @if ( Auth::user()->isRider() )
+                                    <li class="m-0">
+                                        <a href="{{ route('rider.dashboard') }}" aria-expanded="false">
+                                            Dashboard       
                                         </a>
-                                        <div class="dropdown-menu dropdown-menu-right"
-                                            aria-labelledby="dropdownMenuButton">
-                                            <a class="dropdown-item" href="partner-profile.html">Partner Profile</a>
-                                        </div>
-                                    </div>
-                                </li> -->
+                                    </li>
+                                @elseif ( Auth::user()->isDriver() )
+                                    <li class="m-0">
+                                        <a href="{{ route('driver.dashboard') }}" aria-expanded="false">
+                                            Dashboard       
+                                        </a>
+                                    </li>
+                                @elseif ( Auth::user()->isAdmin() )
+                                    <li class="m-0">
+                                        <a href="{{ route('admin.dashboard') }}" aria-expanded="false">
+                                            Dashboard       
+                                        </a>
+                                    </li>
+                                @endif
                               
                                 <li class="m-0"><a href="#">Help</a></li>
                                 <li class="m-0"><a href="#"><i class="far fa-envelope"></i></a></li>
@@ -109,10 +107,26 @@
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="{{ route('driver.edit-profile.edit') }}">Profile</a>
-                                <a class="dropdown-item" href="{{ route('driver.change-password.edit') }}">Change Password</a>
-                                <a class="dropdown-item" href="{{ route('driver.register-vehicle.create') }}">Register Vehicle</a>
-                                <a class="dropdown-item" href="#">Earnings</a>
+                                
+                                @if ( Auth::user()->isRider() )
+
+                                    <a class="dropdown-item" href="{{ route('rider.edit-profile.edit') }}">Profile</a>
+                                    <a class="dropdown-item" href="{{ route('rider.change-password.edit') }}">Change Password</a>
+                                    <a class="dropdown-item" href="#">Bonus</a>
+
+                                @elseif ( Auth::user()->isDriver() )
+
+                                    <a class="dropdown-item" href="{{ route('driver.edit-profile.edit') }}">Profile</a>
+                                    <a class="dropdown-item" href="{{ route('driver.change-password.edit') }}">Change Password</a>
+                                    <a class="dropdown-item" href="{{ route('driver.register-vehicle.create') }}">Register Vehicle</a>
+                                    <a class="dropdown-item" href="#">Earnings</a>
+
+                                @elseif ( Auth::user()->isAdmin() )
+
+                                    <a class="dropdown-item" href="{{ route('admin.edit-profile.edit') }}">Profile</a>
+                                    <a class="dropdown-item" href="{{ route('admin.change-password.edit') }}">Change Password</a>
+
+                                @endif
 
                                 <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">
                                     @csrf
