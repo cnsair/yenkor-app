@@ -5,18 +5,17 @@
                 <div>
                     <h2 class="how-it-works-title pb-4">How It Works</h2>
                     <p class="how-it-works-text">
-                    Yenkor transforms your public transportation experience by providing a smart and efficient way to find, 
-                    board, and pay for buses. When you open the app, it automatically shows nearby buses registered on the 
-                    platform that are traveling towards your destination. You can view their real-time locations, helping you plan your 
-                    journey better. <br> To ensure a smooth pickup, you can pin your exact location on the app, notifying bus drivers where you 
-                    are waiting at the bus-stop. This eliminates confusion and long waits.<br> Once you board the bus, Yenkor’s 
-                    intelligent system tracks the bus's movement and sets your destination based on your current location. 
-                    This allows both you and the driver to stay updated on the route without needing additional input. <br> As for payments, 
-                    Yenkor makes the process cashless and effortless—simply scan the QR code displayed inside the bus to make an instant 
-                    digital payment. This feature ensures a secure and hassle-free transaction without the need for physical money exchanges. <br> 
-                    With Yenkor, you no longer need to guess when the next bus will arrive or worry about carrying exact change. The app offers 
-                    a comprehensive, user-friendly solution that connects passengers and drivers, making public transportation more predictable, 
-                    reliable, and convenient.
+                    Yenkor revolutionizes your public transportation experience, offering a smart and efficient way to locate, board, 
+                    and pay for buses. When you open the app, it automatically displays nearby buses registered on the platform that 
+                    are heading towards your destination. You can track their real-time locations, helping you plan your journey with 
+                    ease. <br> To streamline pickups, you can pin your exact location within the app, notifying bus drivers where you’ll 
+                    be waiting at the bus stop—eliminating confusion and reducing wait times. Once you board, Yenkor's intelligent system 
+                    automatically tracks the bus's movement and sets your destination based on your current location, keeping both you and 
+                    the driver informed about the route without any extra effort. <br> For payments, Yenkor offers a seamless cashless system. 
+                    Simply scan the QR code inside the bus to make an instant digital payment, ensuring secure and hassle-free transactions 
+                    without the need for physical cash. <br> Say goodbye to guessing bus arrival times or scrambling for exact change. 
+                    Yenkor provides a comprehensive, user-friendly platform that connects passengers and drivers, making public transportation 
+                    more predictable, reliable, and convenient.
                     </p>
                     <a href="#" class="how-it-works-btn button button-dark">Read More</a>
                 </div>

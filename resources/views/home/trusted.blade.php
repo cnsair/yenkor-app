@@ -7,15 +7,13 @@
                         Trusted Cab Services <span class="d-block">in the World</span>
                     </h2>
                     <p>
-                    Yenkor offers a globally trusted cab service designed to make your travel experience reliable, 
-                    efficient, and secure. With just two taps, you can easily book a ride and connect with professional 
-                    drivers near you, ensuring a quick and hassle-free experience. <br> Yenkor allows you to track your driver 
-                    in real-time, providing peace of mind by keeping you informed about their location and estimated time 
-                    of arrival. <br> Our priority is your safety, which is why we only work with trusted drivers who adhere 
-                    to strict safety standards. Whether you're heading to work, running errands, or traveling long 
-                    distances, Yenkor guarantees a seamless and secure journey, making us one of the most trusted 
-                    cab services worldwide. Wherever you are, YENKOR ensures you arrive at your destination safely 
-                    and comfortably.
+                    Yenkor delivers a globally trusted cab service, designed to make your travel experience reliable, 
+                    efficient, and secure. With just two taps, you can book a ride and connect with professional drivers 
+                    nearby, ensuring a smooth and hassle-free journey. <br> Track your driver in real-time to stay updated 
+                    on their location and estimated arrival time, giving you peace of mind. Your safety is our top 
+                    priority—Yenkor partners exclusively with trusted drivers who follow strict safety protocols. <br> Whether 
+                    you’re commuting to work, running errands, or traveling long distances, Yenkor guarantees a seamless and 
+                    secure ride. No matter where you are, Yenkor ensures you reach your destination safely and comfortably.
                     </p>
                     <div class="list-group-flush mb-4">
                         <div class="list-group-item bg-transparent border-bottom-0 p-0">

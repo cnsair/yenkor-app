@@ -69,9 +69,9 @@
                         </div>
                         <div class="testimonial-slide-v-2 testimonial-slide">
                             <p>
-                            "Public transportation used to be stressful, but not anymore with Yenkor. 
-                            The app helps me find the right bus quickly, and the digital payment option 
-                            saves me time and hassle. It’s the best app for commuters!"
+                                "Public transportation used to be stressful, but Yenkor changed everything. 
+                                The app makes it easy to find the right bus quickly, and the digital payment 
+                                feature saves me both time and hassle. It's a game-changer for commuters!"
                             </p>
                             <div class="thmb-row">
                                 <div class="thmb-img">
