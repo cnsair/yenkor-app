@@ -82,7 +82,7 @@
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
                                 </form>
                                 <p class="acclink">Already have an account?
-                                    <a href="{{ route('login') }}">Sign in
+                                    <a href="{{ route('login') }}"> <b>Sign in</b>
                                         <i class="icofont">double_right</i>
                                     </a>
                                 </p>
@@ -146,7 +146,7 @@
                                 </form>
 
                                 <p class="acclink">Already have an account?
-                                    <a href="{{ route('login') }}">Sign in
+                                    <a href="{{ route('login') }}"><b>Sign in</b>
                                         <i class="icofont">double_right</i>
                                     </a>
                                 </p>

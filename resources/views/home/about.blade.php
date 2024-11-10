@@ -87,58 +87,6 @@
     @include('home.counter')
     @include('home.team')
 
-    <style>
-   <style>
-    .dropdown-container {
-        margin-top: 20px;
-    }
-
-    .dropdown-box {
-    background-color: rgba(255, 255, 255, 0.05); /* Low transparency for the background of the box */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Very subtle border */
-    box-shadow: 0 4px 8px rgba(255, 223, 0, 0.1); /* Yellow shadow similar to bee color */
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    justify-content: space-between;
-}
-
-
-    .dropdown-text {
-        color: black; /* Full opacity for the text to remain clearly visible */
-    }
-
-    .dropdown-icon {
-        width: 24px; /* Icon width */
-        height: 24px; /* Icon height */
-        fill: black; /* Full opacity for the icon to remain clearly visible */
-    }
-
-    .dropdown-content {
-        margin-top: 10px;
-    }
-   
-   
-   
-    .dropdown-text-box {
-        background-color: rgba(255, 255, 255, 0.05); /* Very low transparency for the dropdown text box */
-        padding: 10px; /* Padding around text */
-        border-radius: 5px; /* Rounded corners */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for dropdown text */
-    }
-
-    .dropdown-text-content {
-        text-align: justify; /* Justifies the text */
-        margin: 0; /* Remove margin */
-    }
-
-    .justified-text {
-        text-align: justify; /* Justifies the text */
-    }
-</style>
-
-
-
     <script>
         document.querySelector('.dropdown-box').addEventListener('click', function() {
             var dropdownContent = document.getElementById('dropdownContent');
@@ -150,10 +98,13 @@
         });
     </script>
 
+    <!-- 
+    •	Locate Buses: Find nearby buses heading to your destination.
+    •	Pin Your Location: Let drivers know where you're waiting.
+    •	Hop On: Automatically set your destination when the bus departs.
+    •	Pay Digitally: Scan a QR code to pay—no cash needed 
+    -->
+
 @endsection
 
 
-•	Locate Buses: Find nearby buses heading to your destination.
-•	Pin Your Location: Let drivers know where you're waiting.
-•	Hop On: Automatically set your destination when the bus departs.
-•	Pay Digitally: Scan a QR code to pay—no cash needed
