@@ -1,11 +1,14 @@
 <?php
 
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\DashboardRendererController;
 use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RedirectController;
+use App\Http\Controllers\VehicleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -74,10 +77,23 @@ Route::group(['middleware' => 'auth'], function() {
                     return view('rider.dashboard'); })
                     ->name('dashboard');
 
-                //Rider method calls
-                // Route::get('/dashboard', [
-                //     RiderController::class, 'index'
-                // ])->name('rider');
+                //dashboard:view
+                Route::get('/edit-profile', function () {
+                    return view('rider.edit-profile'); })
+                    ->name('edit-profile.edit');
+
+                //view upload page
+                Route::patch('/edit-profile', [ProfileController::class, 'update'])
+                    ->name('edit-profile.update');
+
+                //change password:view
+                Route::get('/change-password', function () {
+                    return view('rider.change-password'); })
+                    ->name('change-password.edit');
+
+                //update password page
+                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                    ->name('change-password.update');
 
             });
         });
@@ -90,8 +106,10 @@ Route::group(['middleware' => 'auth'], function() {
             Route::name('driver.')->group(function () {
 
                 //dashboard:view
-                Route::get('/dashboard', function () {
-                    return view('driver.dashboard'); })
+                // Route::get('/dashboard', function () {
+                //     return view('driver.dashboard'); })
+                //     ->name('dashboard');
+                Route::get('/dashboard', [DashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
                 //dashboard:view
@@ -103,18 +121,26 @@ Route::group(['middleware' => 'auth'], function() {
                 Route::patch('/edit-profile', [ProfileController::class, 'update'])
                     ->name('edit-profile.update');
 
-                //view upload page
-                Route::delete('/edit-profile', [ProfileController::class, 'destroy'])
-                    ->name('edit-profile.destroy');
+                //change password:view
+                Route::get('/change-password', function () {
+                    return view('driver.change-password'); })
+                    ->name('change-password.edit');
 
-                // Route::get('/dashboard', [
-                //     DriverController::class, 'index'
-                // ])->name('driver');
+                //update password page
+                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                    ->name('change-password.update');
+                
+                //Register vehicle
+                Route::get('/register-vehicle', [VehicleController::class, 'create'])
+                    ->name('register-vehicle.create');
+                
+                //Delete vehicle record
+                Route::delete('/dashboard/{vehicle}', [VehicleController::class, 'destroy'])
+                    ->name('vehicle.destroy');
 
             });
         });
     });
-
 
 
     Route::group(['middleware' => 'admin'], function() {

@@ -1,4 +1,4 @@
-@extends('layouts.app-driver')
+@extends('layouts.app-rider')
 
 @section('content')
 
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-sm-6 right-text">
-                    <h2>Driver</h2>
+                    <h2>Rider</h2>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                                 </x-failed-msg>
                             @endif
 
-                            <form method="POST" action="{{ route('driver.edit-profile.update', ['update' => $user_id]) }}" enctype="multipart/form-data" class="mt-6 space-y-6" onsubmit="return editF(this);">
+                            <form method="POST" action="{{ route('rider.edit-profile.update', ['update' => $user_id]) }}" enctype="multipart/form-data" class="mt-6 space-y-6" onsubmit="return editF(this);">
                                 @csrf
                                 @method('patch')
 
@@ -132,7 +132,7 @@
                                     <div class="col-lg-12">
                                         <div class="form-group">
                                             <label for="aboutDesc">Write a little about you (500 characters max)</label>
-                                            <textarea class="form-control text-muted" id="aboutDesc" name="biography">{{ !empty(Auth()->user()->biography) ? old('biography', Auth()->user()->biography) : 'Please write something like: I am a driver for safety from Kumasi, married with 3 children...' }}</textarea>
+                                            <textarea class="form-control text-muted" id="aboutDesc" name="biography">{{ !empty(Auth()->user()->biography) ? old('biography', Auth()->user()->biography) : 'E.g. I am 5 foot tall and reside in Accra' }}</textarea>
                                             <x-input-error for="biography" class="mt-2" />
                                         </div>
                                         <!-- <a href="#" class="button button-dark">Save</a> -->

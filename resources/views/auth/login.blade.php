@@ -56,15 +56,10 @@
                                         Sign in
                                     </button>
 
-
-                                    <!-- <div class="form-floating mb-3 mt-3">
-                                        <input class="w-100 h-50 btn btn-xs btn-dark" type="submit" data-submit="...Signing in" 
-                                            name="signIn" value="SIGN-IN">
-                                    </div> -->
                                 </form>
 
                                 <p class="acclink">Don't have an account?
-                                    <a href="{{ route('register') }}">Sign up
+                                    <a href="{{ route('register') }}"> <b>Sign up</b>
                                         <i class="icofont">double_right</i>
                                     </a>
                                 </p>

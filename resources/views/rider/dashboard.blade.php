@@ -1,32 +1,17 @@
-<!doctype html>
+@extends('layouts.app-rider')
 
-<html class="no-js" lang="en">
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Rider - {{ Auth()->user()->firstname }}</title>
-    <meta name="description" content>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/yenkor-favicon.ico">
-
-    <x-css-links></x-css-links>
-</head>
-
-<body class="theme-2">
-    
-<x-dashboard-header></x-dashboard-header>
+@section('content')
 
     <div class="breadcrumb-div">
         <div class="container">
             <h1 class="page-title mb-0">Let's Ride</h1>
             <ol class="breadcrumb">
                 <li><a href="{{ route('rider.dashboard') }}">Home</a></li>
-                <li>Ride with Carrgo</li>
+                <li>Ride with Yenkor</li>
             </ol>
         </div>
     </div>
+    
     <div class="div-padding our-vehicles-div">
         <div class="container">
             <div class="row">
@@ -145,12 +130,5 @@
             </div>
         </div>
     </div>
-    
-    <x-dashboard-footer></x-dashboard-footer>
 
-    <x-dashboard-js-script></x-dashboard-js-script>
-
-</body>
-
-
-</html>
+@endsection
