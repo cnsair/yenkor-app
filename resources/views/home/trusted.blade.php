@@ -7,9 +7,15 @@
                         Trusted Cab Services <span class="d-block">in the World</span>
                     </h2>
                     <p>
-                        Curabitur placerat cursus nisi nec pharetra. Proin quis tortor
-                        fringilla, placerat nisi nec, auctor ex. Donec commodo orci ac
-                        lectus mattis, sed interdum sem scelerisque.
+
+                    Yenkor delivers a globally trusted cab service, designed to make your travel experience reliable, 
+                    efficient, and secure. With just two taps, you can book a ride and connect with professional drivers 
+                    nearby, ensuring a smooth and hassle-free journey. <br> Track your driver in real-time to stay updated 
+                    on their location and estimated arrival time, giving you peace of mind. Your safety is our top 
+                    priority—Yenkor partners exclusively with trusted drivers who follow strict safety protocols. <br> Whether 
+                    you’re commuting to work, running errands, or traveling long distances, Yenkor guarantees a seamless and 
+                    secure ride. No matter where you are, Yenkor ensures you reach your destination safely and comfortably.
+
                     </p>
                     <div class="list-group-flush mb-4">
                         <div class="list-group-item bg-transparent border-bottom-0 p-0">

@@ -5,9 +5,10 @@
                     <h2 class="div-title">Download Yenkor</h2>
                     <h3>Download the Yenkor mobile application</h3>
                     <p>
-                        Nunc volutpat tincidunt est a scelerisque. Aliquam erat volutpat.
-                        Donec varius ex in justo pharetra, nec mollis erat porta. Donec
-                        sit amet facilisis neque. In hac habitasse platea dictumst.
+                        Discover a smarter way to travel with Yenkor—the app that simplifies public transportation, making it seamless, 
+                        reliable, and convenient. Locate nearby buses, pin your pickup location for easy boarding, and make secure digital 
+                        payments, all from one app. Say goodbye to long waits and uncertainty at the bus stop. Download Yenkor today and 
+                        enjoy a stress-free, efficient daily commute!
                     </p>
                     <div class="app-btns download-buttons">
                         <a href="#" aria-label="download-apple-btn"><img src="assets/assets/images/download-1.webp" alt></a>
