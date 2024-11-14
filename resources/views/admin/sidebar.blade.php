@@ -23,7 +23,7 @@
                     <li class="mm-active">
                         <a href="#">
                             <i class="metismenu-icon pe-7s-rocket"></i>
-                            Dashboards
+                            Dashboardszz
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul class="mm-show" >

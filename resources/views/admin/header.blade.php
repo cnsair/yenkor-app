@@ -179,12 +179,11 @@
                                                         </div>
                                                     </div>
                                                     <div class="widget-content-right mr-2">
-                                                            <form method="POST" action="{{ route('logout') }}" style="text-decoration: none;">
-                                                                @csrf
+                                                        <form method="POST" action="{{ route('logout') }}">
+                                                            @csrf
 
-                                                                <button class="btn-pill btn-shadow btn-shine btn btn-focus">Logout Now</button>
-                                                            </form>
-                                                        
+                                                            <button class="btn-pill btn-shadow btn-shine btn btn-focus">Logout Now</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

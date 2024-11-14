@@ -3,7 +3,7 @@
 @section('content')
     
     <div class="app-inner-layout__wrapper">
-        <div class="app-inner-layout__sidebar">
+        <!-- <div class="app-inner-layout__sidebar">
             <div class="app-layout__sidebar-inner dropdown-menu-rounded">
                 <div class="nav flex-column">
                     <div class="nav-item-header text-primary nav-item">
@@ -20,7 +20,7 @@
                     <a class="dropdown-item" href="statistics-dashboard.html">Statistics</a>
                 </div>                            
             </div>
-        </div>
+        </div> -->
         <div class="app-inner-layout__content">
             <div class="tab-content">
                 <div class="container-fluid">
@@ -289,7 +289,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-sm-12 col-lg-6">
                             <div class="card-hover-shadow-2x mb-3 card">
                                 <div class="card-header-tab card-header">
@@ -464,7 +464,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="card no-shadow bg-transparent no-border rm-borders mb-3">
                         <div class="card">
                             <div class="no-gutters row">
