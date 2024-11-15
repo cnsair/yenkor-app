@@ -19,7 +19,6 @@
                 <div class="col-sm-6">
                     <div class="passanger-name">
                         <div class="media">
-                            
                             @php
                                 $user_id = Auth::user()->id;
                                 

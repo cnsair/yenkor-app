@@ -61,17 +61,17 @@
                                     <div class="icon-wrapper rounded-circle">
                                         <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
                                         <i class="lnr-graduation-hat text-white"></i></div>
-                                    <div class="widget-chart-content">
-                                        <div class="widget-subheading">Invested Dividents</div>
-                                        <div class="widget-numbers"><span>9M</span></div>
-                                        <div class="widget-description opacity-8 text-focus">
-                                            Grow Rate:
-                                            <span class="text-info pl-1">
-                            <i class="fa fa-angle-down"></i>
-                            <span class="pl-1">14.1%</span>
-                        </span>
+                                        <div class="widget-chart-content">
+                                            <div class="widget-subheading">Invested Dividents</div>
+                                            <div class="widget-numbers"><span>9M</span></div>
+                                            <div class="widget-description opacity-8 text-focus">
+                                                Grow Rate:
+                                                <span class="text-info pl-1">
+                                                    <i class="fa fa-angle-down"></i>
+                                                    <span class="pl-1">14.1%</span>
+                                                </span>
+                                            </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="divider m-0 d-md-none d-sm-block"></div>
                             </div>
@@ -96,14 +96,13 @@
                         </div>
                         <div class="text-center d-block p-3 card-footer">
                             <button class="btn-pill btn-wide fsize-1 btn btn-primary">
-            <span class="mr-2 opacity-7">
-                <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
-            </span>
+                                <span class="mr-2 opacity-7">
+                                    <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
+                                </span>
                                 <span class="mr-1">View Complete Report</span>
                             </button>
                         </div>
                     </div>
-
                     
                     <div class="row">
                         <div class="col-md-6 col-xl-3">
@@ -202,39 +201,8 @@
                     <div class="card mb-3">
                         <div class="card-header-tab card-header">
                             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>Easy
-                                Dynamic Tables
-                            </div>
-                            <div class="btn-actions-pane-right actions-icon-btn">
-                                <div class="btn-group dropdown">
-                                    <button type="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false"
-                                            class="btn-icon btn-icon-only btn btn-link"><i
-                                            class="pe-7s-menu btn-icon-wrapper"></i></button>
-                                    <div tabindex="-1" role="menu" aria-hidden="true"
-                                            class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu">
-                                        <h6 tabindex="-1" class="dropdown-header">
-                                            Header</h6>
-                                        <button type="button" tabindex="0" class="dropdown-item"><i
-                                                class="dropdown-icon lnr-inbox"> </i><span>Menus</span>
-                                        </button>
-                                        <button type="button" tabindex="0" class="dropdown-item"><i
-                                                class="dropdown-icon lnr-file-empty"> </i><span>Settings</span>
-                                        </button>
-                                        <button type="button" tabindex="0" class="dropdown-item"><i
-                                                class="dropdown-icon lnr-book"> </i><span>Actions</span>
-                                        </button>
-                                        <div tabindex="-1" class="dropdown-divider"></div>
-                                        <div class="p-3 text-right">
-                                            <button class="mr-2 btn-shadow btn-sm btn btn-link">View
-                                                Details
-                                            </button>
-                                            <button class="mr-2 btn-shadow btn-sm btn btn-primary">
-                                                Action
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <i class="header-icon lnr-laptop-phone mr-3 text-muted opacity-6"> </i>
+                                Registered Users
                             </div>
                         </div>
                         <div class="card-body">
@@ -242,229 +210,71 @@
                                     class="table table-hover table-striped table-bordered">
                                 <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>Name/ID</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>User Type</th>
+                                    <th>Status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
-                                <tr>
-                                    <td>Michael Bruce</td>
-                                    <td>Javascript Developer</td>
-                                    <td>Singapore</td>
-                                    <td>29</td>
-                                    <td>2011/06/27</td>
-                                    <td>$183,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Donna Snider</td>
-                                    <td>Customer Support</td>
-                                    <td>New York</td>
-                                    <td>27</td>
-                                    <td>2011/01/25</td>
-                                    <td>$112,000</td>
-                                </tr>
+                                    @forelse ( $user_data as $user )
+                                        <tr>
+                                            <td>
+                                                {{ $user->firstname ." ". $user->lastname }} 
+                                                <small><b>{{ $user->yenkor_id }}</b></small>
+                                            </td>
+                                            <td>{{ $user->phone }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>
+                                                @if ($user->gender)
+                                                    {{ $user->gender }}
+                                                @else
+                                                    N/A
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ( $user->is_rider == 1 )
+                                                    Rider
+                                                @elseif ( $user->is_driver == 1 )
+                                                   Driver
+                                                @elseif ( $user->is_admin == 1 )
+                                                    Admin
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($user->status == "4")
+                                                    <button class="btn btn-sm btn-success">Active</button>
+                                                @elseif ($user->status == "3")
+                                                    <button class="btn btn-sm btn-primary">Inactive</button>
+                                                @elseif ($user->status == "2")
+                                                    <button class="btn btn-sm btn-default">Susupended</button>
+                                                @elseif ($user->status == "1")
+                                                    <button class="btn btn-sm btn-danger">Banned</button>
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <div class="container">
+                                            There's nothing to display yet. Please check back later.
+                                        </div>
+                                    @endforelse
                                 </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>Name/ID</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>User Type</th>
+                                    <th>Status</th>
                                 </tr>
                                 </tfoot>
                             </table>
                         </div>
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-sm-12 col-lg-6">
-                            <div class="card-hover-shadow-2x mb-3 card">
-                                <div class="card-header-tab card-header">
-                                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                        <i class="header-icon lnr-database icon-gradient bg-malibu-beach"> </i>Tasks
-                                        List
-                                    </div>
-                                    <div class="btn-actions-pane-right text-capitalize actions-icon-btn">
-                                        <div class="btn-group dropdown">
-                                            <button type="button" data-toggle="dropdown"
-                                                    aria-haspopup="true" aria-expanded="false"
-                                                    class="btn-icon btn-icon-only btn btn-link"><i
-                                                    class="pe-7s-menu btn-icon-wrapper"></i></button>
-                                            <div tabindex="-1" role="menu" aria-hidden="true"
-                                                    class="dropdown-menu-right rm-pointers dropdown-menu-shadow dropdown-menu-hover-link dropdown-menu">
-                                                <h6 tabindex="-1"
-                                                    class="dropdown-header">
-                                                    Header</h6>
-                                                <button type="button" tabindex="0"
-                                                        class="dropdown-item"><i
-                                                        class="dropdown-icon lnr-inbox"> </i><span>Menus</span>
-                                                </button>
-                                                <button type="button" tabindex="0"
-                                                        class="dropdown-item"><i
-                                                        class="dropdown-icon lnr-file-empty"> </i><span>Settings</span>
-                                                </button>
-                                                <button type="button" tabindex="0"
-                                                        class="dropdown-item"><i
-                                                        class="dropdown-icon lnr-book"> </i><span>Actions</span>
-                                                </button>
-                                                <div tabindex="-1" class="dropdown-divider"></div>
-                                                <div class="p-3 text-right">
-                                                    <button class="mr-2 btn-shadow btn-sm btn btn-link">
-                                                        View Details
-                                                    </button>
-                                                    <button class="mr-2 btn-shadow btn-sm btn btn-primary">
-                                                        Action
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="scroll-area-lg">
-                                    <div class="scrollbar-container">
-                                        <div class="p-2">
-                                            <ul class="todo-list-wrapper list-group list-group-flush">
-                                                <li class="list-group-item">
-                                                    <div class="todo-indicator bg-warning"></div>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-2">
-                                                                <div class="custom-checkbox custom-control">
-                                                                    <input type="checkbox"
-                                                                            id="exampleCustomCheckbox12"
-                                                                            class="custom-control-input"><label
-                                                                        class="custom-control-label"
-                                                                        for="exampleCustomCheckbox12">&nbsp;</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left">
-                                                                <div class="widget-heading">Wash the car
-                                                                    <div class="badge badge-danger ml-2">
-                                                                        Rejected
-                                                                    </div>
-                                                                </div>
-                                                                <div class="widget-subheading"><i>Written
-                                                                    by Bob</i></div>
-                                                            </div>
-                                                            <div class="widget-content-right widget-content-actions">
-                                                                <button class="border-0 btn-transition btn btn-outline-success">
-                                                                    <i class="fa fa-check"></i>
-                                                                </button>
-                                                                <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                    <i class="fa fa-trash-alt"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                
-                                                <li class="list-group-item">
-                                                    <div class="todo-indicator bg-primary"></div>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-2">
-                                                                <div class="custom-checkbox custom-control">
-                                                                    <input type="checkbox"
-                                                                            id="exampleCustomCheckbox4"
-                                                                            class="custom-control-input"><label
-                                                                        class="custom-control-label"
-                                                                        for="exampleCustomCheckbox4">&nbsp;</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Badge on the
-                                                                    right task
-                                                                </div>
-                                                                <div class="widget-subheading">This task
-                                                                    has show on hover actions!
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-right widget-content-actions">
-                                                                <button class="border-0 btn-transition btn btn-outline-success">
-                                                                    <i class="fa fa-check"></i>
-                                                                </button>
-                                                            </div>
-                                                            <div class="widget-content-right ml-3">
-                                                                <div class="badge badge-pill badge-success">
-                                                                    Latest Task
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                
-                                                <li class="list-group-item">
-                                                    <div class="todo-indicator bg-success"></div>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-2">
-                                                                <div class="custom-checkbox custom-control">
-                                                                    <input type="checkbox"
-                                                                            id="exampleCustomCheckbox3"
-                                                                            class="custom-control-input"><label
-                                                                        class="custom-control-label"
-                                                                        for="exampleCustomCheckbox3">&nbsp;</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Development
-                                                                    Task
-                                                                </div>
-                                                                <div class="widget-subheading">Finish
-                                                                    React ToDo List App
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-right">
-                                                                <div class="badge badge-warning mr-2">
-                                                                    69
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-right">
-                                                                <button class="border-0 btn-transition btn btn-outline-success">
-                                                                    <i class="fa fa-check"></i>
-                                                                </button>
-                                                                <button class="border-0 btn-transition btn btn-outline-danger">
-                                                                    <i class="fa fa-trash-alt"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-block text-right card-footer">
-                                    <button class="mr-2 btn btn-link btn-sm">Cancel</button>
-                                    <button class="btn btn-primary">Add Task</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6">
-                            <div class="card-hover-shadow-2x mb-3 card">
-                                <div class="card-header-tab card-header">
-                                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                                        <i class="header-icon lnr-printer icon-gradient bg-ripe-malin"> </i>Chat
-                                        Box
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                    
                     <div class="card no-shadow bg-transparent no-border rm-borders mb-3">
                         <div class="card">
                             <div class="no-gutters row">

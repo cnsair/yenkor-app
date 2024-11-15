@@ -21,22 +21,20 @@
                 <ul class="vertical-nav-menu">
                     <li class="app-sidebar__heading">Menu</li>
                     <li class="mm-active">
-                        <a href="#">
+                        <a href="{{ route('admin.dashboard') }}">
                             <i class="metismenu-icon pe-7s-rocket"></i>
-                            Dashboardszz
+                            Dashboard
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
-                        <ul class="mm-show" >
-                            <li><a  class="mm-active" href="index-2.html">Analytics</a></li>
-                            <li><a href="management-dashboard.html">Management</a></li>
-                            <li><a href="advertisement-dashboard.html">Advertisement</a></li>
-                            <li><a href="helpdesk-dashboard.html">Helpdesk</a></li>
-                            <li><a href="monitoring-dashboard.html">Monitoring</a></li>
-                            <li><a href="crypto-dashboard.html">Cryptocurrency</a></li>
-                            <li><a href="pm-dashboard.html">Project Management</a></li>
-                            <li><a href="product-dashboard.html">Product</a></li>
-                            <li><a href="statistics-dashboard.html">Statistics</a></li>
-                        </ul>
+                        <a  class="mm-active" href="index-2.html">Analytics</a>
+                        <a href="management-dashboard.html">Management</a>
+                        <a href="advertisement-dashboard.html">Advertisement</a>
+                        <a href="helpdesk-dashboard.html">Helpdesk</a>
+                        <a href="monitoring-dashboard.html">Monitoring</a>
+                        <a href="crypto-dashboard.html">Cryptocurrency</a>
+                        <a href="pm-dashboard.html">Project Management</a>
+                        <a href="product-dashboard.html">Product</a>
+                        <a href="statistics-dashboard.html">Statistics</a>
                     </li>
                     <li>
                         <a href="#">

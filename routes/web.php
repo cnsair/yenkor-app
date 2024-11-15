@@ -3,6 +3,7 @@
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DashboardRendererController;
+use App\Http\Controllers\Admin\AdminDashboardRendererController;
 use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
 use App\Http\Controllers\Admin\AdminController;
@@ -106,13 +107,10 @@ Route::group(['middleware' => 'auth'], function() {
             Route::name('driver.')->group(function () {
 
                 //dashboard:view
-                // Route::get('/dashboard', function () {
-                //     return view('driver.dashboard'); })
-                //     ->name('dashboard');
                 Route::get('/dashboard', [DashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
-                //dashboard:view
+                // Edit Profile
                 Route::get('/edit-profile', function () {
                     return view('driver.edit-profile'); })
                     ->name('edit-profile.edit');
@@ -147,9 +145,12 @@ Route::group(['middleware' => 'auth'], function() {
         Route::prefix('admin')->group(function () {
             Route::name('admin.')->group(function () {
 
-                //view analytics page
+                // Dashboard
                 Route::get('/dashboard', function () {
                     return view('admin.dashboard'); })
+                    ->name('dashboard');
+
+                Route::get('/dashboard', [AdminDashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
                 //Admin method calls

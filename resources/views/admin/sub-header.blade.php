@@ -2,10 +2,10 @@
     <div class="inner-bar-left">
         <ul class="nav">
             <li class="nav-item">
-                <a href="#" class="nav-link show-menu-btn">
+                <!-- <a href="#" class="nav-link show-menu-btn">
                     <i class="fa fa-align-left mr-2"></i>
                     <span class="hide-text-md">Show shortcuts</span>
-                </a>
+                </a> -->
                 <a href="#" class="nav-link close-menu-btn">
                     <i class="fa fa-align-right mr-2"></i>
                     <span class="hide-text-md">Close shortcuts</span>
@@ -17,7 +17,7 @@
         <ul class="nav">
             <li class="nav-item">
                 <a href="javascript:void(0);" class="nav-link open-right-drawer">
-                    <span class="hide-text-md">Show right drawer</span>
+                    <span class="hide-text-md">Show Server Information</span>
                     <i class="fa fa-align-right ml-2"></i>
                 </a>
             </li>
