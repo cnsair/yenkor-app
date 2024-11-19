@@ -3,24 +3,6 @@
 @section('content')
     
     <div class="app-inner-layout__wrapper">
-        <!-- <div class="app-inner-layout__sidebar">
-            <div class="app-layout__sidebar-inner dropdown-menu-rounded">
-                <div class="nav flex-column">
-                    <div class="nav-item-header text-primary nav-item">
-                        Dashboard Shortcuts
-                    </div>
-                    <a class="dropdown-item active" href="analytics-dashboard.html">Analytics</a>
-                    <a class="dropdown-item" href="management-dashboard.html">Management</a>
-                    <a class="dropdown-item" href="advertisement-dashboard.html">Advertisement</a>
-                    <a class="dropdown-item" href="index-2.html">Helpdesk</a>
-                    <a class="dropdown-item" href="monitoring-dashboard.html">Monitoring</a>
-                    <a class="dropdown-item" href="crypto-dashboard.html">Cryptocurrency</a>
-                    <a class="dropdown-item" href="pm-dashboard.html">Project Management</a>
-                    <a class="dropdown-item" href="product-dashboard.html">Product</a>
-                    <a class="dropdown-item" href="statistics-dashboard.html">Statistics</a>
-                </div>                            
-            </div>
-        </div> -->
         <div class="app-inner-layout__content">
             <div class="tab-content">
                 <div class="container-fluid">
@@ -41,7 +23,8 @@
                                 <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
                                     <div class="icon-wrapper rounded-circle">
                                         <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
-                                        <i class="lnr-laptop-phone text-dark opacity-8"></i></div>
+                                        <i class="lnr-laptop-phone text-dark opacity-8"></i>
+                                    </div>
                                     <div class="widget-chart-content">
                                         <div class="widget-subheading">Cash Deposits</div>
                                         <div class="widget-numbers">1,7M</div>
@@ -79,16 +62,19 @@
                                 <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
                                     <div class="icon-wrapper rounded-circle">
                                         <div class="icon-wrapper-bg opacity-9 bg-success"></div>
-                                        <i class="lnr-apartment text-white"></i></div>
+                                        <i class="lnr-apartment text-white"></i>
+                                    </div>
                                     <div class="widget-chart-content">
                                         <div class="widget-subheading">Capital Gains</div>
-                                        <div class="widget-numbers text-success"><span>$563</span></div>
+                                        <div class="widget-numbers text-success">
+                                            <span>$563</span>
+                                        </div>
                                         <div class="widget-description text-focus">
                                             Increased by
                                             <span class="text-warning pl-1">
-                            <i class="fa fa-angle-up"></i>
-                            <span class="pl-1">7.35%</span>
-                        </span>
+                                                <i class="fa fa-angle-up"></i>
+                                                <span class="pl-1">7.35%</span>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -219,7 +205,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ( $user_data as $user )
+                                    @foreach ( $user_data as $user )
                                         <tr>
                                             <td>
                                                 {{ $user->firstname ." ". $user->lastname }} 
@@ -255,11 +241,7 @@
                                                 @endif
                                             </td>
                                         </tr>
-                                    @empty
-                                        <div class="container">
-                                            There's nothing to display yet. Please check back later.
-                                        </div>
-                                    @endforelse
+                                    @endforeach
                                 </tbody>
                                 <tfoot>
                                 <tr>

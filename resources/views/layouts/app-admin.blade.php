@@ -17,7 +17,12 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
+    <!-- Main CSS -->
     <link href="{{ asset('assets/admin/css/main.07a59de7b920cd76b874.css') }}" rel="stylesheet">
+
+    <!-- FontType and Icons CSS -->
+	<link type="text/css" href="{{ asset('assets/admin/icon-font-7-stroke/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}" rel="stylesheet">
+	<link type="text/css" href="{{ asset('assets/admin/icon-font-7-stroke/pe-icon-7-stroke/css/helper.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="app-container app-theme-gray">

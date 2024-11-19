@@ -15,13 +15,13 @@
             </span>
         </button>
         <div class="app-header__menu">
-        <span>
-            <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                <span class="btn-icon-wrapper">
-                    <i class="fa fa-ellipsis-v fa-w-6"></i>
-                </span>
-            </button>
-        </span>
+            <span>
+                <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
+                    <span class="btn-icon-wrapper">
+                        <i class="fa fa-ellipsis-v fa-w-6"></i>
+                    </span>
+                </button>
+            </span>
         </div>
     </div>
 </div>
@@ -30,7 +30,7 @@
     <div class="page-title-heading">
         ADMINISTRATOR
         <div class="page-title-subheading">
-            Signed In as as Admin
+            Signed in as as {{ Auth()->user()->firstname." ".Auth()->user()->lastname }}
         </div>
     </div>
     <div class="app-header-right">

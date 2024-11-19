@@ -19,34 +19,52 @@
         <div class="scrollbar-sidebar scrollbar-container">
             <div class="app-sidebar__inner">
                 <ul class="vertical-nav-menu">
-                    <li class="app-sidebar__heading">Menu</li>
+                    <li class="app-sidebar__heading">Admin Panel</li>
                     <li class="mm-active">
                         <a href="{{ route('admin.dashboard') }}">
-                            <i class="metismenu-icon pe-7s-rocket"></i>
+                            <i class="metismenu-icon pe-7s-culture"></i>
                             Dashboard
-                            <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
-                        <a  class="mm-active" href="index-2.html">Analytics</a>
-                        <a href="management-dashboard.html">Management</a>
-                        <a href="advertisement-dashboard.html">Advertisement</a>
-                        <a href="helpdesk-dashboard.html">Helpdesk</a>
-                        <a href="monitoring-dashboard.html">Monitoring</a>
-                        <a href="crypto-dashboard.html">Cryptocurrency</a>
-                        <a href="pm-dashboard.html">Project Management</a>
-                        <a href="product-dashboard.html">Product</a>
-                        <a href="statistics-dashboard.html">Statistics</a>
+                        <a href="#index-2.html">
+                            <i class="metismenu-icon pe-7s-users"></i>
+                            Users
+                        </a>
+                        <a href="#index-2.html">
+                            <i class="metismenu-icon pe-7s-cash"></i>
+                            Finance
+                        </a>
+                        <a href="#index-2.html">
+                            <i class="metismenu-icon pe-7s-graph3"></i>
+                            App Log
+                        </a>
+                        <a href="#index-2.html">
+                            <i class="metismenu-icon pe-7s-news-paper"></i>
+                            Blog
+                        </a>
+                        <a href="#index-2.html">
+                            <i class="metismenu-icon pe-7s-mail"></i>
+                            Feedback
+                        </a>
+                        <a href="#index-2.html">
+                            <i class="metismenu-icon pe-7s-cloud-upload"></i>
+                            Uploads
+                        </a>
                     </li>
                     <li>
                         <a href="#">
                             <i class="metismenu-icon pe-7s-browser"></i>
-                            Pages
+                            Others
                             <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                         </a>
                         <ul>
                             <li>
-                                <a href="pages-login.html">
+                                <a href="#pages">
+                                    <i class="metismenu-icon pe-7s-vehicle"></i>
+                                    Driver
+                                </a>
+                                <a href="#pages">
                                     <i class="metismenu-icon"></i>
-                                    Login
+                                    Rider
                                 </a>
                             </li>
                         </ul>
