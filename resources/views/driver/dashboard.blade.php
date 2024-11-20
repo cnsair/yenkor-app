@@ -37,7 +37,6 @@
                                 <h2 class="mt-0">{{ Auth()->user()->firstname .' '.Auth()->user()->lastname }}</h2>
                                 <p>{{ 'ID: ' . Auth()->user()->yenkor_id }}</p>
                                 <p>{{ 'Email: ' . Auth()->user()->email }}</p>
-                                
                                 <a class="btn btn-secondary" style="color: #fffddd" href="{{ route('driver.edit-profile.edit') }}">Edit Profile</a>
                             </div>
                         </div>

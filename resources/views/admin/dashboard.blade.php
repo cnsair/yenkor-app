@@ -10,7 +10,7 @@
                         <div class="card-header-tab card-header">
                             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                 <i class="header-icon lnr-charts icon-gradient bg-happy-green"> </i>
-                                Portfolio Performance
+                                Audit Trail
                             </div>
                             <div class="btn-actions-pane-right text-capitalize">
                                 <button class="btn-wide btn-outline-2x mr-md-2 btn btn-outline-focus btn-sm">
@@ -23,17 +23,16 @@
                                 <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
                                     <div class="icon-wrapper rounded-circle">
                                         <div class="icon-wrapper-bg opacity-10 bg-warning"></div>
-                                        <i class="lnr-laptop-phone text-dark opacity-8"></i>
+                                        <i class="pe-7s-mouse text-dark opacity-8"></i>
                                     </div>
                                     <div class="widget-chart-content">
-                                        <div class="widget-subheading">Cash Deposits</div>
+                                        <div class="widget-subheading">Total Clicks</div>
                                         <div class="widget-numbers">1,7M</div>
                                         <div class="widget-description opacity-8 text-focus">
-                                            <div class="d-inline text-danger pr-1">
+                                            <!-- <div class="d-inline text-danger pr-1">
                                                 <i class="fa fa-angle-down"></i>
                                                 <span class="pl-1">54.1%</span>
-                                            </div>
-                                            less earnings
+                                            </div>less earnings -->
                                         </div>
                                     </div>
                                 </div>
@@ -43,16 +42,16 @@
                                 <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
                                     <div class="icon-wrapper rounded-circle">
                                         <div class="icon-wrapper-bg opacity-9 bg-danger"></div>
-                                        <i class="lnr-graduation-hat text-white"></i></div>
+                                        <i class="pe-7s-users text-white"></i></div>
                                         <div class="widget-chart-content">
-                                            <div class="widget-subheading">Invested Dividents</div>
+                                            <div class="widget-subheading">Registered Users</div>
                                             <div class="widget-numbers"><span>9M</span></div>
                                             <div class="widget-description opacity-8 text-focus">
-                                                Grow Rate:
+                                                <!-- Grow Rate:
                                                 <span class="text-info pl-1">
                                                     <i class="fa fa-angle-down"></i>
                                                     <span class="pl-1">14.1%</span>
-                                                </span>
+                                                </span> -->
                                             </div>
                                         </div>
                                 </div>
@@ -62,19 +61,19 @@
                                 <div class="card no-shadow rm-border bg-transparent widget-chart text-left">
                                     <div class="icon-wrapper rounded-circle">
                                         <div class="icon-wrapper-bg opacity-9 bg-success"></div>
-                                        <i class="lnr-apartment text-white"></i>
+                                        <i class="pe-7s-map-2 text-white"></i>
                                     </div>
                                     <div class="widget-chart-content">
-                                        <div class="widget-subheading">Capital Gains</div>
+                                        <div class="widget-subheading">Unique Clicks</div>
                                         <div class="widget-numbers text-success">
                                             <span>$563</span>
                                         </div>
                                         <div class="widget-description text-focus">
-                                            Increased by
+                                            <!-- Increased by
                                             <span class="text-warning pl-1">
                                                 <i class="fa fa-angle-up"></i>
                                                 <span class="pl-1">7.35%</span>
-                                            </span>
+                                            </span> -->
                                         </div>
                                     </div>
                                 </div>
@@ -90,7 +89,7 @@
                         </div>
                     </div>
                     
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-6 col-xl-3">
                             <div class="card mb-3 widget-chart widget-chart2 text-left card-btm-border card-shadow-success border-success">
                                 <div class="widget-chat-wrapper-outer">
@@ -183,7 +182,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    
                     <div class="card mb-3">
                         <div class="card-header-tab card-header">
                             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">

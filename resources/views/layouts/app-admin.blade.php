@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Admin - {{ Auth()->user()->firstname }}</title>
+    <title>{{ Auth()->user()->firstname }}</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
     />
@@ -39,7 +39,7 @@
 
                 <div class="app-inner-layout app-inner-layout-page">
 
-                    @include('admin.sub-header')
+                    {{-- @include('admin.sub-header') --}}
                     
                     @yield('content')
                     
@@ -47,13 +47,13 @@
             </div>
 
             @include('admin.footer')
-            
+
         </div>
     </div>
 
 </div>
 
-@include('admin.server-components')
+{{-- @include('admin.server-components') --}}
 
 <div class="app-drawer-overlay d-none animated fadeIn"></div>
 

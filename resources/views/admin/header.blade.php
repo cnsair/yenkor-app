@@ -2,11 +2,9 @@
     <div class="app-header__logo">
 
         @if ( Auth::user()->isAdmin() )
-
             <a href="{{ route('admin.dashboard') }}">
                 <img src="{{ asset('assets/assets/images/logo-main.webp') }}" data-toggle="tooltip" data-placement="bottom" title="Yenkor Admin" alt="Site Logo">
             </a>
-
         @endif
 
         <button type="button" class="hamburger hamburger--elastic mobile-toggle-sidebar-nav">
@@ -153,9 +151,22 @@
                     <div class="widget-content-left">
                         <div class="btn-group">
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                <img width="42" class="rounded" src="{{ asset('assets/admin/images/avatars/3.jpg') }}" 
-                                    alt="{{ Auth()->user()->firstname }}">
-                                <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                            
+                                @php
+                                    $user_id = Auth::user()->id;
+                                    $file = Auth()->user()->profile_photo_path;
+                                    $photo_path  = asset('storage/' . $file);
+                                @endphp
+
+                                @if ($file)
+                                    <img width="42" class="rounded" src="{{ asset($photo_path) }}" alt="{{ Auth()->user()->firstname }}">
+                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                @else
+                                    <img width="42" class="rounded" src="{{ asset('assets/assets/images/avatar.png') }}" 
+                                        alt="{{ Auth()->user()->firstname }}">
+                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                                @endif
+
                             </a>
                             <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-menu-header">
@@ -167,9 +178,12 @@
                                             <div class="widget-content p-0">
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left mr-3">
-                                                        <img width="42" class="rounded-circle"
-                                                            src="{{ asset('assets/admin/images/avatars/3.jpg') }}" 
-                                                            alt="{{ Auth()->user()->firstname }}">
+
+                                                        @if ($file)
+                                                            <img width="42" class="rounded-circle" src="{{ asset($photo_path) }}" alt="{{ Auth()->user()->firstname }}">
+                                                        @else
+                                                            <img width="42" class="rounded-circle" src="{{ asset('assets/assets/images/avatar.png') }}" alt="{{ Auth()->user()->firstname }}">
+                                                        @endif
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">
@@ -191,34 +205,26 @@
                                     </div>
                                 </div>
                                 
-                                <ul class="nav flex-column">
+                                <!-- <ul class="nav flex-column">
                                     <li class="nav-item-divider mb-0 nav-item"></li>
-                                </ul>
+                                </ul> -->
                                 <div class="grid-menu grid-menu-2col">
                                     <div class="no-gutters row">
                                         <div class="col-sm-6">
-                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
-                                                <i class="pe-7s-chat icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
-                                                Message Inbox
+                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success">
+                                                <i class="pe-7s-settings icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
+                                                Profile Settings
                                             </button>
                                         </div>
                                         <div class="col-sm-6">
-                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-danger">
-                                                <i class="pe-7s-ticket icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
-                                                <b>Support Tickets</b>
+                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
+                                                <i class="pe-7s-lock icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
+                                                <b>Change Password</b>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <ul class="nav flex-column">
-                                    <li class="nav-item-divider nav-item">
-                                    </li>
-                                    <li class="nav-item-btn text-center nav-item">
-                                        <button class="btn-wide btn btn-primary btn-sm">
-                                            Open Messages
-                                        </button>
-                                    </li>
-                                </ul> -->
+
                             </div>
                         </div>
                     </div>

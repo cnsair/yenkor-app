@@ -35,7 +35,7 @@
                         </a>
                         <a href="#index-2.html">
                             <i class="metismenu-icon pe-7s-graph3"></i>
-                            App Log
+                            Audit Trail
                         </a>
                         <a href="#index-2.html">
                             <i class="metismenu-icon pe-7s-news-paper"></i>
