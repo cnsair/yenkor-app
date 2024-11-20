@@ -1,78 +1,71 @@
 # Terms of Service
 
 
-Conditions Générales d’Utilisation
+
+Terms and Conditions of Use
 
 1. Introduction
-Bienvenue sur Yenkor APP , une plateforme de covoiturage visant à connecter conducteurs et passagers au Ghana. En utilisant cette application, vous acceptez sans réserve les présentes Conditions Générales d’Utilisation (CGU). Si vous n'acceptez pas ces termes, veuillez ne pas utiliser l'application.
+Welcome to Yenkor APP, a ridesharing platform aimed at connecting drivers and passengers in Ghana. By using this application, you unconditionally accept these Terms and Conditions of Use (T&C). If you do not accept these terms, please do not use the application.
 
-2. Définitions
+2. Definitions
 
-Application : La plateforme numérique proposée par Yenkor APP.
+Application: The digital platform offered by Yenkor APP.
 
-Utilisateur : Toute personne utilisant l’application, y compris les conducteurs et passagers.
+User: Any person using the application, including drivers and passengers.
 
-Conducteur : Personne proposant des trajets via l’application.
+Driver: Person offering rides via the application.
 
-Passager : Personne réservant un trajet via l’application.
+Passenger: Person booking a ride via the application.
 
-Service : Les fonctionnalités de covoiturage fournies par l’application.
+Service: The ridesharing features provided by the application.
 
+3. Registration and Access to the Service
 
-3. Inscription et Accès au Service
+To access the service, the user must create an account with accurate information.
 
-Pour accéder au service, l’utilisateur doit créer un compte avec des informations exactes.
+Drivers must provide supporting documents: valid driving license, vehicle registration and insurance.
 
-Les conducteurs doivent fournir des justificatifs : permis de conduire valide, immatriculation du véhicule et assurance.
+Access to the service is reserved for persons aged 18 years or above.
 
-L’accès au service est réservé aux personnes âgées de 18 ans ou plus.
+ 4. User Obligations
 
+Drivers agree to abide by the Ghanaian Highway Code and maintain their vehicles in good condition.
 
-4. Obligations des Utilisateurs
+Passengers must respect the booking times and the driver.
 
-Les conducteurs s’engagent à respecter le Code de la route ghanéen et à maintenir leur véhicule en bon état.
+Any misuse or fraudulent use of the application will result in immediate suspension of the account.
 
-Les passagers doivent respecter les horaires de réservation et le conducteur.
+5. Payment and Fees
 
-Toute utilisation abusive ou frauduleuse de l’application entraînera une suspension immédiate du compte.
+Payments for rides are made through the application using secure methods.
 
+A commission of [x%] is applied to the ride amount to cover service fees.
 
-5. Paiement et Frais
+Refunds are possible in the event of a problem validated by the support team.
 
-Les paiements pour les trajets sont effectués via l’application à l’aide de méthodes sécurisées.
+6. Platform Liability
 
-Une commission de [x%] est appliquée sur le montant du trajet pour couvrir les frais de service.
+Yenkor APP acts only as an intermediary between drivers and passengers.
 
-Les remboursements sont possibles en cas de problème validé par l’équipe de support.
+The platform declines all responsibility in the event of an accident, delay or dispute between users.
 
+Users assume full responsibility for their interactions and mutual commitments.
 
-6. Responsabilité de la Plateforme
+ 7. Dispute Resolution
 
-Yenkor APP agit uniquement comme un intermédiaire entre conducteurs et passagers.
+In the event of a dispute, the parties must first attempt to resolve the issue amicably.
 
-La plateforme décline toute responsabilité en cas d’accident, retard ou litige entre les utilisateurs.
+If no agreement is reached, the dispute will be submitted to the competent courts of Ghana.
 
-Les utilisateurs assument l’entière responsabilité de leurs interactions et engagements mutuels.
+8. Modification of the Terms
 
+Yenkor APP reserves the right to modify these T&Cs at any time. Users will be notified of the changes via the application.
 
-7. Résolution des Litiges
+9. Account Termination
 
-En cas de litige, les parties doivent d’abord tenter de résoudre le problème à l’amiable.
+The user may delete their account at any time via the application settings.
 
-Si aucun accord n’est trouvé, le litige sera soumis aux juridictions compétentes du Ghana.
+Yenkor APP may suspend or terminate an account in the event of a violation of these terms.
 
-
-8. Modification des Conditions
-
-Yenkor APP se réserve le droit de modifier ces CGU à tout moment. Les utilisateurs seront notifiés des changements via l’application.
-
-
-9. Résiliation du Compte
-
-L’utilisateur peut supprimer son compte à tout moment via les paramètres de l’application.
-
-Yenkor APP  peut suspendre ou résilier un compte en cas de violation des présentes conditions.
-
-
-10. Droit Applicable
-Ces termes sont régis par les lois en vigueur au Ghana.
+10. Applicable Law
+These terms are governed by the laws in force in Ghana.
