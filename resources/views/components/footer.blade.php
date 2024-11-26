@@ -43,7 +43,7 @@
                         <ul>
                             <li><a href="{{ route('book-ride') }}">Book a Ride</a></li>
                             <li><a href="{{ route('register') }}">Become a Driver</a></li>
-                            <li><a href="{{ route('contact') }}">Contact Us</a></li>
+                            <li><a href="{{ route('home.contact') }}">Contact Us</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
                             <li><a href="#">Privacy policy</a></li>
                         </ul>
