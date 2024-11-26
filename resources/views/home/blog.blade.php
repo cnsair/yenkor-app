@@ -51,7 +51,7 @@
                                 Handshake scrum project learning curve termsheet buzz
                                 bandwidth alpha pivot analytics supply.
                             </p>
-                            <span class="posted-on">May 3rd, 2020, by <a href="#" title>Admin</a></span>
+                            <span class="posted-on">May 2nd, 2020, by <a href="#" title>Admin</a></span>
                         </div>
                     </div>
 

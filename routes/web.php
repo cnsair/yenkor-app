@@ -3,7 +3,7 @@
 use App\Actions\Fortify\UpdateUserProfileInformation;
 use App\Http\Controllers\Rider\RiderController;
 use App\Http\Controllers\Driver\DriverController;
-use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RedirectController;
 use App\Models\User;
@@ -120,21 +120,22 @@ Route::group(['middleware' => 'auth'], function() {
     Route::group(['middleware' => 'admin'], function() {
         Route::prefix('admin')->group(function () {
             Route::name('admin.')->group(function () {
-
+    
                 //view analytics page
                 Route::get('/dashboard', function () {
                     return view('admin.dashboard'); })
                     ->name('dashboard');
-
-                //Admin method calls
-                // Route::get('/admin/dashboard', [
-                //     AdminController::class, 'index'
-                // ])->name('admin.admin');
-
+    
+                // Add these routes for the Edit Profile page
+                Route::get('/edit-profile', [AdminController::class, 'editProfile'])
+                    ->name('edit-profile.edit');
+    
+                Route::patch('/edit-profile', [AdminController::class, 'updateProfile'])
+                    ->name('edit-profile.update');
             });
         });
     });
-
+    
 
 });
 
@@ -151,6 +152,13 @@ Route::middleware([
     })->name('dashboard');
 
 });
+
+use App\Http\Controllers\BlogController;
+
+Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/admin/blogs', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/', [BlogController::class, 'index'])->name('home');
+
 
 
 
