@@ -12,6 +12,7 @@ use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\VehicleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GuestMessageController;
 
 
 
@@ -179,15 +180,17 @@ Route::middleware([
 
 });
 
+// Routes for guest messages
+Route::get('/contact-us', function () {
+    return view('home.contact-us');
+})->name('home.contact');
 
+Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('contact-us.store');
 
-
-
-
-
-
-
-
+// Routes for admin to view messages
+Route::middleware('auth')->group(function () {
+    Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
+});
 
 
 
