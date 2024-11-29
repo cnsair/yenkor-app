@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('contact') }}">
+                <a class="nav-link" href="{{ route('home.contact') }}">
                     <i class="fas fa-map-marker-alt"></i>Contact Us</a>
             </li>
         </ul>
