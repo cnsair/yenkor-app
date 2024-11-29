@@ -152,15 +152,12 @@ Route::middleware([
 
 });
 
+use App\Http\Controllers\BlogController;
 
-
-
-
-
-
-
-
-
+Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/admin/blogs', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/', [BlogController::class, 'index'])->name('home');
+Route::get('/', [BlogController::class, 'index'])->name('home')->middleware('auth');
 
 
 
