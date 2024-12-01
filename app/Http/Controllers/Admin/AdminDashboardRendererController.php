@@ -10,7 +10,7 @@ class AdminDashboardRendererController extends \App\Http\Controllers\Controller
     public function dashboardRenderer(){
         // where('type', 1)
         $user_data = User::query()->orderBy('id', 'desc')
-                                    ->limit(50)->get();      
+                                    ->limit(100)->get();      
 
         return view('admin.dashboard')
             ->with('user_data', $user_data);
