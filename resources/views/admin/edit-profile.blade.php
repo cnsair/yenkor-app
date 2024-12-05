@@ -32,6 +32,36 @@
                                         $photo_path = $image ? asset('storage/' . $image) : asset('assets/assets/images/avatar.png');
                                     @endphp
 
+                                    <form id="RegisterValidation" method="POST" action="{{ route('admin.edit-profile.update', ['update' => $user->id]) }}" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PATCH') 
+
+                                    <div class="card-shadow-primary profile-responsive card-border mb-3 card">
+                                        <div class="dropdown-menu-header">
+                                            <div class="dropdown-menu-header-inner bg-dark">
+                                                <div class="menu-header-image" style="background-image: url('assets/images/dropdown-header/abstract1.jpg')"></div>
+                                                <div class="menu-header-content btn-pane-right">
+                                                    <div class="avatar-icon-wrapper mr-2 avatar-icon-xl">
+                                                        <div class="avatar-icon">
+                                                            <img src="{{ $photo_path }}" alt="Avatar">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <h5 class="menu-header-title">
+                                                            {{ $user->firstname ." ". $user->lastname }}
+                                                        </h5>
+                                                        <h6 class="menu-header-subtitle">
+                                                            {{ $user->admin_role ?? "N/A" }}
+                                                        </h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input class="form-control-file" name="photo" type="file" id="profile-photo" value="{{ old('photo',$user->photo) }}" />
+                                        <x-input-error for="photo" class="mt-2" />
+                                    </div>
+
                                     <x-validation-errors class="mb-4" />
 
                                     @if (session('status') === 'success')
@@ -43,10 +73,6 @@
                                             {{ __('Something went wrong! Please try again.') }}
                                         </x-failed-msg>
                                     @endif
-
-                                    <form id="RegisterValidation" method="POST" action="{{ route('admin.edit-profile.update', ['update' => $user->id]) }}" enctype="multipart/form-data">
-                                    @csrf
-                                    @method('PATCH') 
 
                                     <div class="card-body">
 
@@ -144,7 +170,7 @@
                                         <!-- /.card-body -->
 
                                         <div class="card-footer" align="center">
-                                            <input type="submit" class="btn btn-success btn-block" value="UPDATE">
+                                            <input type="submit" class="mb-2 mr-2 btn-hover-shine btn btn-shadow btn-focus btn-block" value="UPDATE">
                                             <div class="clearfix"></div>
                                         </div>
 

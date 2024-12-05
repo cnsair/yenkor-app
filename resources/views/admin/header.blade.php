@@ -3,7 +3,7 @@
 
         @if ( Auth::user()->isAdmin() )
             <a href="{{ route('admin.dashboard') }}">
-                <img src="{{ asset('assets/assets/images/logo-main.webp') }}" data-toggle="tooltip" data-placement="bottom" title="Yenkor Admin" alt="Site Logo">
+                <img src="{{ asset('assets/assets/images/logo-main.webp') }}" data-toggle="tooltip" data-placement="bottom" title="Admin" alt="Site Logo">
             </a>
         @endif
 
@@ -153,20 +153,15 @@
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
                             
                                 @php
-                                    $user_id = Auth::user()->id;
-                                    $file = Auth()->user()->profile_photo_path;
-                                    $photo_path  = asset('storage/' . $file);
+                                    $user = Auth::user();
+
+                                    $image = $user->profile_photo_path;
+                                    $photo_path = $image ? asset('storage/' . $image) : asset('assets/assets/images/avatar.png');
                                 @endphp
 
-                                @if ($file)
-                                    <img width="42" class="rounded" src="{{ asset($photo_path) }}" alt="{{ Auth()->user()->firstname }}">
-                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                @else
-                                    <img width="42" class="rounded" src="{{ asset('assets/assets/images/avatar.png') }}" 
-                                        alt="{{ Auth()->user()->firstname }}">
-                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
-                                @endif
-
+                                <img width="42" class="rounded" src="{{ $photo_path }}" alt="{{ $user->firstname }}">
+                                <i class="fa fa-angle-down ml-2 opacity-8"></i>
+                              
                             </a>
                             <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
                                 <div class="dropdown-menu-header">
@@ -179,17 +174,14 @@
                                                 <div class="widget-content-wrapper">
                                                     <div class="widget-content-left mr-3">
 
-                                                        @if ($file)
-                                                            <img width="42" class="rounded-circle" src="{{ asset($photo_path) }}" alt="{{ Auth()->user()->firstname }}">
-                                                        @else
-                                                            <img width="42" class="rounded-circle" src="{{ asset('assets/assets/images/avatar.png') }}" alt="{{ Auth()->user()->firstname }}">
-                                                        @endif
+                                                        <img width="42" class="rounded-circle" src="{{ $photo_path }}" alt="{{ $user->firstname }}">
+
                                                     </div>
                                                     <div class="widget-content-left">
                                                         <div class="widget-heading">
-                                                            {{ Auth()->user()->firstname." ".Auth()->user()->lastname }}
+                                                            {{ $user->firstname ." ". $user->lastname }}
                                                         </div>
-                                                        <div class="widget-subheading opacity-8">Yenkor Ghana
+                                                        <div class="widget-subheading opacity-8">Ghana
                                                         </div>
                                                     </div>
                                                     <div class="widget-content-right mr-2">
@@ -220,11 +212,7 @@
                                             <a href="{{ route('admin.change-password.edit') }}" class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning" >
                                                 <i class="pe-7s-lock icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
                                                 Change Password
-                                            </a> 
-                                            <!-- <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
-                                                <i class="pe-7s-lock icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
-                                                <b>Change Password</b>
-                                            </button> -->
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

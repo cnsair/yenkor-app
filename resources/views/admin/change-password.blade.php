@@ -68,7 +68,7 @@
                                                 </div>
                                             </div>
                                             <div class="card-footer text-center">    
-                                                <input style="color: #fff" type="submit" class="btn btn-success btn-block" value="UPDATE PASSWORD">
+                                                <input style="color: #fff" type="submit" class="mb-2 mr-2 btn-hover-shine btn btn-shadow btn-focus btn-block" value="UPDATE PASSWORD">
                                             </div>
                                         </div>
                                     </form>
