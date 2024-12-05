@@ -17,10 +17,11 @@ class ProfileController extends Controller
             'lastname' => ['required', 'string', 'regex:/^\S*$/u', 'max:30'],
             'email' => ['required', 'email', 'max:100', Rule::unique('users')->ignore(Auth::user())],
             'phone' => ['string', 'max:25', Rule::unique('users')->ignore(Auth::user())],
-            'gender' => ['string', 'max:20'],
-            'biography' => ['string', 'max:500'],
-            'd_o_b' => ['string', 'max:20'],
+            'gender' => ['nullable','string', 'max:20'],
+            'biography' => ['nullable','string', 'max:500'],
+            'd_o_b' => ['nullable','string', 'max:20'],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:5120'],
+            'admin_role' => ['nullable', 'string', 'max:40'],
         ]);
 
         // Update the user's profile using Jetstream's UpdateUserProfileInformation class

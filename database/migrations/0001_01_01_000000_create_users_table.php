@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('phone')->unique();
             $table->string('email')->unique();
+            $table->string('admin_role')->nullable();
             $table->boolean('is_admin')->default(false);
             $table->boolean('is_driver')->default(false);
             $table->boolean('is_rider')->default(false);

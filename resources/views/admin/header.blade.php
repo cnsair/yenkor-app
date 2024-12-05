@@ -211,16 +211,20 @@
                                 <div class="grid-menu grid-menu-2col">
                                     <div class="no-gutters row">
                                         <div class="col-sm-6">
-                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success">
+                                            <a href="{{ route('admin.edit-profile.edit') }}" class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-success" >
                                                 <i class="pe-7s-settings icon-gradient bg-amy-crisp btn-icon-wrapper mb-2"></i>
                                                 Profile Settings
-                                            </button>
+                                            </a> 
                                         </div>
                                         <div class="col-sm-6">
-                                            <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
+                                            <a href="{{ route('admin.change-password.edit') }}" class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning" >
+                                                <i class="pe-7s-lock icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
+                                                Change Password
+                                            </a> 
+                                            <!-- <button class="btn-icon-vertical btn-transition btn-transition-alt pt-2 pb-2 btn btn-outline-warning">
                                                 <i class="pe-7s-lock icon-gradient bg-love-kiss btn-icon-wrapper mb-2"></i>
                                                 <b>Change Password</b>
-                                            </button>
+                                            </button> -->
                                         </div>
                                     </div>
                                 </div>

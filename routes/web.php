@@ -146,18 +146,26 @@ Route::group(['middleware' => 'auth'], function() {
         Route::prefix('admin')->group(function () {
             Route::name('admin.')->group(function () {
 
-                // Dashboard
-                Route::get('/dashboard', function () {
-                    return view('admin.dashboard'); })
-                    ->name('dashboard');
-
                 Route::get('/dashboard', [AdminDashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
-                //Admin method calls
-                // Route::get('/admin/dashboard', [
-                //     AdminController::class, 'index'
-                // ])->name('admin.admin');
+                    // Edit Profile
+                Route::get('/edit-profile', function () {
+                    return view('admin.edit-profile'); })
+                    ->name('edit-profile.edit');
+    
+                //view upload page
+                Route::patch('/edit-profile', [ProfileController::class, 'update'])
+                    ->name('edit-profile.update');
+
+                //change password:view
+                Route::get('/change-password', function () {
+                    return view('admin.change-password'); })
+                    ->name('change-password.edit');
+
+                //update password page
+                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                    ->name('change-password.update');
 
             });
         });
@@ -190,19 +198,4 @@ Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('cont
 // Routes for admin to view messages
 Route::middleware('auth')->group(function () {
     Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
-});
-
-
-
-
-Route::group(['middleware' => 'auth'], function() {
-
-    // Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
-    //     Route::resource('lesson', LessonController::class);
-    // });
-
-    // Route::group(['middleware' => 'role:rider', 'prefix' => 'rider', 'as' => 'rider.'], function(){
-    //     Route::resource('rider', RiderController::class);
-    // });
-
 });

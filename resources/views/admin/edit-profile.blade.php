@@ -1,140 +1,170 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
-    <style>
-        /* Internal CSS Styling */
-        body {
-            font-family: Arial, sans-serif; /* Use a clean font */
-            background-color: #f8f9fa; /* Light background color */
-            margin: 0;
-            padding: 20px; /* Add some padding */
-        }
+@extends('layouts.app-admin')
 
-        .app-inner-layout__wrapper {
-            max-width: 800px; /* Set a max width for the card */
-            margin: auto; /* Center the card */
-            padding-top: 50px; /* Top padding for spacing */
-        }
+@section('content')
 
-        .card {
-            border: 1px solid #ddd; /* Border for the card */
-            border-radius: 5px; /* Rounded corners */
-            background-color: #fff; /* White background for the card */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            padding: 30px; /* Increased padding for the card */
-        }
+<div class="app-inner-layout__wrapper">
+    <div class="app-inner-layout__content">
+        <div class="tab-content">
 
-        .card-header {
-            background-color: #000; /* Black background for header */
-            color: #fff; /* White text color */
-            padding: 15px; /* Increased padding for the header */
-            border-top-left-radius: 5px; /* Rounded corners for the header */
-            border-top-right-radius: 5px; /* Rounded corners for the header */
-        }
-
-        .card-header-title {
-            display: flex; /* Align items in the header */
-            align-items: center; /* Center items vertically */
-            font-size: 1.5rem; /* Larger font size for header title */
-        }
-
-        .header-icon {
-            margin-right: 15px; /* Space between icon and text */
-        }
-
-        .form-group {
-            margin-bottom: 25px; /* Increased space between form groups */
-        }
-
-        /* Add margin to create space between the header and the first form group */
-        .form-group.name-field {
-            margin-top: 20px; /* Adjust the top margin for the name field */
-        }
-
-        label {
-            font-weight: bold; /* Make labels bold */
-        }
-
-        input.form-control,
-        input.form-control-file {
-            border: 1px solid #ced4da; /* Border for input fields */
-            border-radius: 4px; /* Rounded corners */
-            padding: 12px; /* Increased padding for input fields */
-            width: 100%; /* Full width for input fields */
-        }
-
-        .btn-primary {
-            background-color: #000; /* Black button color */
-            color: white; /* White text color */
-            border: none; /* No border */
-            padding: 12px 25px; /* Increased button padding */
-            border-radius: 4px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor */
-            font-size: 1rem; /* Font size for button */
-        }
-
-        .btn-primary:hover {
-            background-color: #444; /* Darker shade on hover */
-        }
-
-        img {
-            margin-top: 15px; /* Space above the profile image */
-        }
-    </style>
-</head>
-<body>
-    <div class="app-inner-layout__wrapper">
-        <div class="app-inner-layout__content">
-            <div class="container-fluid">
-                <div class="mb-3 card">
-                    <div class="card-header-tab card-header">
-                        <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
-                            <i class="header-icon lnr-user icon-gradient bg-happy-green"> </i>
-                            Edit Profile
+            <div class="tab-pane tabs-animation fade show active" id="tab-content-0" role="tabpanel">
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                        <div class="col-sm-12">
+                            <div class="card mb-3">
+                                <div class="card-header-tab card-header">
+                                    <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                        <i class="header-icon pe-7s-settings mr-3 text-muted opacity-6"> </i>
+                                        Profile Settings                              
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="main-card mb-3 card">
+                                <div class="card-body">
+
+                                    @php
+                                        $user = Auth::user();
+
+                                        $image = $user->profile_photo_path;
+                                        $photo_path = $image ? asset('storage/' . $image) : asset('assets/assets/images/avatar.png');
+                                    @endphp
+
+                                    <x-validation-errors class="mb-4" />
+
+                                    @if (session('status') === 'success')
+                                        <x-success-msg>
+                                            {{ __('Profile updated successfully.') }}
+                                        </x-success-msg>
+                                    @elseif (session('status') === 'failed')
+                                        <x-failed-msg>
+                                            {{ __('Something went wrong! Please try again.') }}
+                                        </x-failed-msg>
+                                    @endif
+
+                                    <form id="RegisterValidation" method="POST" action="{{ route('admin.edit-profile.update', ['update' => $user->id]) }}" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PATCH') 
+
+                                    <div class="card-body">
+
+                                        <div class="form-group has-label">
+                                            <label>
+                                                Admin Role
+                                            </label>
+                                            <select class="form-control" name="admin_role">
+                                                <option {{ (old('admin_role', $user->admin_role) == 'none') ? 'selected' : '' }} value="none">None</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'ceo') ? 'selected' : '' }} value="none" value="none">CEO</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'customer-support') ? 'selected' : '' }} value="customer-support">Customer Support</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'software-developer') ? 'selected' : '' }} value="software-developer">Software Developer</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'product-designer') ? 'selected' : '' }} value="product-designer">Product Designer</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'graphic-designer') ? 'selected' : '' }} value="graphic-designer">Graphic Designer</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'product-manager') ? 'selected' : '' }} value="product-manager">Product Manager</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'mobile-developer') ? 'selected' : '' }} value="mobile-developer">Mobile Developer</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'dev-ops') ? 'selected' : '' }} value="dev-ops" value="dev-ops">Dev Ops</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'database-management') ? 'selected' : '' }} value="database-management">Database Management</option>
+                                                <option {{ (old('admin_role', $user->admin_role) == 'cyber-security') ? 'selected' : '' }} value="cyber-security">Cyber Security</option>
+                                            </select>
+                                            <x-input-error for="admin_role" class="mt-2" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                Firstname <star class="star">*</star>
+                                            </label>
+                                            <input class="form-control" name="firstname" type="text" value="{{ old('firstname',$user->firstname) }}" required />
+                                            <x-input-error for="firstname" class="mt-2" />
+                                        </div>
+                                                            
+                                        <div class="form-group">
+                                            <label>
+                                                Lastname <star class="star">*</star>
+                                            </label>
+                                            <input class="form-control" name="lastname" type="text" value="{{ old('lastname',$user->lastname) }}" required />
+                                            <x-input-error for="lastname" class="mt-2" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                Email <star class="star">*</star>
+                                            </label>
+                                            <input class="form-control" name="email" type="text" value="{{ old('email',$user->email) }}" required />
+                                            <x-input-error for="email" class="mt-2" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                Phone
+                                            </label>
+                                            <input class="form-control" name="phone" type="number" value="{{ old('phone',$user->phone) }}" required />
+                                            <x-input-error for="phone" class="mt-2" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                Gender
+                                            </label>
+                                            <div class="col-lg-8">
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="gender" value="Male" {{ old('gender',$user->gender) == 'Male' ? 'checked' : '' }} /> Male
+                                                    </label> 
+                                                    &nbsp;&nbsp;&nbsp;
+                                                    <label>
+                                                        <input type="radio" name="gender" value="Female" {{ old('gender',$user->gender) == 'Female' ? 'checked' : '' }} /> Female
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label>
+                                                Biography
+                                            </label>
+                                            <textarea class="form-control" name="biography">{{ old('biography',$user->biography) }}</textarea>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>
+                                                DoB
+                                            </label>
+                                            <input class="form-control" name="d_o_b" type="date" value="{{ old('phone',$user->d_o_b) }}" data-inputmask-alias="datetime" data-inputmask-inputformat="mm/dd/yyyy" />
+                                            <x-input-error for="d_o_b" class="mt-2" />
+                                        </div>
+                                    
+                                        <div class="clearfix"></div>
+
+                                        <div class="card-category form-category">
+                                            <star class="star">*</star> Required fields
+                                        </div>
+
+                                        </div>
+                                        <!-- /.card-body -->
+
+                                        <div class="card-footer" align="center">
+                                            <input type="submit" class="btn btn-success btn-block" value="UPDATE">
+                                            <div class="clearfix"></div>
+                                        </div>
+
+                                    </form>
+                                
+                                </div>
+                            </div>
+                            <!-- /.mini-card mb3 card -->
+                        </div>
+                        <!--/.col (left) -->
+        
                     </div>
-                    <div class="card-body">
-                        <form action="{{ route('admin.edit-profile.update') }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('PATCH') <!-- Change PUT to PATCH to match your route definition -->
-
-                            <!-- Name Field -->
-                            <div class="form-group name-field">
-                                <label for="name">Name</label>
-                                <input type="text" name="name" class="form-control" value="{{ old('name', $admin->name) }}" required>
-                            </div>
-
-                            <!-- Email Field -->
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" name="email" class="form-control" value="{{ old('email', $admin->email) }}" required>
-                            </div>
-
-                            <!-- Password Field -->
-                            <div class="form-group">
-                                <label for="password">New Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Leave blank to keep current password">
-                            </div>
-
-                            <!-- Profile Image Upload -->
-                            <div class="form-group">
-                                <label for="profile_image">Profile Image</label>
-                                <input type="file" name="profile_image" class="form-control-file">
-                                @if($admin->profile_image)
-                                <img src="{{ asset('storage/'.$admin->profile_image) }}" alt="Profile Image" width="100px">
-                                @endif
-                            </div>
-
-                            <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary">Update Profile</button>
-                        </form>
-                    </div>
+                    <!-- /.row -->
                 </div>
             </div>
+
+
         </div>
     </div>
-</body>
-</html>
+
+</div>
+
+@endsection

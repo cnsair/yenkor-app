@@ -29,10 +29,11 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'lastname' => ['required', 'string', 'regex:/^\S*$/u', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'phone' => ['string', 'max:20', Rule::unique('users')->ignore($user->id)],
-            'gender' => ['string', 'max:20'],
-            'biography' => ['string', 'max:500'],
-            'd_o_b' => ['string', 'max:20'],
+            'gender' => ['nullable', 'string', 'max:20'],
+            'biography' => ['nullable', 'string', 'max:500'],
+            'd_o_b' => ['nullable', 'string', 'max:20'],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:5120'],
+            'admin_role' => ['nullable', 'string', 'max:40'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -51,6 +52,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'gender' => $input['gender'],
                 'biography' => $input['biography'],
                 'd_o_b' => $input['d_o_b'],
+                'admin_role' => $input['admin_role'],
             ])->save();
         }
     }
