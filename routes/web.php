@@ -146,26 +146,18 @@ Route::group(['middleware' => 'auth'], function() {
         Route::prefix('admin')->group(function () {
             Route::name('admin.')->group(function () {
 
+                // Dashboard
+                Route::get('/dashboard', function () {
+                    return view('admin.dashboard'); })
+                    ->name('dashboard');
+
                 Route::get('/dashboard', [AdminDashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
-                    // Edit Profile
-                Route::get('/edit-profile', function () {
-                    return view('admin.edit-profile'); })
-                    ->name('edit-profile.edit');
-    
-                //view upload page
-                Route::patch('/edit-profile', [ProfileController::class, 'update'])
-                    ->name('edit-profile.update');
-
-                //change password:view
-                Route::get('/change-password', function () {
-                    return view('admin.change-password'); })
-                    ->name('change-password.edit');
-
-                //update password page
-                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
-                    ->name('change-password.update');
+                //Admin method calls
+                // Route::get('/admin/dashboard', [
+                //     AdminController::class, 'index'
+                // ])->name('admin.admin');
 
             });
         });
@@ -188,6 +180,30 @@ Route::middleware([
 
 });
 
+use App\Http\Controllers\BlogController;
+
+// Public Routes (Frontend)
+Route::get('/', [BlogController::class, 'index'])->name('home'); // Homepage showing blogs
+Route::get('/blogs/{id}', [BlogController::class, 'show'])->name('blogs.show'); // View a single blog post
+
+// Admin Routes (Backend)
+    Route::prefix('admin')->middleware(['auth'])->group(function () {
+    Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index'); // List all blogs (admin view)
+    Route::get('/blogs/create', [BlogController::class, 'create'])->name('blogs.create'); // Create blog form
+    Route::post('/blogs', [BlogController::class, 'store'])->name('blogs.store'); // Store a new blog
+    Route::get('/blogs/{id}/edit', [BlogController::class, 'edit'])->name('blogs.edit'); // Edit blog form
+    Route::put('/blogs/{id}', [BlogController::class, 'update'])->name('blogs.update'); // Update blog
+    Route::delete('/blogs/{id}', [BlogController::class, 'destroy'])->name('blogs.destroy'); // Delete blog
+});
+
+Route::get('/search', [BlogController::class, 'search'])->name('blogs.search');
+Route::get('/admin/blogs/create', [BlogController::class, 'create'])->name('blogs.create');
+Route::post('/admin/blogs', [BlogController::class, 'store'])->name('blogs.store');
+Route::get('/', [BlogController::class, 'index'])->name('home');
+Route::get('/', [BlogController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+
+
 // Routes for guest messages
 Route::get('/contact-us', function () {
     return view('home.contact-us');
@@ -198,4 +214,19 @@ Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('cont
 // Routes for admin to view messages
 Route::middleware('auth')->group(function () {
     Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
+});
+
+
+
+
+Route::group(['middleware' => 'auth'], function() {
+
+    // Route::group(['middleware' => 'role:student', 'prefix' => 'student', 'as' => 'student.'], function(){
+    //     Route::resource('lesson', LessonController::class);
+    // });
+
+    // Route::group(['middleware' => 'role:rider', 'prefix' => 'rider', 'as' => 'rider.'], function(){
+    //     Route::resource('rider', RiderController::class);
+    // });
+
 });
