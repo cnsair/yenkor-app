@@ -158,6 +158,14 @@
                             {{ __('Switch Teams') }}
                         </div>
 
+                        @if(Auth::check())
+                            <img class="h-8 w-8 rounded-full object-cover" 
+                                src="{{ Auth::user()->profile_photo_url }}" 
+                                alt="{{ Auth::user()->firstname . ' ' . Auth::user()->lastname }}" />
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                        @endif
+
                         @foreach (Auth::user()->allTeams() as $team)
                             <x-switchable-team :team="$team" component="responsive-nav-link" />
                         @endforeach
