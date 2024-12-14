@@ -183,6 +183,7 @@ Route::middleware([
 
     Route::get('/dashboard', function () {
         // return view('dashboard');
+        // return redirect()->route('user.redirect');
         abort(403, 'Unauthorised action!');
     })->name('dashboard');
 
