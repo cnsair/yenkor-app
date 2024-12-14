@@ -55,6 +55,9 @@ Route::middleware('guest')->group(function () {
         return view('home.book-ride');
     })->name('book-ride');
 
+    
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 
@@ -200,3 +203,4 @@ Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('cont
 Route::middleware('auth')->group(function () {
     Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
 });
+
