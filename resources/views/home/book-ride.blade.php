@@ -2,93 +2,6 @@
 
 @section('content')
 
-<style>
-
-.form-check-inline {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-right: 15px;
-}
-
-.form-check-label {
-    position: relative;
-    padding-left: 30px; 
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.form-check-label::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    border: 2px solid black;
-    border-radius: 50%;
-    background-color: #fff;
-    transition: background-color 0.3s, border-color 0.3s;
-}
-
-.form-check-inline.selected .form-check-label::before {
-    background-color: #333333; 
-    border-color: #666666;    
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-.form-group.car-options {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px; 
-    align-items: center;
-}
-
-.car-option {
-    text-align: center;
-    display: inline-block;
-    width: 100px; 
-    cursor: pointer;
-    margin: 0; 
-    transition: transform 0.3s ease-in-out;
-}
-
-.car-image {
-    display: block;
-    border-radius: 50%; 
-    width: 80px; 
-    height: 80px;
-    object-fit: cover; 
-    transition: transform 0.3s ease-in-out, border-color 0.3s ease;
-}
-
-.car-option:hover .car-image {
-    transform: scale(1.3); 
-    border: 3px solid rgb(92, 92, 89);
-}
-
-.car-image.selected {
-    border: 3px solid rgb(11, 11, 12); 
-    transform: scale(1.15); 
-}
-
-.car-details {
-    margin-top: 5px; 
-}
-
-.car-details p {
-    margin: 0;
-    font-size: 14px; 
-    font-weight: bold; 
-    color: #333; 
-}
-
-</style>
     <div class="breadcrumb-div">
         <div class="container">
             <h1 class="page-title mb-0">Let's Ride</h1>
@@ -135,31 +48,31 @@ input[type="radio"] {
                                 <div class="selected-car">
                                     <div class="form-group car-options">
                                         <div class="car-option" onclick="selectCar('economy')">
-                                            <img src="assets/images/Economy.jpeg" alt="Car" class="car-image" id="economy">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Economy.jpeg') }}" alt="Car" class="car-image" id="economy">
                                             <div class="car-details">
                                                 <p>Economy</p>
                                             </div>
                                         </div>
                                         <div class="car-option" onclick="selectCar('standard')">
-                                            <img src="assets/images/Standard.jpg" alt="Car" class="car-image" id="standard">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Standard.jpg') }}" alt="Car'" class="car-image" id="standard">
                                             <div class="car-details">
                                                 <p>Standard</p>
                                             </div>
                                         </div>
                                         <div class="car-option" onclick="selectCar('luxury')">
-                                            <img src="assets/images/Luxury.jpeg" alt="Car" class="car-image" id="luxury">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Luxury.jpeg') }}" alt="Car'" class="car-image" id="luxury">
                                             <div class="car-details">
                                                 <p>Luxury</p>
                                             </div>
                                         </div>
                                         <div class="car-option" onclick="selectCar('suv')">
-                                            <img src="assets/images/SUV.jpeg" alt="Car" class="car-image" id="suv">
+                                            <img src="{{ asset('assets/assets/images/book-ride/SUV.jpeg') }}" alt="Car" class="car-image" id="suv">
                                             <div class="car-details">
                                                 <p>SUV</p>
                                             </div>
                                         </div>
                                         <div class="car-option" onclick="selectCar('minivan')">
-                                            <img src="assets/images/Minivan.jpeg" alt="Car" class="car-image" id="minivan">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Minivan.jpeg') }}" alt="Car" class="car-image" id="minivan">
                                             <div class="car-details">
                                                 <p>Minivans</p>
                                             </div>
@@ -186,35 +99,4 @@ input[type="radio"] {
         </div>
     </div>
 
-<script>
-    // Select all form-check-inline elements
-const formCheckElements = document.querySelectorAll('.form-check-inline');
-
-// Add click event listeners to each element
-formCheckElements.forEach((element) => {
-    element.addEventListener('click', () => {
-        // Remove "selected" class from all elements
-        formCheckElements.forEach((el) => el.classList.remove('selected'));
-        
-        // Add "selected" class to the clicked element
-        element.classList.add('selected');
-
-        // Optionally, handle selected value
-        const selectedValue = element.getAttribute('data-value');
-        console.log('Selected payment option:', selectedValue);
-    });
-});
-
-function selectCar(carId) {
-    // Deselect all images first
-    const allCars = document.querySelectorAll('.car-image');
-    allCars.forEach(car => {
-        car.classList.remove('selected');
-    });
-
-    // Select the clicked car
-    const selectedCar = document.getElementById(carId);
-    selectedCar.classList.add('selected');
-}
-</script>
 @endsection
