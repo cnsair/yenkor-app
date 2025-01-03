@@ -108,7 +108,7 @@ Route::group(['middleware' => 'auth'], function() {
             Route::name('driver.')->group(function () {
 
                 //dashboard:view
-                Route::get('/dashboard', [DashboardRendererController::class, 'dashboardRenderer'])
+                Route::get('/dashboard', [VehicleController::class, 'showAll'])
                     ->name('dashboard');
 
                 // Edit Profile

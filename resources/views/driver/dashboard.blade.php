@@ -210,7 +210,6 @@
                                         </div>
 
                                         @forelse ( $vehicle_data as $vehicle )
-                                            
                                             @php
                                                 $vehicle_photo = $vehicle->vehicle_photo;
                                                 $insurance_document = $vehicle->insurance_document;

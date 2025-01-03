@@ -17,6 +17,27 @@ class VehicleController extends Controller
     }
 
     /**
+     * Display all uploaded vehicles
+     */
+    public function showAll(){
+        $vehicle_data = Vehicle::query()->orderBy('id', 'desc')
+                                    ->limit(5)->get();      
+
+        return view('driver.dashboard')
+            ->with('vehicle_data', $vehicle_data);
+
+        // return view('common.show-job', compact('post_jobs'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function show(Vehicle $vehicle)
+    {
+        //
+    }
+
+    /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
