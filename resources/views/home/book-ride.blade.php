@@ -6,7 +6,7 @@
         <div class="container">
             <h1 class="page-title mb-0">Let's Ride</h1>
             <ol class="breadcrumb">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="{{ route('home') }}">Home</a></li>
                 <li>Ride with Yenkor</li>
             </ol>
         </div>

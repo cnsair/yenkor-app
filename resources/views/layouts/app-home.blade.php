@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="robots" content="follow, download App" />
-    <meta name="description" content="Yenkor - A ride hailing App for everyone">
+    <meta name="description" content="Yencor - A ride hailing app for everyone">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/assets/images/yenkor-favicon.ico') }}">
 
@@ -15,7 +15,6 @@
 </head>
 
 <body class="theme-1">
-    
     <x-header-desktop-home></x-header-desktop-home>
 
     <x-header-mobile-home></x-header-mobile-home>

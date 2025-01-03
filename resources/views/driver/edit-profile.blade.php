@@ -108,7 +108,6 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Your Gender</label>
-
                                             <div class="in-line">
                                                 <label for="male">Male</label>
                                                 <input id="male" type="radio" name="gender" value="Male" {{ old('gender', Auth()->user()->gender) == 'Male' ? 'checked' : '' }}>
@@ -117,9 +116,8 @@
                                             <div class="in-line">
                                                 <label for="female">Female</label>
                                                 <input id="female" type="radio" name="gender" value="Female" {{ old('gender', Auth()->user()->gender) == 'Female' ? 'checked' : '' }}>
-                                                <x-input-error for="gender" class="mt-2" />
                                             </div>
-                                            
+                                            <x-input-error for="gender" class="mt-2" />
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

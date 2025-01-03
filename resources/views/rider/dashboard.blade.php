@@ -33,19 +33,13 @@
                             <div class="payment-options-wrapper">
                                 <h2>Payment Method</h2>
                                 <div class="from-group payment-options">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="payment-opts" id="cash-pay"
-                                            value="option1">
+                                    <div class="form-check form-check-inline" data-value="option1">
                                         <label class="form-check-label" for="cash-pay">Cash</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="payment-opts"
-                                            id="banking-pay" value="option2">
+                                    <div class="form-check form-check-inline" data-value="option2">
                                         <label class="form-check-label" for="banking-pay">Net Banking</label>
                                     </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="payment-opts" id="card-pay"
-                                            value="option3">
+                                    <div class="form-check form-check-inline" data-value="option3">
                                         <label class="form-check-label" for="card-pay">Debit Card</label>
                                     </div>
                                 </div>
@@ -53,60 +47,35 @@
                             <div class="select-car-wrapper">
                                 <h2>Selected Car</h2>
                                 <div class="selected-car">
-                                    <div class="from-group car-options">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="car-opts" id="scooter"
-                                                value="option1">
-                                            <label class="form-check-label" for="scooter">
-                                                <img src="assets/images/dashboard/car-1.webp" alt="car">
-                                            </label>
+                                    <div class="form-group car-options">
+                                        <div class="car-option" onclick="selectCar('economy')">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Economy.jpeg') }}" alt="Car" class="car-image" id="economy">
                                             <div class="car-details">
-                                                <h4>1x</h4>
-                                                <p>Scooter</p>
+                                                <p>Economy</p>
                                             </div>
                                         </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="car-opts" id="alto"
-                                                value="option2">
-                                            <label class="form-check-label" for="alto">
-                                                <img src="assets/images/dashboard/car-2.webp" alt="Car">
-                                            </label>
+                                        <div class="car-option" onclick="selectCar('standard')">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Standard.jpg') }}" alt="Car'" class="car-image" id="standard">
                                             <div class="car-details">
-                                                <h4>2x</h4>
-                                                <p>Alto</p>
+                                                <p>Standard</p>
                                             </div>
                                         </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="car-opts" id="swift"
-                                                value="option3">
-                                            <label class="form-check-label" for="swift">
-                                                <img src="assets/images/dashboard/car-3.webp" alt="Car">
-                                            </label>
+                                        <div class="car-option" onclick="selectCar('luxury')">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Luxury.jpeg') }}" alt="Car'" class="car-image" id="luxury">
                                             <div class="car-details">
-                                                <h4>3x</h4>
-                                                <p>Swift dzire</p>
-                                            </div>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="car-opts" id="luxury"
-                                                value="option3">
-                                            <label class="form-check-label" for="luxury">
-                                                <img src="assets/images/dashboard/car-4.webp" alt="Car">
-                                            </label>
-                                            <div class="car-details">
-                                                <h4>4x</h4>
                                                 <p>Luxury</p>
                                             </div>
                                         </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="car-opts" id="tourist"
-                                                value="option3">
-                                            <label class="form-check-label" for="tourist">
-                                                <img src="assets/images/dashboard/car-5.webp" alt="Car">
-                                            </label>
+                                        <div class="car-option" onclick="selectCar('suv')">
+                                            <img src="{{ asset('assets/assets/images/book-ride/SUV.jpeg') }}" alt="Car" class="car-image" id="suv">
                                             <div class="car-details">
-                                                <h4>5x</h4>
-                                                <p>Tourist</p>
+                                                <p>SUV</p>
+                                            </div>
+                                        </div>
+                                        <div class="car-option" onclick="selectCar('minivan')">
+                                            <img src="{{ asset('assets/assets/images/book-ride/Minivan.jpeg') }}" alt="Car" class="car-image" id="minivan">
+                                            <div class="car-details">
+                                                <p>Minivans</p>
                                             </div>
                                         </div>
                                     </div>

@@ -16,7 +16,7 @@ return new class extends Migration
 
             // 0 = rider; 1 = driver; 2 = admin; 3 = super-admin;
             $table->enum('role',[0,1,2,3])->default(0);
-            $table->unsignedBigInteger('yenkor_id')->unique();
+            $table->unsignedBigInteger('yenkor_id')->unique()->nullable();
             $table->string('firstname');
             $table->string('lastname');
             $table->string('phone')->unique();

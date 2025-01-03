@@ -23,7 +23,7 @@ class CreateNewUser implements CreatesNewUsers
             'role' => ['required', 'integer'],
             'firstname' => ['required', 'string', 'regex:/^\S*$/u', 'max:25'],
             'lastname' => ['required', 'string', 'regex:/^\S*$/u', 'max:25'],
-            'phone' => ['string', 'max:20', 'unique:users'],
+            'phone' => ['required', 'string', 'max:20', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:40', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
@@ -46,7 +46,7 @@ class CreateNewUser implements CreatesNewUsers
         }else{
             $is_driver = 0; 
         }
-
+        
         return User::create([
             'role' => $input['role'],
             'yenkor_id' => $yenkor_id,
@@ -59,6 +59,5 @@ class CreateNewUser implements CreatesNewUsers
             'is_driver' => $is_driver,
             'password' => Hash::make($input['password']),
         ]);
-       
     }
 }

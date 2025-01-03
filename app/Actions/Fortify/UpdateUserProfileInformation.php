@@ -52,7 +52,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'gender' => $input['gender'],
                 'biography' => $input['biography'],
                 'd_o_b' => $input['d_o_b'],
-                'admin_role' => $input['admin_role'],
+                'admin_role' => $input['admin_role'] ?? 'N/A',
             ])->save();
         }
     }

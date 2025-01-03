@@ -54,7 +54,7 @@
                                     </div>
                                     <div class="form-floating">
                                         <input type="number" class="form-control" name="phone" id="phone"
-                                            placeholder="Phone Number (Optional)" :value="old('phone')">
+                                            placeholder="Phone Number" :value="old('phone')" required >
                                         <label for="phone">Phone Number</label>
                                     </div>
                                     <div class="form-floating">
@@ -70,20 +70,21 @@
                                     <div class="form-floating">
                                         <input type="password" class="form-control" name="password.confirmation"
                                             id="passwordConfirm" placeholder="Confirm Password">
-                                        <label for="passwordConfirm">Password</label>
+                                        <label for="passwordConfirm">Confirm Password</label>
                                     </div>
-                                    <!-- <div class="form-floating">
-                                        <input type="checkbox" id="agree" name="terms">
+                                   
+                                    <div class="">
+                                        <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
                                         <label for="agree">I agree to the
                                             <a href="#">Terms and Conditions</a> and
                                             <a href="#">Privacy Policy</a>
                                         </label>
-                                    </div> -->
+                                    </div>
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
                                 </form>
                                 <p class="acclink">Already have an account?
-                                    <a href="{{ route('login') }}"> <b>Sign in</b>
-                                        <i class="icofont">double_right</i>
+                                    <a href="{{ route('login') }}"> 
+                                        <b>Sign in</b>
                                     </a>
                                 </p>
                             </div>
@@ -117,7 +118,7 @@
                                     </div>
                                     <div class="form-floating">
                                         <input type="tel" class="form-control" name="phone" id="number2"
-                                            placeholder="Phone Number" required :value="old('phone')">
+                                            placeholder="Phone Number" :value="old('phone')" required>
                                         <label for="number2">Phone Number</label>
                                     </div>
                                     <div class="form-floating">
@@ -135,19 +136,19 @@
                                             id="passwordConfirm2" placeholder="Confirm Password" required>
                                         <label for="passwordConfirm2">Confirm Password</label>
                                     </div>
-                                    <!-- <div class="form-floating">
-                                        <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
-                                        <label for="agree">I agree to the
+                                    <div class="">
+                                        <input type="checkbox" id="agree2" name="terms" {{ old('terms') == 1 ? 'checked' : '' }} >
+                                        <label for="agree2">I agree to the
                                             <a href="#">Terms and Conditions</a> and
                                             <a href="#">Privacy Policy</a>
                                         </label>
-                                    </div> -->
+                                    </div>
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
                                 </form>
 
                                 <p class="acclink">Already have an account?
-                                    <a href="{{ route('login') }}"><b>Sign in</b>
-                                        <i class="icofont">double_right</i>
+                                    <a href="{{ route('login') }}">
+                                        <b>Sign in</b>
                                     </a>
                                 </p>
                             </div>
