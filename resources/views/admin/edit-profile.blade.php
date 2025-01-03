@@ -124,7 +124,7 @@
                                             <label>
                                                 Phone
                                             </label>
-                                            <input class="form-control" name="phone" type="number" value="{{ old('phone',$user->phone) }}" required />
+                                            <input class="form-control" name="phone" type="text" value="{{ old('phone',$user->phone) }}" required />
                                             <x-input-error for="phone" class="mt-2" />
                                         </div>
 
