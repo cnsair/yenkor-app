@@ -30,7 +30,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'phone' => ['required', 'string', 'max:20', Rule::unique('users')->ignore($user->id)],
             'gender' => ['nullable', 'string', 'max:20'],
-            'biography' => ['nullable', 'string', 'max:1000'],
+            'biography' => ['nullable', 'string', 'min: 10', 'max:1000'],
             'd_o_b' => ['nullable', 'string', 'max:20'],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:5120'],
             'admin_role' => ['nullable', 'string', 'max:40'],
