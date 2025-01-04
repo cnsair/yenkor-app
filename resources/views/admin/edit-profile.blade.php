@@ -53,6 +53,9 @@
                                                         <h6 class="menu-header-subtitle">
                                                             {{ $user->admin_role ?? "N/A" }}
                                                         </h6>
+                                                        <small class="menu-header-subtitle">
+                                                            {{ $user->yenkor_id ?? "N/A" }}
+                                                        </small>
                                                     </div>
                                                 </div>
                                             </div>

@@ -66,9 +66,11 @@ Route::middleware('guest')->group(function () {
 Route::group(['middleware' => 'auth'], function() {
 
     //Main Redirect Controller
-    Route::resource('redirects', RedirectController::class, 
-    ['only' => 'index']);
-
+    // Route::resource('redirects', RedirectController::class, 
+    // ['only' => 'index']);
+    
+    Route::get('redirects', [RedirectController::class, 'index'])
+    ->name('user.redirect');
    
     Route::group(['middleware' => 'rider'], function() {
         Route::prefix('rider')->group(function () {
@@ -182,9 +184,9 @@ Route::middleware([
 ])->group(function () {
 
     Route::get('/dashboard', function () {
-        // return view('dashboard');
-        // return redirect()->route('user.redirect');
-        abort(403, 'Unauthorised action!');
+        // return view('redirects');
+        return redirect()->route('user.redirect');
+        // abort(403, 'Unauthorised action!');
     })->name('dashboard');
 
 });

@@ -274,7 +274,7 @@
                                             </div>
                                         @empty
                                             <div class="container">
-                                                You've not registered any car yet. Click <a href="{{ route('driver.register-vehicle.create') }}" class="button button-dark">here</a> to register one.
+                                                You've not registered any vehicle yet yet. Please click <a href="{{ route('driver.register-vehicle.create') }}">here</a> to register one.
                                             </div>
                                         @endforelse
 
