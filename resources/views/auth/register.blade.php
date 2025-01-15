@@ -25,6 +25,7 @@
                             </li>
                         </ul>
                         <div class="tab-content">
+                            <!-- Rider Registration -->
                             <div role="tabpanel" class="tab-pane active" id="rider">
 
                                 <x-validation-errors class="mb-4" />
@@ -70,15 +71,17 @@
                                     <div class="form-floating">
                                         <input type="password" class="form-control" name="password.confirmation"
                                             id="passwordConfirm" placeholder="Confirm Password">
-                                        <label for="passwordConfirm">Password</label>
+                                        <label for="passwordConfirm">Confirm Password</label>
                                     </div>
-                                    <!-- <div class="form-floating">
+                                    <div class="form-group">
                                         <input type="checkbox" id="agree" name="terms">
-                                        <label for="agree">I agree to the
-                                            <a href="#">Terms and Conditions</a> and
-                                            <a href="#">Privacy Policy</a>
+                                        <label for="agree">
+                                            I agree to the
+                                            <a href="https://us.docworkspace.com/d/sIEPVusEz79WevAY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                                            and
+                                            <a href="https://us.docworkspace.com/d/sIMrVusEzj9aevAY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
                                         </label>
-                                    </div> -->
+                                    </div>
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
                                 </form>
                                 <p class="acclink">Already have an account?
@@ -88,6 +91,7 @@
                                 </p>
                             </div>
 
+                            <!-- Driver Registration -->
                             <div role="tabpanel" class="tab-pane" id="driver">
 
                                 <x-validation-errors class="mb-4" />
@@ -135,13 +139,15 @@
                                             id="passwordConfirm2" placeholder="Confirm Password" required>
                                         <label for="passwordConfirm2">Confirm Password</label>
                                     </div>
-                                    <!-- <div class="form-floating">
-                                        <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
-                                        <label for="agree">I agree to the
-                                            <a href="#">Terms and Conditions</a> and
-                                            <a href="#">Privacy Policy</a>
+                                    <div class="form-group">
+                                        <input type="checkbox" id="agree2" name="terms">
+                                        <label for="agree2">
+                                            I agree to the
+                                            <a href="https://us.docworkspace.com/d/sIEPVusEz79WevAY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                                            and
+                                            <a href="https://us.docworkspace.com/d/sIMrVusEzj9aevAY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
                                         </label>
-                                    </div> -->
+                                    </div>
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
                                 </form>
 
