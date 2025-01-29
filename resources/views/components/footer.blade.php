@@ -51,12 +51,12 @@
                     <h4>Head Office</h4>
                     <address class="company-address">
                         <p class="m-b-20">
-                                Tema, Accra, Ghana
-                            <span class="d-block">Near Station, 1356.</span>
+                                GT25XXXX Sakumono, Tema, 
+                            <span class="d-block">Accra, Ghana</span>
                         </p>
                         <p class="m-b-8">Phone number: (+233) 24 024 1097</p>
                         <p class="m-b-8">Email Address: <a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
-                            data-cfemail="">info@yencor.com</a>
+                            data-cfemail="">info@yencor.com <br/> support@yencor.com</a>
                         </p>
                     </address>
                 </div>
