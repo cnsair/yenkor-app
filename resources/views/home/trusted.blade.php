@@ -8,36 +8,36 @@
                     </h2>
                     <p>
 
-                    Yenkor delivers a globally trusted cab service, designed to make your travel experience reliable, 
+                    Yencor delivers a globally trusted cab service, designed to make your travel experience reliable, 
                     efficient, and secure. With just two taps, you can book a ride and connect with professional drivers 
                     nearby, ensuring a smooth and hassle-free journey. <br> Track your driver in real-time to stay updated 
                     on their location and estimated arrival time, giving you peace of mind. Your safety is our top 
-                    priority—Yenkor partners exclusively with trusted drivers who follow strict safety protocols. <br> Whether 
-                    you’re commuting to work, running errands, or traveling long distances, Yenkor guarantees a seamless and 
-                    secure ride. No matter where you are, Yenkor ensures you reach your destination safely and comfortably.
+                    priority—Yencor partners exclusively with trusted drivers who follow strict safety protocols. <br> Whether 
+                    you’re commuting to work, running errands, or traveling long distances, Yencor guarantees a seamless and 
+                    secure ride. No matter where you are, Yencor ensures you reach your destination safely and comfortably.
 
                     </p>
                     <div class="list-group-flush mb-4">
                         <div class="list-group-item bg-transparent border-bottom-0 p-0">
                             <p class="mb-0">
                                 <i class="fas fa-check-circle mr-4 p-3 grey rounded-circle"
-                                    aria-hidden="true"></i>Cras justo odio
+                                    aria-hidden="true"></i>Fast
                             </p>
                         </div>
                         <div class="list-group-item bg-transparent border-bottom-0 p-0">
                             <p class="mb-0">
                                 <i class="fas fa-check-circle mr-4 mr-4 grey p-3 rounded-circle"
-                                    aria-hidden="true"></i>Dapibus ac facilisis in
+                                    aria-hidden="true"></i>Safe
                             </p>
                         </div>
                         <div class="list-group-item bg-transparent border-bottom-0 p-0">
                             <p class="mb-0">
                                 <i class="fas fa-check-circle mr-4 mr-4 grey p-3 rounded-circle"
-                                    aria-hidden="true"></i>Morbi leo risus
+                                    aria-hidden="true"></i>Reliable
                             </p>
                         </div>
                     </div>
-                    <a href="#" class="button button-dark">Read More</a>
+                    <!-- <a href="#" class="button button-dark">Read More</a> -->
                 </div>
             </div>
         </div>

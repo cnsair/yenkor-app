@@ -2,7 +2,7 @@
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <title>{{ config('app.name', 'Yenkor - Lets Go') }}</title>
+    <title>{{ config('app.name', 'yencor - Lets Go') }}</title>
     
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">

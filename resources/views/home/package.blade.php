@@ -28,9 +28,9 @@
                             </span>
                         </div>
                         <div class="package-details">
-                            <h4 class="div-title text-center">Prime</h4>
+                            <h4 class="div-title text-center">Standard</h4>
                             <h2 class="package-price">
-                                $599
+                                $100
                                 <span>/24hour</span>
                             </h2>
                             <ul>
@@ -55,7 +55,7 @@
                         <div class="package-details">
                             <h4 class="div-title text-center">Superior</h4>
                             <h2 class="package-price">
-                                $1399
+                                $150
                                 <span>/24hour</span>
                             </h2>
                             <ul>
@@ -80,7 +80,7 @@
                         <div class="package-details">
                             <h4 class="div-title text-center">Prime</h4>
                             <h2 class="package-price">
-                                $2599
+                                $200
                                 <span>/24hour</span>
                             </h2>
                             <ul>

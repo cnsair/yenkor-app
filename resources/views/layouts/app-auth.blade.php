@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ config('app.name', 'Yenkor - Lets Go') }}</title>
-    <meta name="description" content="Yenkor - A ride hailing App for everyone">
+    <title>{{ config('app.name', 'yencor - Lets Go') }}</title>
+    <meta name="description" content="yencor - A ride hailing App for everyone">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/assets/images/yenkor-favicon.ico') }}">
     

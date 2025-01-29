@@ -8,13 +8,11 @@
                       Yenkor revolutionizes your public transportation experience, offering a smart and efficient way to locate, board, 
                       and pay for buses. When you open the app, it automatically displays nearby buses registered on the platform that 
                       are heading towards your destination. You can track their real-time locations, helping you plan your journey with 
-                      ease. <br> To streamline pickups, you can pin your exact location within the app, notifying bus drivers where you’ll 
-                      be waiting at the bus stop—eliminating confusion and reducing wait times. Once you board, Yenkor's intelligent system 
-                      automatically tracks the bus's movement and sets your destination based on your current location, keeping both you and 
-                      the driver informed about the route without any extra effort. <br> For payments, Yenkor offers a seamless cashless system. 
-                      Simply scan the QR code inside the bus to make an instant digital payment, ensuring secure and hassle-free transactions 
-                      without the need for physical cash. <br> Say goodbye to guessing bus arrival times or scrambling for exact change. 
-                      Yenkor provides a comprehensive, user-friendly platform that connects passengers and drivers, making public transportation 
+                      ease. <br> 
+                      To streamline pickups, you can pin your exact location within the app, notifying bus drivers where you’ll be waiting at the bus stop—eliminating confusion and reducing wait times. Once you board, Yenkor's intelligent system 
+                      automatically tracks the bus's movement and sets your destination based on your current location, keeping both you and the driver informed about the route without any extra effort. <br> 
+                      For payments, Yenkor offers a seamless cashless system. Simply scan the QR code inside the bus to make an instant digital payment, ensuring secure and hassle-free transactions without the need for physical cash. <br> 
+                      Say goodbye to guessing bus arrival times or scrambling for exact change. Yenkor provides a comprehensive, user-friendly platform that connects passengers and drivers, making public transportation 
                       more predictable, reliable, and convenient.
                     </p>
                     <a href="#" class="how-it-works-btn button button-dark">Read More</a>
@@ -29,8 +27,7 @@
                         <div class="how-it-works-text-wrapper">
                             <h3>Book in Just 2 Tabs</h3>
                             <p class="how-it-works-text">
-                                Curabitur ac quam aliquam urna vehicula semper sed vel elit.
-                                Sed et leo purus. Vivamus vitae sapien.
+                                Our App is built with the convenience of our customers in mind
                             </p>
                         </div>
                     </div>
@@ -41,8 +38,7 @@
                         <div class="how-it-works-text-wrapper">
                             <h3>Get a Driver</h3>
                             <p class="how-it-works-text">
-                                Curabitur ac quam aliquam urna vehicula semper sed vel elit.
-                                Sed et leo purus. Vivamus vitae sapien.
+                                "Safety first" is our drivers' keyword
                             </p>
                         </div>
                     </div>
@@ -53,8 +49,7 @@
                         <div class="how-it-works-text-wrapper">
                             <h3>Track your Driver</h3>
                             <p class="how-it-works-text">
-                                Curabitur ac quam aliquam urna vehicula semper sed vel elit.
-                                Sed et leo purus. Vivamus vitae sapien.
+                                Equipped with the renowned Google Maps, your drivers live location is at your finger tips
                             </p>
                         </div>
                     </div>
@@ -65,8 +60,7 @@
                         <div class="how-it-works-text-wrapper">
                             <h3>Arrive safely</h3>
                             <p class="how-it-works-text">
-                                Curabitur ac quam aliquam urna vehicula semper sed vel elit.
-                                Sed et leo purus. Vivamus vitae sapien.
+                                Enjoy the safety and comfort of our rides.
                             </p>
                         </div>
                     </div>

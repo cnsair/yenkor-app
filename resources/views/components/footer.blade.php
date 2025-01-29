@@ -18,14 +18,12 @@
                     </div>
                     <div class="footer-text pe-lg-3">
                         <p class="mb-4">
-                            Nulla justo neque, tincidunt id bibendum a, rhoncus et eros.
-                            Vestibulum commodo diam ut risus pulvinar consequat vitae a
-                            dui. Vivamus sed molestie diam. Maecenas vitae enim lacus.
+                            Yencor - The definitive ride hailing app for everyone.
                         </p>
                     </div>
                     <div class="helpline">
                         <h3 class="mb-0">Toll Free <span>Helpline</span></h3>
-                        <p class="mb-0">(+1) 123 4567 890</p>
+                        <p class="mb-0">(+233) 24 024 1097</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -53,12 +51,12 @@
                     <h4>Head Office</h4>
                     <address class="company-address">
                         <p class="m-b-20">
-                            GT223454 Accra, Ghana
+                                Tema, Accra, Ghana
                             <span class="d-block">Near Station, 1356.</span>
                         </p>
-                        <p class="m-b-8">Phone number: (+1) 123 4567 890</p>
+                        <p class="m-b-8">Phone number: (+233) 24 024 1097</p>
                         <p class="m-b-8">Email Address: <a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
-                            data-cfemail="">info@yenkor.com</a>
+                            data-cfemail="">info@yencor.com</a>
                         </p>
                     </address>
                 </div>
@@ -70,7 +68,7 @@
                     </div>
                     <div class="cta-button">
                         <a href="{{ route('register') }}" class="button button-light big">Become a Driver</a>
-                        <a href="{{ route('book-ride') }}" class="button button-black big">Ride with CarrGo</a>
+                        <a href="{{ route('book-ride') }}" class="button button-black big">Ride with Yencor</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +80,7 @@
                 <div class="col-lg-6">
                     <p>
                         &copy; <script>document.write(new Date().getFullYear());</script> 
-                        Yenkor App. All Right Reserved.
+                        yencor App. All Right Reserved.
                     </p>
                 </div>
                 <div class="col-lg-6">

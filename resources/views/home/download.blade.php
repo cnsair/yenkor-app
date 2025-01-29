@@ -2,12 +2,12 @@
         <div class="container">
             <div class="download-content-wrapper">
                 <div class="download-left-content">
-                    <h2 class="div-title">Download Yenkor</h2>
-                    <h3>Download the Yenkor mobile application</h3>
+                    <h2 class="div-title">Download Yencor</h2>
+                    <h3>Download the Yencor mobile application</h3>
                     <p>
-                        Discover a smarter way to travel with Yenkor—the app that simplifies public transportation, making it seamless, 
+                        Discover a smarter way to travel with Yencor—the app that simplifies public transportation, making it seamless, 
                         reliable, and convenient. Locate nearby buses, pin your pickup location for easy boarding, and make secure digital 
-                        payments, all from one app. Say goodbye to long waits and uncertainty at the bus stop. Download Yenkor today and 
+                        payments, all from one app. Say goodbye to long waits and uncertainty at the bus stop. Download Yencor today and 
                         enjoy a stress-free, efficient daily commute!
                     </p>
                     <div class="app-btns download-buttons">

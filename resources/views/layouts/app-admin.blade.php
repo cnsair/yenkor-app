@@ -11,7 +11,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"
     />
-    <meta name="description" content="Yenkor - A ride hailing App for everyone">
+    <meta name="description" content="yencor - A ride hailing App for everyone">
     <link rel="icon" href="{{ asset('assets/assets/images/yenkor-favicon.ico') }}">
 
     <!-- Disable tap highlight on IE -->

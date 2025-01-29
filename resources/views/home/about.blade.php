@@ -19,11 +19,11 @@
                     <div class="who-we-are-left-content">
                         <h2 class="who-we-are-title pb-4">About Us</h2>
                         <p class="justified-text">
-                            YENKOR is a smart public transportation app developed by AFRICA BLOCKCHAIN CONSORTIUM & DIGITAL ECONOMY LIMITED in collaboration with students from the Ghana Communication Technology University, Accra - Ghana. Just like popular ride-hailing apps, but tailored for public buses, YENKOR makes traveling easier by helping you find buses going your way — with a few extra features to improve your journey.
+                            YENCOR is a smart public transportation app developed by AFRICA BLOCKCHAIN CONSORTIUM & DIGITAL ECONOMY LIMITED in collaboration with students from the Ghana Communication Technology University, Accra - Ghana. Just like popular ride-hailing apps, but tailored for public buses, YENCOR makes traveling easier by helping you find buses going your way — with a few extra features to improve your journey.
                         </p>
                         
                     <p class="justified-text">
-                        With YENKOR, you can:
+                        With YENCOR, you can:
                     </p>
                     <ul class="visible-bullet-points">
                         <li>• Locate Available Buses: See nearby buses registered on the app and traveling towards your destination.</li>
@@ -33,11 +33,11 @@
                     </ul>
 
                         <p class="justified-text">
-                            Whether you’re commuting to work, school, or running errands, YENKOR simplifies your journey by bridging the gap between passengers and drivers. YENKOR helps you plan better, avoid the guesswork and long waits at the bus stop. We are here to make public transportation more reliable, predictable, and stress-free.  <br>
-                            Wherever you’re headed, YENKOR connects you to the right bus, fast and hassle-free. <br>
+                            Whether you’re commuting to work, school, or running errands, YENCOR simplifies your journey by bridging the gap between passengers and drivers. YENCOR helps you plan better, avoid the guesswork and long waits at the bus stop. We are here to make public transportation more reliable, predictable, and stress-free.  <br>
+                            Wherever you’re headed, YENCOR connects you to the right bus, fast and hassle-free. <br>
                            
                            <p>
-                             <b> YENKOR – Let's Go!  </b>
+                             <b> YENCOR – Let's Go!  </b>
                            </p>
                         </p>
                     </div>
@@ -65,17 +65,13 @@
                     <div class="dropdown-text-box">
                         <p class="dropdown-text-content">
                         <h2>  Mission  </h2>
-                        At YENKOR, our mission is to make public transportation more accessible, efficient, and stress-free. We aim to connect
-                        riders and bus drivers seamlessly, helping people
-                        find buses traveling to their destination, board with ease, and pay digitally. With YENKOR, public transport becomes simpler and more reliable for everyone.
+                        At YENCOR, our mission is to make public transportation more accessible, efficient, and stress-free. We aim to connect riders and bus drivers seamlessly, helping people find buses traveling to their destination, board with ease, and pay digitally. With YENCOR, public transport becomes simpler and more reliable for everyone.
                         </p>
                         <p class="dropdown-text-content2">
                             
                        <h2> Vision </h2>
-                        Our vision is to revolutionize public transportation
-                        by providing a smarter way for people to travel.
-                        We aspire to create a world where waiting at bus 
-                        stops becomes a thing of the past, every ride is convenient, and public buses are just a tap away. YENKOR strives to be the leading platform that transforms the way people move, making public transit easy, predictable, and enjoyable for all.
+                        Our vision is to revolutionize public transportation by providing a smarter way for people to travel.
+                        We aspire to create a world where waiting at bus stops becomes a thing of the past, every ride is convenient, and public buses are just a tap away. YENCOR strives to be the leading platform that transforms the way people move, making public transit easy, predictable, and enjoyable for all.
                         </p>
                     </div>
                 </div>
@@ -97,12 +93,5 @@
             }
         });
     </script>
-
-    <!-- 
-    •	Locate Buses: Find nearby buses heading to your destination.
-    •	Pin Your Location: Let drivers know where you're waiting.
-    •	Hop On: Automatically set your destination when the bus departs.
-    •	Pay Digitally: Scan a QR code to pay—no cash needed 
-    -->
 
 @endsection
