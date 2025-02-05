@@ -202,3 +202,7 @@ Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('cont
 Route::middleware('auth')->group(function () {
     Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
 });
+
+use App\Http\Controllers\AdminDashboardController;
+
+Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
