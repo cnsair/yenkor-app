@@ -33,7 +33,7 @@
                             <i class="metismenu-icon pe-7s-cash"></i>
                             Finance
                         </a>
-                        <a href="#index-2.html">
+                        <a href="{{ route('admin.audit-trail.index') }}">
                             <i class="metismenu-icon pe-7s-graph3"></i>
                             Audit Trail
                         </a>

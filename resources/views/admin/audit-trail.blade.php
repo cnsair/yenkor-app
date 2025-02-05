@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="widget-chart-content">
                                         <div class="widget-subheading">Total Clicks</div>
-                                        <div class="widget-numbers">1.7M</div>
+                                        <div class="widget-numbers">{{ $totalClicks }}</div>
                                     </div>
                                 </div>
                                 <div class="divider m-0 d-md-none d-sm-block"></div>
@@ -39,7 +39,7 @@
                                         <i class="pe-7s-users text-dark opacity-8"></i></div>
                                         <div class="widget-chart-content">
                                             <div class="widget-subheading">Registered Users</div>
-                                            <div class="widget-numbers"><span>9M</span></div>
+                                            <div class="widget-numbers"><span>{{ $registeredUsers }}</span></div>
                                         </div>
                                 </div>
                                 <div class="divider m-0 d-md-none d-sm-block"></div>
@@ -53,19 +53,11 @@
                                     <div class="widget-chart-content">
                                         <div class="widget-subheading">Unique Clicks</div>
                                         <div class="widget-numbers">
-                                            <span>563</span>
+                                            <span>{{ $uniqueClicks }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="text-center d-block p-3 card-footer">
-                            <button class="btn-wide btn-pill btn-shadow fsize-1 btn btn-focus btn-lg">
-                                <span class="mr-2 opacity-7">
-                                    <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
-                                </span>
-                                <span class="mr-1">View Complete Report</span>
-                            </button>
                         </div>
                     </div>
                     
@@ -77,7 +69,8 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover table-striped table-bordered">
+                            <table style="width: 100%;" id="example"
+                                class="table table-hover table-striped table-bordered">
                                 <thead>
                                     <tr>
                                         <th>User</th>
@@ -90,7 +83,7 @@
                                 <tbody>
                                     @foreach ($auditTrails as $log)
                                         <tr>
-                                            <td>{{ $log->user_id ? $log->user->name : 'Guest' }}</td>
+                                            <td>{{ $log->user_id ? $log->user->firstname ." ". $log->user->lastname : 'Guest' }}</td>
                                             <td>{{ $log->page_visited }}</td>
                                             <td>{{ $log->ip_address }}</td>
                                             <td>{{ $log->is_registered ? 'Yes' : 'No' }}</td>
@@ -98,6 +91,15 @@
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Page Visited</th>
+                                        <th>IP Address</th>
+                                        <th>Registered</th>
+                                        <th>Timestamp</th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>

@@ -14,9 +14,6 @@ use App\Http\Controllers\VehicleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestMessageController;
-use App\Http\Controllers\AdminDashboardController;
-
-
 
 
 //=======================================
@@ -62,9 +59,10 @@ Route::middleware('guest')->group(function () {
 
 
 //===================================================
-//      AUTHENTICATION REDIRECTS
+// Main routes
 //==================================================
 
+// Auth middleware
 Route::group(['middleware' => 'auth'], function() {
 
     //Main Redirect Controller
@@ -74,107 +72,117 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('redirects', [RedirectController::class, 'index'])
     ->name('user.redirect');
    
-    Route::group(['middleware' => 'rider'], function() {
-        Route::prefix('rider')->group(function () {
-            Route::name('rider.')->group(function () {
+    // Audit Trail middleware
+    Route::group(['middleware' => 'audit-trail'], function() {
 
-                //view analytics page
-                Route::get('/dashboard', function () {
-                    return view('rider.dashboard'); })
-                    ->name('dashboard');
+        //========================================================
+        // Rider
+        //========================================================
+        Route::group(['middleware' => 'rider'], function() {
+            Route::prefix('rider')->group(function () {
+                Route::name('rider.')->group(function () {
 
-                //dashboard:view
-                Route::get('/edit-profile', function () {
-                    return view('rider.edit-profile'); })
-                    ->name('edit-profile.edit');
+                    //view analytics page
+                    Route::get('/dashboard', function () {
+                        return view('rider.dashboard'); })
+                        ->name('dashboard');
 
-                //view upload page
-                Route::patch('/edit-profile', [ProfileController::class, 'update'])
-                    ->name('edit-profile.update');
+                    //dashboard:view
+                    Route::get('/edit-profile', function () {
+                        return view('rider.edit-profile'); })
+                        ->name('edit-profile.edit');
 
-                //change password:view
-                Route::get('/change-password', function () {
-                    return view('rider.change-password'); })
-                    ->name('change-password.edit');
+                    //view upload page
+                    Route::patch('/edit-profile', [ProfileController::class, 'update'])
+                        ->name('edit-profile.update');
 
-                //update password page
-                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
-                    ->name('change-password.update');
+                    //change password:view
+                    Route::get('/change-password', function () {
+                        return view('rider.change-password'); })
+                        ->name('change-password.edit');
 
+                    //update password page
+                    Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                        ->name('change-password.update');
+
+                });
             });
         });
-    });
 
+        //========================================================
+        // Driver
+        //========================================================
+        Route::group(['middleware' => 'driver'], function() {
+        
+            Route::prefix('driver')->group(function () {
+                Route::name('driver.')->group(function () {
 
-    Route::group(['middleware' => 'driver'], function() {
-      
-        Route::prefix('driver')->group(function () {
-            Route::name('driver.')->group(function () {
+                    //dashboard:view
+                    Route::get('/dashboard', [VehicleController::class, 'showAll'])
+                        ->name('dashboard');
 
-                //dashboard:view
-                Route::get('/dashboard', [VehicleController::class, 'showAll'])
-                    ->name('dashboard');
+                    // Edit Profile
+                    Route::get('/edit-profile', function () {
+                        return view('driver.edit-profile'); })
+                        ->name('edit-profile.edit');
 
-                // Edit Profile
-                Route::get('/edit-profile', function () {
-                    return view('driver.edit-profile'); })
-                    ->name('edit-profile.edit');
+                    //view upload page
+                    Route::patch('/edit-profile', [ProfileController::class, 'update'])
+                        ->name('edit-profile.update');
 
-                //view upload page
-                Route::patch('/edit-profile', [ProfileController::class, 'update'])
-                    ->name('edit-profile.update');
+                    //change password:view
+                    Route::get('/change-password', function () {
+                        return view('driver.change-password'); })
+                        ->name('change-password.edit');
 
-                //change password:view
-                Route::get('/change-password', function () {
-                    return view('driver.change-password'); })
-                    ->name('change-password.edit');
+                    //update password page
+                    Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                        ->name('change-password.update');
+                    
+                    //Register vehicle
+                    Route::get('/register-vehicle', [VehicleController::class, 'create'])
+                        ->name('register-vehicle.create');
+                    
+                    //Delete vehicle record
+                    Route::delete('/dashboard/{vehicle}', [VehicleController::class, 'destroy'])
+                        ->name('vehicle.destroy');
 
-                //update password page
-                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
-                    ->name('change-password.update');
-                
-                //Register vehicle
-                Route::get('/register-vehicle', [VehicleController::class, 'create'])
-                    ->name('register-vehicle.create');
-                
-                //Delete vehicle record
-                Route::delete('/dashboard/{vehicle}', [VehicleController::class, 'destroy'])
-                    ->name('vehicle.destroy');
-
+                });
             });
         });
-    });
 
+        //========================================================
+        // Admin
+        //========================================================
+        Route::group(['middleware' => 'admin'], function() {
+            Route::prefix('admin')->group(function () {
+                Route::name('admin.')->group(function () {
 
-    Route::group(['middleware' => 'admin'], function() {
-        Route::prefix('admin')->group(function () {
-            Route::name('admin.')->group(function () {
+                    // landing
+                    Route::get('/dashboard', [AdminDashboardRendererController::class, 'dashboardRenderer'])
+                        ->name('dashboard');
 
-                // landing
-                Route::get('/dashboard', [AdminDashboardRendererController::class, 'dashboardRenderer'])
-                    ->name('dashboard');
+                    // Edit Profile
+                    Route::get('/edit-profile', function () {
+                        return view('admin.edit-profile'); })
+                        ->name('edit-profile.edit');
+        
+                    // view upload
+                    Route::patch('/edit-profile', [ProfileController::class, 'update'])
+                        ->name('edit-profile.update');
 
-                // Edit Profile
-                Route::get('/edit-profile', function () {
-                    return view('admin.edit-profile'); })
-                    ->name('edit-profile.edit');
-    
-                // view upload
-                Route::patch('/edit-profile', [ProfileController::class, 'update'])
-                    ->name('edit-profile.update');
+                    // change password
+                    Route::get('/change-password', function () {
+                        return view('admin.change-password'); })
+                        ->name('change-password.edit');
 
-                // change password
-                Route::get('/change-password', function () {
-                    return view('admin.change-password'); })
-                    ->name('change-password.edit');
+                    // update password 
+                    Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
+                        ->name('change-password.update');
 
-                // update password 
-                Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
-                    ->name('change-password.update');
-
-                // Audit Trail
-                Route::get('/audit-trail', [AuditTrailController::class, 'index'])
-                    ->name('audit-trail.index');
+                    Route::get('/audit-trail', [AuditTrailController::class, 'index'])
+                        ->name('audit-trail.index');
+                });
 
             });
         });
