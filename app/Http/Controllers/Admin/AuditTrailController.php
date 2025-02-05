@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Services\AuditTrailService;
 
-class AdminDashboardController extends Controller
+class AuditTrailController extends Controller
 {
     protected $auditTrailService;
 
@@ -22,6 +22,9 @@ class AdminDashboardController extends Controller
         $auditTrails = $this->auditTrailService->getAuditTrails();
 
         // Pass the data to the view
-        return view('admin.dashboard', compact('totalClicks', 'registeredUsers', 'uniqueClicks', 'auditTrails'));
+        return view('admin.audit-trail', compact('totalClicks', 
+                                                            'registeredUsers', 
+                                                            'uniqueClicks', 
+                                                            'auditTrails'));
     }
 }

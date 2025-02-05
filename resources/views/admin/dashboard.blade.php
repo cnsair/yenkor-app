@@ -63,7 +63,11 @@
                                 <span class="mr-2 opacity-7">
                                     <i class="icon icon-anim-pulse ion-ios-analytics-outline"></i>
                                 </span>
-                                <span class="mr-1">View Complete Report</span>
+                                <span class="mr-1">
+                                    <a class="btn-hover-shine btn btn-shadow btn-focus" href="{{ route('admin.audit-trail.index') }}">
+                                        View Complete Report
+                                    </a>
+                                </span>
                             </button>
                         </div>
                     </div>
@@ -72,32 +76,193 @@
                         <div class="card-header-tab card-header">
                             <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                 <i class="metismenu-icon pe-7s-users mr-3 text-muted opacity-6"> </i>
-                                Audit Trail Logs
+                                Registered Users
                             </div>
                         </div>
                         <div class="card-body">
-                            <table class="table table-hover table-striped table-bordered">
+                            <table style="width: 100%;" id="example"
+                                    class="table table-hover table-striped table-bordered">
                                 <thead>
-                                    <tr>
-                                        <th>User</th>
-                                        <th>Page Visited</th>
-                                        <th>IP Address</th>
-                                        <th>Registered</th>
-                                        <th>Timestamp</th>
-                                    </tr>
+                                <tr>
+                                    <th>Name/ID</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>User Type</th>
+                                    <th>Status</th>
+                                </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($auditTrails as $log)
+                                    @foreach ( $user_data as $user )
                                         <tr>
-                                            <td>{{ $log->user_id ? $log->user->name : 'Guest' }}</td>
-                                            <td>{{ $log->page_visited }}</td>
-                                            <td>{{ $log->ip_address }}</td>
-                                            <td>{{ $log->is_registered ? 'Yes' : 'No' }}</td>
-                                            <td>{{ $log->created_at }}</td>
+                                            <td>
+                                                {{ $user->firstname ." ". $user->lastname }} 
+                                                <small><b>{{ $user->yenkor_id }}</b></small>
+                                            </td>
+                                            <td>{{ $user->phone }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>
+                                                @if ($user->gender)
+                                                    {{ $user->gender }}
+                                                @else
+                                                    N/A
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ( $user->is_rider == 1 )
+                                                    Rider
+                                                @elseif ( $user->is_driver == 1 )
+                                                   Driver
+                                                @elseif ( $user->is_admin == 1 )
+                                                    Admin
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($user->status == "4")
+                                                    <button class="btn btn-sm btn-success">Active</button>
+                                                @elseif ($user->status == "3")
+                                                    <button class="btn btn-sm btn-primary">Inactive</button>
+                                                @elseif ($user->status == "2")
+                                                    <button class="btn btn-sm btn-default">Susupended</button>
+                                                @elseif ($user->status == "1")
+                                                    <button class="btn btn-sm btn-danger">Banned</button>
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Name/ID</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Gender</th>
+                                    <th>User Type</th>
+                                    <th>Status</th>
+                                </tr>
+                                </tfoot>
                             </table>
+                        </div>
+                    </div>
+                    
+                    <div class="card no-shadow bg-transparent no-border rm-borders mb-3">
+                        <div class="card">
+                            <div class="no-gutters row">
+                                <div class="col-md-12 col-lg-4">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="bg-transparent list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">Total Rides</div>
+                                                            <div class="widget-subheading">All time</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-success">
+                                                                3696
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="bg-transparent list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">Total Fare Amount</div>
+                                                            <div class="widget-subheading">Net Income</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-primary">
+                                                                $12.6k
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="bg-transparent list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">Total Drivers</div>
+                                                            <div class="widget-subheading">Registered</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-success">
+                                                                45,9%
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="bg-transparent list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">Total Payouts</div>
+                                                            <div class="widget-subheading">All time</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-danger">
+                                                                $3M
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 col-lg-4">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="bg-transparent list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">Total Riders</div>
+                                                            <div class="widget-subheading">Registered</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-success">
+                                                                1896
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="bg-transparent list-group-item">
+                                            <div class="widget-content p-0">
+                                                <div class="widget-content-outer">
+                                                    <div class="widget-content-wrapper">
+                                                        <div class="widget-content-left">
+                                                            <div class="widget-heading">Total Bonuses</div>
+                                                            <div class="widget-subheading">All time</div>
+                                                        </div>
+                                                        <div class="widget-content-right">
+                                                            <div class="widget-numbers text-primary">
+                                                                $12.6k
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

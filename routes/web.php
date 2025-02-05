@@ -1,6 +1,7 @@
 <?php
 
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Http\Controllers\AuditTrailController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DashboardRendererController;
 use App\Http\Controllers\Admin\AdminDashboardRendererController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\VehicleController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestMessageController;
+use App\Http\Controllers\AdminDashboardController;
 
 
 
@@ -148,26 +150,31 @@ Route::group(['middleware' => 'auth'], function() {
         Route::prefix('admin')->group(function () {
             Route::name('admin.')->group(function () {
 
+                // landing
                 Route::get('/dashboard', [AdminDashboardRendererController::class, 'dashboardRenderer'])
                     ->name('dashboard');
 
-                    // Edit Profile
+                // Edit Profile
                 Route::get('/edit-profile', function () {
                     return view('admin.edit-profile'); })
                     ->name('edit-profile.edit');
     
-                //view upload page
+                // view upload
                 Route::patch('/edit-profile', [ProfileController::class, 'update'])
                     ->name('edit-profile.update');
 
-                //change password:view
+                // change password
                 Route::get('/change-password', function () {
                     return view('admin.change-password'); })
                     ->name('change-password.edit');
 
-                //update password page
+                // update password 
                 Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
                     ->name('change-password.update');
+
+                // Audit Trail
+                Route::get('/audit-trail', [AuditTrailController::class, 'index'])
+                    ->name('audit-trail.index');
 
             });
         });
@@ -202,7 +209,3 @@ Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('cont
 Route::middleware('auth')->group(function () {
     Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
 });
-
-use App\Http\Controllers\AdminDashboardController;
-
-Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
