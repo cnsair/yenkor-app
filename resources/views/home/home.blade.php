@@ -91,8 +91,8 @@
                                             <div class="col-12 form-group mt-3">
                                                 <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
                                                 <label for="agree">I agree to the
-                                                    <a href="https://us.docworkspace.com/d/sIEPVusEz79WevAY" target="_blank">Terms and Conditions</a> and
-                                                    <a href="https://us.docworkspace.com/d/sIMrVusEzj9aevAY" target="_blank">Privacy Policy</a>.
+                                                    <a href="{{ asset('storage/docs/terms_conditions.pdf') }}" target="_blank">Terms and Conditions</a> and
+                                                    <a href="{{ asset('storage/docs/privacy_policy.pdf') }}" target="_blank">Privacy Policy</a>.
                                                 </label>
                                             </div>
                                             <div class="form-btn col-12">
@@ -150,8 +150,8 @@
                                             <div class="col-12 form-group mt-3">
                                                 <input type="checkbox" id="agree2" {{ old('terms') == 1 ? 'checked' : '' }} name="terms" required>
                                                 <label for="agree2">I agree to the
-                                                    <a href="https://us.docworkspace.com/d/sIEPVusEz79WevAY" target="_blank">Terms and Conditions</a> and
-                                                    <a href="https://us.docworkspace.com/d/sIMrVusEzj9aevAY" target="_blank">Privacy Policy</a>.
+                                                    <a href="{{ asset('storage/docs/terms_conditions.pdf') }}" target="_blank">Terms and Conditions</a> and
+                                                    <a href="{{ asset('storage/docs/privacy_policy.pdf') }}" target="_blank">Privacy Policy</a>.
                                                 </label>
                                             </div>
                                             <div class="form-btn col-12">
