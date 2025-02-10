@@ -54,6 +54,8 @@ Route::middleware('guest')->group(function () {
         return view('home.book-ride');
     })->name('book-ride');
 
+    Route::post('/contact-us', [GuestMessageController::class, 'store'])
+    ->name('contact-us.store');
 });
 
 
@@ -182,6 +184,9 @@ Route::group(['middleware' => 'auth'], function() {
 
                     Route::get('/audit-trail', [AuditTrailController::class, 'index'])
                         ->name('audit-trail.index');
+                        
+                    Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])
+                        ->name('guest-messages');
                 });
 
             });
@@ -204,16 +209,4 @@ Route::middleware([
         // abort(403, 'Unauthorised action!');
     })->name('dashboard');
 
-});
-
-// Routes for guest messages
-Route::get('/contact-us', function () {
-    return view('home.contact-us');
-})->name('home.contact');
-
-Route::post('/contact-us', [GuestMessageController::class, 'store'])->name('contact-us.store');
-
-// Routes for admin to view messages
-Route::middleware('auth')->group(function () {
-    Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])->name('admin.guest-messages');
 });
