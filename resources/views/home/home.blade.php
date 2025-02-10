@@ -91,8 +91,8 @@
                                             <div class="col-12 form-group mt-3">
                                                 <input type="checkbox" id="agree" name="terms" {{ old('terms') == 1 ? 'checked' : '' }}>
                                                 <label for="agree">I agree to the
-                                                    <a href="{{ asset('storage/docs/terms_conditions.pdf') }}" target="_blank">Terms and Conditions</a> and
-                                                    <a href="{{ asset('storage/docs/privacy_policy.pdf') }}" target="_blank">Privacy Policy</a>.
+                                                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:16df4fd1-c621-4634-b681-829a890b92ee" target="_blank">Terms and Conditions</a> and
+                                                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:96c179ba-aeab-4b35-9a88-389da04e1e40" target="_blank">Privacy Policy</a>.
                                                 </label>
                                             </div>
                                             <div class="form-btn col-12">
@@ -150,8 +150,8 @@
                                             <div class="col-12 form-group mt-3">
                                                 <input type="checkbox" id="agree2" {{ old('terms') == 1 ? 'checked' : '' }} name="terms" required>
                                                 <label for="agree2">I agree to the
-                                                    <a href="{{ asset('storage/docs/terms_conditions.pdf') }}" target="_blank">Terms and Conditions</a> and
-                                                    <a href="{{ asset('storage/docs/privacy_policy.pdf') }}" target="_blank">Privacy Policy</a>.
+                                                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:16df4fd1-c621-4634-b681-829a890b92ee" target="_blank">Terms and Conditions</a> and
+                                                    <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:96c179ba-aeab-4b35-9a88-389da04e1e40" target="_blank">Privacy Policy</a>.
                                                 </label>
                                             </div>
                                             <div class="form-btn col-12">
