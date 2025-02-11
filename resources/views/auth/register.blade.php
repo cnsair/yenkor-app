@@ -77,9 +77,13 @@
                                         <input type="checkbox" id="agree" name="terms">
                                         <label for="agree">
                                             I agree to the
-                                            <a href="https://us.docworkspace.com/d/sIEPVusEz79WevAY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:16df4fd1-c621-4634-b681-829a890b92ee" target="_blank" rel="noopener noreferrer">
+                                                Terms and Conditions
+                                            </a>
                                             and
-                                            <a href="https://us.docworkspace.com/d/sIMrVusEzj9aevAY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:96c179ba-aeab-4b35-9a88-389da04e1e40" target="_blank" rel="noopener noreferrer">
+                                                Privacy Policy
+                                            </a>.
                                         </label>
                                     </div>
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
@@ -143,9 +147,13 @@
                                         <input type="checkbox" id="agree2" name="terms">
                                         <label for="agree2">
                                             I agree to the
-                                            <a href="https://us.docworkspace.com/d/sIEPVusEz79WevAY" target="_blank" rel="noopener noreferrer">Terms and Conditions</a>
+                                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:16df4fd1-c621-4634-b681-829a890b92ee" target="_blank" rel="noopener noreferrer">
+                                                Terms and Conditions
+                                            </a>
                                             and
-                                            <a href="https://us.docworkspace.com/d/sIMrVusEzj9aevAY" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.
+                                            <a href="https://acrobat.adobe.com/id/urn:aaid:sc:EU:96c179ba-aeab-4b35-9a88-389da04e1e40" target="_blank" rel="noopener noreferrer">
+                                                Privacy Policy
+                                            </a>.
                                         </label>
                                     </div>
                                     <button type="submit" name="register" class="w-100 btn btn-lg btn-primary">Register</button>
