@@ -15,7 +15,7 @@
                         <ul class="nav nav-tabs" role="tablist">
                             <li role="presentation" class="active">
                                 <a href="#rider" class="active" aria-controls="rider" role="tab" data-toggle="tab">
-                                    Take to Ride
+                                    Connect to Ride
                                 </a>
                             </li>
                             <li role="presentation">

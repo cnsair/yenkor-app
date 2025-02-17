@@ -38,13 +38,13 @@
                 </a>
             </li>
             <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('home.contact') }}">
+                <a class="nav-link" href="{{ route('contact') }}">
                     <i class="fas fa-map-marker-alt"></i>Contact Us</a>
             </li>
         </ul>
         <div class="header__upper--right flex-column">
             <a href="{{ route('login') }}" class="button p-3"><i class="far fa-user-astronaut"></i> Drive with us</a>
-            <a href="{{ route('book-ride') }}" class="button p-3 my-2"><i class="far fa-taxi"></i> Book a Ride</a>
+            <a href="{{ route('book-ride') }}" class="button p-3 my-2"><i class="far fa-taxi"></i> Connect to Ride</a>
             <div class="p-3 my-lg-0 d-inline-flex">
                 <a href="{{ route('register') }}" class="button button-light big">Get Started</a>
             </div>

@@ -36,7 +36,7 @@
                             <i class="far fa-user-astronaut"></i> Drive with us
                         </a>
                         <a href="{{ route('book-ride') }}" class="button p-0">
-                            <i class="far fa-taxi"></i> Book a Ride
+                            <i class="far fa-taxi"></i> Connect to Ride
                         </a>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item {{ request()->routeIs('contact') ? 'active' : '' }}">
-                                    <a class="nav-link" href="{{ route('home.contact') }}">
+                                    <a class="nav-link" href="{{ route('contact') }}">
                                         <i class="fas fa-map-marker-alt"></i>Contact Us</a>
                                 </li>
                             </ul>

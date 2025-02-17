@@ -36,12 +36,12 @@
                             <div class="combine-form">
                                 <nav class="navigation">
                                     <div class="nav nav-tabs form-tab" role="tablist">
-                                        <button class="nav-link" id="nav-ride-tab" data-bs-toggle="tab"
+                                        <button class="nav-link active" id="nav-ride-tab" data-bs-toggle="tab"
                                             data-bs-target="#nav-ride" type="button" role="tab" aria-controls="nav-ride"
                                             aria-selected="false">
-                                            <i class="fas fa-car"></i> Take a Ride
+                                            <i class="fas fa-car"></i> Connect to Ride
                                         </button>
-                                        <button class="nav-link active" id="nav-drive-tab" data-bs-toggle="tab"
+                                        <button class="nav-link" id="nav-drive-tab" data-bs-toggle="tab"
                                             data-bs-target="#nav-drive" type="button" role="tab"
                                             aria-controls="nav-drive" aria-selected="true">
                                             <i class="far fa-steering-wheel"></i> Apply to Drive
