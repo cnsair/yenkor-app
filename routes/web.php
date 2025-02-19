@@ -61,7 +61,7 @@ Route::middleware('guest')->group(function () {
 
 
 //===================================================
-// Main routes
+// Dashboard routes
 //==================================================
 
 // Auth middleware
@@ -182,9 +182,11 @@ Route::group(['middleware' => 'auth'], function() {
                     Route::patch('/change-password', [ChangePasswordController::class, 'updatePassword'])
                         ->name('change-password.update');
 
+                    // audit trail
                     Route::get('/audit-trail', [AuditTrailController::class, 'index'])
                         ->name('audit-trail.index');
-                        
+
+                    // guest messages
                     Route::get('/admin/guest-messages', [GuestMessageController::class, 'index'])
                         ->name('guest-messages');
                 });

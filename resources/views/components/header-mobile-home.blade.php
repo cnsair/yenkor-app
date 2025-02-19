@@ -19,10 +19,6 @@
                     <i class="fas fa-exclamation-circle"></i>About
                 </a>
             </li>
-            <li class="nav-item {{ request()->routeIs('service') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('service') }}">
-                    <i class="fas fa-cog"></i>Our Services</a>
-            </li>
             <li class="nav-item {{ request()->routeIs('vehicle') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('vehicle') }}">
                     <i class="fas fa-taxi"></i>Our Vehicles
@@ -44,7 +40,6 @@
         </ul>
         <div class="header__upper--right flex-column">
             <a href="{{ route('login') }}" class="button p-3"><i class="far fa-user-astronaut"></i> Drive with us</a>
-            <a href="{{ route('book-ride') }}" class="button p-3 my-2"><i class="far fa-taxi"></i> Connect to Ride</a>
             <div class="p-3 my-lg-0 d-inline-flex">
                 <a href="{{ route('register') }}" class="button button-light big">Get Started</a>
             </div>

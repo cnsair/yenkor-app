@@ -23,7 +23,7 @@
                     </div>
                     <div class="helpline">
                         <h3 class="mb-0">Toll Free <span>Helpline</span></h3>
-                        <p class="mb-0">(+233) 24 024 1097</p>
+                        <p class="mb-0">(+233) 20 970 5088</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -51,10 +51,10 @@
                     <h4>Head Office</h4>
                     <address class="company-address">
                         <p class="m-b-20">
-                                GT25XXXX Sakumono, Tema, 
+                                Sakumono, Tema, 
                             <span class="d-block">Accra, Ghana</span>
                         </p>
-                        <p class="m-b-8">Phone number: (+233) 24 024 1097</p>
+                        <p class="m-b-8">Phone number: (+233) 20 970 5088</p>
                         <p class="m-b-8">Email Address: <a href="cdn-cgi/l/email-protection.html" class="__cf_email__"
                             data-cfemail="">info@yencor.com <br/> support@yencor.com</a>
                         </p>
@@ -80,7 +80,7 @@
                 <div class="col-lg-6">
                     <p>
                         &copy; <script>document.write(new Date().getFullYear());</script> 
-                        yencor App. All Right Reserved.
+                        Yencor App. All Right Reserved.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -89,24 +89,16 @@
                             <a href="#" class="facebook" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
                         </li>
                         <li>
-                            <a href="#" class="twitter" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+                            <a target="_blank" href="https://x.com/yencordotcom" class="twitter" aria-label="twitter"><i class="fab fa-twitter"></i></a>
                         </li>
                         <li>
                             <a href="#" class="instagram" aria-label="instagram"><i
                                     class="fab fa-instagram"></i></a>
                         </li>
-                        <li>
-                            <a href="#" class="google-p" aria-label="google"><i
-                                    class="fab fa-google-plus-g"></i></a>
-                        </li>
-                        <li>
+                        <!-- <li>
                             <a href="#" class="linkedin" aria-label="linkedin"><i
                                     class="fab fa-linkedin-in"></i></a>
-                        </li>
-                        <li>
-                            <a href="#" class="pinterest" aria-label="pinterest"><i
-                                    class="fab fa-pinterest-p"></i></a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </div>

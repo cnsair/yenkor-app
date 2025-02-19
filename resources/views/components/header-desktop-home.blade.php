@@ -5,12 +5,12 @@
                 <div class="col-12 col-lg-6">
                     <div class="header__upper--left">
                         <div class="d-none d-lg-block logo">
-                            <a href="{{ route('home') }}"><img src="{{ asset('assets/assets/images/logo-main.webp') }}" alt="Site Logo"></a>
+                            <a href="{{ route('home') }}"><img height="60" src="{{ asset('assets/assets/images/logo/logo-one.png') }}" alt="Site Logo"></a>
                         </div>
                         <div class="d-block d-lg-none logo w-49px">
-                            <a href="{{ route('home') }}"><img src="{{ asset('assets/assets/images/logo-icon.webp') }}" alt="Site Logo"></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/assets/images/logo/logo-one.png') }}" alt="Site Logo"></a>
                         </div>
-                        <div class="search-bar">
+                        <!-- <div class="search-bar">
                             <form class="form">
                                 <span class="icon icon-left"><i class="fas fa-map-marker-alt"></i></span>
                                 <input class="form-control" type="search" name="search-bar"
@@ -19,7 +19,7 @@
                                     <i class="fal fa-arrow-right"></i>
                                 </button>
                             </form>
-                        </div>
+                        </div> -->
                         <button type="button" class="nav-toggle-btn a-nav-toggle ms-auto d-block d-lg-none"
                             aria-label="toggle-nav">
                             <span class="nav-toggle nav-toggle-sm">
@@ -30,14 +30,12 @@
                         </button>
                     </div>
                 </div>
-                <div class="d-none d-lg-block col-lg-6">
+                <div class="d-none d-lg-block col-lg-6" style="padding-left: 32%;">
                     <div class="header__upper--right">
                         <a href="{{ route('register') }}" class="button p-0">
                             <i class="far fa-user-astronaut"></i> Drive with us
                         </a>
-                        <a href="{{ route('book-ride') }}" class="button p-0">
-                            <i class="far fa-taxi"></i> Connect to Ride
-                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -66,10 +64,6 @@
                                     <a class="nav-link" href="{{ route('about') }}">
                                         <i class="fas fa-exclamation-circle"></i>About
                                     </a>
-                                </li>
-                                <li class="nav-item {{ request()->routeIs('service') ? 'active' : '' }}">
-                                    <a class="nav-link" href="{{ route('service') }}">
-                                        <i class="fas fa-cog"></i>Our Services</a>
                                 </li>
                                 <li class="nav-item {{ request()->routeIs('vehicle') ? 'active' : '' }}">
                                     <a class="nav-link" href="{{ route('vehicle') }}">
